@@ -1,0 +1,22 @@
+{
+  "name": "Krunker.io Cheats [ESP Only]",
+  "version": "0.9.9.6",
+  "description": "Krunker.io chrome extension",
+  "homepage_url": "https://github.com/tonzsm/krunker.io-Cheats",
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "storage",
+    "*://*/*",
+    "declarativeContent",
+    "webRequest",
+    "webRequestBlocking",
+    "background"
+  ],
+  "web_accessible_resources": [
+    "game.js"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
