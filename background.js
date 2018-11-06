@@ -1,6 +1,7 @@
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
 	return {
-		redirectUrl: chrome.extension.getURL("game.js")
+		redirectUrl: chrome.extension.getURL("game.js"),
+		
 	};
 }, {
 	urls: [

@@ -1,3 +1,12 @@
+var cheatSettings = {
+	showfps: false,
+	showesp: false,
+	noRecoil: false,
+	aimInitialized : false,
+	aimbot: false,
+	autoShoot: false,
+	bhop: false
+};
 ! function(t) {
     var e = {};
 
@@ -84,7 +93,7 @@
     }
 }, function(t, e, n) {
     (function(e) {
-        t.exports.isProd = void 0 !== e && !!e.env.IS_PROD || "undefined" != typeof location && "127.0.0.1" !== location.hostname && "localhost" !== location.hostname && !location.hostname.startsWith("192.168."), t.exports.enableHttps = t.exports.isProd, t.exports.serverTickRate = 1e3 / 30, t.exports.serverSendRate = 100, t.exports.clientSendRate = 1e3 / 30, t.exports.dltMx = Math.round(1e3 / 30), t.exports.maxPlayers = 8, t.exports.serverSpread = 3, t.exports.minServerSpace = 3, t.exports.gamesPerServer = 5, t.exports.serverBrowserRate = 1e4, t.exports.maxPlayersTotal = t.exports.maxPlayers * t.exports.gamesPerServer + 46, t.exports.kickTimer = 9e4, t.exports.endTimer = 2e4, t.exports.endAnim = 5e3, t.exports.serverConfig = [{
+        t.exports.isProd = void 0 !== e && !!e.env.IS_PROD || "undefined" != typeof location && "127.0.0.1" !== location.hostname && "localhost" !== location.hostname && !location.hostname.startsWith("192.168."), t.exports.enableHttps = t.exports.isProd, t.exports.serverTickRate = 1e3 / 30, t.exports.serverSendRate = 100, t.exports.clientSendRate = 1e3 / 30, t.exports.updateBids = 3e5, t.exports.dltMx = Math.round(1e3 / 30), t.exports.maxPlayers = 8, t.exports.serverSpread = 3, t.exports.minServerSpace = 3, t.exports.gamesPerServer = 5, t.exports.serverBrowserRate = 1e4, t.exports.maxPlayersTotal = t.exports.maxPlayers * t.exports.gamesPerServer + 46, t.exports.kickTimer = 9e4, t.exports.endTimer = 2e4, t.exports.endAnim = 5e3, t.exports.serverConfig = [{
             name: "Players",
             varN: "maxPlayers",
             def: 2,
@@ -167,7 +176,7 @@
             found: function(t, e, n) {
                 return n.convs
             }
-        }, t.exports.hitLife = 2e3, t.exports.regenDelay = 5e3, t.exports.regenVal = .1, t.exports.sprayTimer = 1e3, t.exports.sprayRange = 25, t.exports.sprayScale = 15, t.exports.deathDelay = 2800, t.exports.deathFollowD = 100, t.exports.suicides = ["suicide", "uninstall life", "not alive", "neck rope", "sudoku"], t.exports.fov = 70, t.exports.viewDist = 2e3, t.exports.nameVisRate = 200, t.exports.worldUV = 60, t.exports.ambientVal = .3, t.exports.ambD = 2, t.exports.ambMlt = 15, t.exports.ambOff = .1, t.exports.ambScale = 10, t.exports.ambBleed = 0, t.exports.boosterSpd = .002, t.exports.rankVar = .03, t.exports.newDataInterval = 6e4, t.exports.socials = ["leaders", "profile", "maps"], t.exports.leaderQueries = ["score", "kills", "wins", "timeplayed", "funds", "clan"], t.exports.leaderCal = {
+        }, t.exports.hitLife = 2e3, t.exports.regenDelay = 5e3, t.exports.regenVal = .1, t.exports.sprayTimer = 1e3, t.exports.sprayRange = 25, t.exports.sprayScale = 15, t.exports.deathDelay = 2800, t.exports.deathFollowD = 100, t.exports.suicides = ["suicide", "uninstall life", "toaster bath", "alt f4", "not alive", "neck rope", "sudoku", "scooter ankle"], t.exports.fov = 70, t.exports.viewDist = 2e3, t.exports.nameVisRate = 200, t.exports.worldUV = 60, t.exports.ambientVal = .3, t.exports.ambD = 2, t.exports.ambMlt = 15, t.exports.ambOff = .1, t.exports.ambScale = 10, t.exports.ambBleed = 0, t.exports.boosterSpd = .002, t.exports.rankVar = .03, t.exports.newDataInterval = 6e4, t.exports.socials = ["leaders", "profile", "maps"], t.exports.leaderQueries = ["score", "kills", "wins", "timeplayed", "funds", "clan"], t.exports.leaderCal = {
             player_score: function(e) {
                 var n = Math.max(1, Math.floor(t.exports.rankVar * Math.sqrt(e)));
                 return "<span class='floatR'><img src='./img/levels/" + Math.max(Math.min(t.exports.maxLevel - 2, n.roundToNearest(3) - 2), 0) + ".png' class='rnkIcon'>" + n + "</span>"
@@ -197,9 +206,9 @@
 
     function i() {}
     n.r(e), n.d(e, "WebGLRenderTargetCube", function() {
-        return qe
-    }), n.d(e, "WebGLRenderTarget", function() {
         return Xe
+    }), n.d(e, "WebGLRenderTarget", function() {
+        return qe
     }), n.d(e, "WebGLRenderer", function() {
         return nr
     }), n.d(e, "ShaderLib", function() {
@@ -267,9 +276,9 @@
     }), n.d(e, "BufferGeometryLoader", function() {
         return Qo
     }), n.d(e, "DefaultLoadingManager", function() {
-        return qa
-    }), n.d(e, "LoadingManager", function() {
         return Xa
+    }), n.d(e, "LoadingManager", function() {
+        return qa
     }), n.d(e, "JSONLoader", function() {
         return ns
     }), n.d(e, "ImageLoader", function() {
@@ -331,9 +340,9 @@
     }), n.d(e, "Audio", function() {
         return ws
     }), n.d(e, "VectorKeyframeTrack", function() {
-        return qo
-    }), n.d(e, "StringKeyframeTrack", function() {
         return Xo
+    }), n.d(e, "StringKeyframeTrack", function() {
+        return qo
     }), n.d(e, "QuaternionKeyframeTrack", function() {
         return Yo
     }), n.d(e, "NumberKeyframeTrack", function() {
@@ -445,9 +454,9 @@
     }), n.d(e, "RectAreaLightHelper", function() {
         return Ys
     }), n.d(e, "HemisphereLightHelper", function() {
-        return Xs
-    }), n.d(e, "GridHelper", function() {
         return qs
+    }), n.d(e, "GridHelper", function() {
+        return Xs
     }), n.d(e, "PolarGridHelper", function() {
         return Zs
     }), n.d(e, "FaceNormalsHelper", function() {
@@ -591,9 +600,9 @@
     }), n.d(e, "MeshLambertMaterial", function() {
         return ja
     }), n.d(e, "MeshDepthMaterial", function() {
-        return Xi
-    }), n.d(e, "MeshDistanceMaterial", function() {
         return qi
+    }), n.d(e, "MeshDistanceMaterial", function() {
+        return Xi
     }), n.d(e, "MeshBasicMaterial", function() {
         return kn
     }), n.d(e, "LineDashedMaterial", function() {
@@ -729,9 +738,9 @@
     }), n.d(e, "AlwaysDepth", function() {
         return Y
     }), n.d(e, "LessDepth", function() {
-        return X
-    }), n.d(e, "LessEqualDepth", function() {
         return q
+    }), n.d(e, "LessEqualDepth", function() {
+        return X
     }), n.d(e, "EqualDepth", function() {
         return Z
     }), n.d(e, "GreaterEqualDepth", function() {
@@ -837,9 +846,9 @@
     }), n.d(e, "RGBA_S3TC_DXT3_Format", function() {
         return Yt
     }), n.d(e, "RGBA_S3TC_DXT5_Format", function() {
-        return Xt
-    }), n.d(e, "RGB_PVRTC_4BPPV1_Format", function() {
         return qt
+    }), n.d(e, "RGB_PVRTC_4BPPV1_Format", function() {
+        return Xt
     }), n.d(e, "RGB_PVRTC_2BPPV1_Format", function() {
         return Zt
     }), n.d(e, "RGBA_PVRTC_4BPPV1_Format", function() {
@@ -1090,8 +1099,8 @@
         V = 210,
         W = 0,
         Y = 1,
-        X = 2,
-        q = 3,
+        q = 2,
+        X = 3,
         Z = 4,
         K = 5,
         J = 6,
@@ -1144,8 +1153,8 @@
         Vt = 33776,
         Wt = 33777,
         Yt = 33778,
-        Xt = 33779,
-        qt = 35840,
+        qt = 33779,
+        Xt = 35840,
         Zt = 35841,
         Kt = 35842,
         Jt = 35843,
@@ -2434,12 +2443,12 @@
         this.x = t || 0, this.y = e || 0, this.z = n || 0, this.w = void 0 !== i ? i : 1
     }
 
-    function Xe(t, e, n) {
+    function qe(t, e, n) {
         this.width = t, this.height = e, this.scissor = new Ye(0, 0, t, e), this.scissorTest = !1, this.viewport = new Ye(0, 0, t, e), void 0 === (n = n || {}).minFilter && (n.minFilter = bt), this.texture = new We(void 0, void 0, n.wrapS, n.wrapT, n.magFilter, n.minFilter, n.format, n.type, n.anisotropy, n.encoding), this.texture.generateMipmaps = void 0 === n.generateMipmaps || n.generateMipmaps, this.depthBuffer = void 0 === n.depthBuffer || n.depthBuffer, this.stencilBuffer = void 0 === n.stencilBuffer || n.stencilBuffer, this.depthTexture = void 0 !== n.depthTexture ? n.depthTexture : null
     }
 
-    function qe(t, e, n) {
-        Xe.call(this, t, e, n), this.activeCubeFace = 0, this.activeMipMapLevel = 0
+    function Xe(t, e, n) {
+        qe.call(this, t, e, n), this.activeCubeFace = 0, this.activeMipMapLevel = 0
     }
 
     function Ze(t, e, n, i, r, a, o, s, c, l, h, u) {
@@ -2745,8 +2754,8 @@
         fromBufferAttribute: function(t, e, n) {
             return void 0 !== n && console.warn("THREE.Vector4: offset has been removed from .fromBufferAttribute()."), this.x = t.getX(e), this.y = t.getY(e), this.z = t.getZ(e), this.w = t.getW(e), this
         }
-    }), Xe.prototype = Object.assign(Object.create(i.prototype), {
-        constructor: Xe,
+    }), qe.prototype = Object.assign(Object.create(i.prototype), {
+        constructor: qe,
         isWebGLRenderTarget: !0,
         setSize: function(t, e) {
             this.width === t && this.height === e || (this.width = t, this.height = e, this.dispose()), this.viewport.set(0, 0, t, e), this.scissor.set(0, 0, t, e)
@@ -2762,7 +2771,7 @@
                 type: "dispose"
             })
         }
-    }), qe.prototype = Object.create(Xe.prototype), qe.prototype.constructor = qe, qe.prototype.isWebGLRenderTargetCube = !0, Ze.prototype = Object.create(We.prototype), Ze.prototype.constructor = Ze, Ze.prototype.isDataTexture = !0, Object.assign(Ke.prototype, {
+    }), Xe.prototype = Object.create(qe.prototype), Xe.prototype.constructor = Xe, Xe.prototype.isWebGLRenderTargetCube = !0, Ze.prototype = Object.create(We.prototype), Ze.prototype.constructor = Ze, Ze.prototype.isDataTexture = !0, Object.assign(Ke.prototype, {
         isBox3: !0,
         set: function(t, e) {
             return this.min.copy(t), this.max.copy(e), this
@@ -5519,7 +5528,7 @@
     function Nn() {
         Object.defineProperty(this, "id", {
             value: Bn++
-        }), this.uuid = ke.generateUUID(), this.name = "", this.type = "Material", this.fog = !0, this.lights = !0, this.blending = S, this.side = m, this.flatShading = !1, this.vertexColors = w, this.opacity = 1, this.transparent = !1, this.blendSrc = U, this.blendDst = z, this.blendEquation = R, this.blendSrcAlpha = null, this.blendDstAlpha = null, this.blendEquationAlpha = null, this.depthFunc = q, this.depthTest = !0, this.depthWrite = !0, this.clippingPlanes = null, this.clipIntersection = !1, this.clipShadows = !1, this.shadowSide = null, this.colorWrite = !0, this.precision = null, this.polygonOffset = !1, this.polygonOffsetFactor = 0, this.polygonOffsetUnits = 0, this.dithering = !1, this.alphaTest = 0, this.premultipliedAlpha = !1, this.overdraw = 0, this.visible = !0, this.userData = {}, this.needsUpdate = !0
+        }), this.uuid = ke.generateUUID(), this.name = "", this.type = "Material", this.fog = !0, this.lights = !0, this.blending = S, this.side = m, this.flatShading = !1, this.vertexColors = w, this.opacity = 1, this.transparent = !1, this.blendSrc = U, this.blendDst = z, this.blendEquation = R, this.blendSrcAlpha = null, this.blendDstAlpha = null, this.blendEquationAlpha = null, this.depthFunc = X, this.depthTest = !0, this.depthWrite = !0, this.clippingPlanes = null, this.clipIntersection = !1, this.clipShadows = !1, this.shadowSide = null, this.colorWrite = !0, this.precision = null, this.polygonOffset = !1, this.polygonOffsetFactor = 0, this.polygonOffsetUnits = 0, this.dithering = !1, this.alphaTest = 0, this.premultipliedAlpha = !1, this.overdraw = 0, this.visible = !0, this.userData = {}, this.needsUpdate = !0
     }
 
     function kn(t) {
@@ -5975,22 +5984,22 @@
                     j.length > 0 && (z = j);
                     for (var V = 0, W = G.length; V < W; V++) {
                         var Y = G[V],
-                            X = F ? w[Y.materialIndex] : w;
-                        if (void 0 !== X) {
-                            if (N = H[Y.a], k = H[Y.b], U = H[Y.c], !0 === X.morphTargets) {
-                                var q = v.morphTargets,
+                            q = F ? w[Y.materialIndex] : w;
+                        if (void 0 !== q) {
+                            if (N = H[Y.a], k = H[Y.b], U = H[Y.c], !0 === q.morphTargets) {
+                                var X = v.morphTargets,
                                     Z = this.morphTargetInfluences;
                                 i.set(0, 0, 0), r.set(0, 0, 0), a.set(0, 0, 0);
-                                for (var K = 0, J = q.length; K < J; K++) {
+                                for (var K = 0, J = X.length; K < J; K++) {
                                     var Q = Z[K];
                                     if (0 !== Q) {
-                                        var $ = q[K].vertices;
+                                        var $ = X[K].vertices;
                                         i.addScaledVector(o.subVectors($[Y.a], N), Q), r.addScaledVector(s.subVectors($[Y.b], k), Q), a.addScaledVector(c.subVectors($[Y.c], U), Q)
                                     }
                                 }
                                 i.add(N), r.add(k), a.add(U), N = i, k = r, U = a
                             }
-                            if (g = y(this, X, p, e, N, k, U, d)) {
+                            if (g = y(this, q, p, e, N, k, U, d)) {
                                 if (z && z[V]) {
                                     var tt = z[V];
                                     l.copy(tt[0]), h.copy(tt[1]), u.copy(tt[2]), g.uv = m(d, N, k, U, l, h, u)
@@ -6019,8 +6028,8 @@
     function Yn() {
         this.seq = [], this.map = {}
     }
-    var Xn = [],
-        qn = [],
+    var qn = [],
+        Xn = [],
         Zn = new Float32Array(16),
         Kn = new Float32Array(9),
         Jn = new Float32Array(4);
@@ -6029,8 +6038,8 @@
         var i = t[0];
         if (i <= 0 || i > 0) return t;
         var r = e * n,
-            a = Xn[r];
-        if (void 0 === a && (a = new Float32Array(r), Xn[r] = a), 0 !== e) {
+            a = qn[r];
+        if (void 0 === a && (a = new Float32Array(r), qn[r] = a), 0 !== e) {
             i.toArray(a, 0);
             for (var o = 1, s = 0; o !== e; ++o) s += n, t[o].toArray(a, s)
         }
@@ -6049,8 +6058,8 @@
     }
 
     function ei(t, e) {
-        var n = qn[e];
-        void 0 === n && (n = new Int32Array(e), qn[e] = n);
+        var n = Xn[e];
+        void 0 === n && (n = new Int32Array(e), Xn[e] = n);
         for (var i = 0; i !== e; ++i) n[i] = t.allocTextureUnit();
         return n
     }
@@ -6818,11 +6827,11 @@
         }
     }
 
-    function Xi(t) {
+    function qi(t) {
         Nn.call(this), this.type = "MeshDepthMaterial", this.depthPacking = Oe, this.skinning = !1, this.morphTargets = !1, this.map = null, this.alphaMap = null, this.displacementMap = null, this.displacementScale = 1, this.displacementBias = 0, this.wireframe = !1, this.wireframeLinewidth = 1, this.fog = !1, this.lights = !1, this.setValues(t)
     }
 
-    function qi(t) {
+    function Xi(t) {
         Nn.call(this), this.type = "MeshDistanceMaterial", this.referencePosition = new He, this.nearDistance = 1, this.farDistance = 1e3, this.skinning = !1, this.morphTargets = !1, this.map = null, this.alphaMap = null, this.displacementMap = null, this.displacementScale = 1, this.displacementBias = 0, this.fog = !1, this.lights = !1, this.setValues(t)
     }
 
@@ -6834,13 +6843,13 @@
             }, w = [new He(1, 0, 0), new He(-1, 0, 0), new He(0, 0, 1), new He(0, 0, -1), new He(0, 1, 0), new He(0, -1, 0)], b = [new He(0, 1, 0), new He(0, 1, 0), new He(0, 1, 0), new He(0, 1, 0), new He(0, 0, 1), new He(0, 0, -1)], M = [new Ye, new Ye, new Ye, new Ye, new Ye, new Ye], _ = 0; _ !== u; ++_) {
             var S = 0 != (_ & l),
                 E = 0 != (_ & h),
-                T = new Xi({
+                T = new qi({
                     depthPacking: De,
                     morphTargets: S,
                     skinning: E
                 });
             p[_] = T;
-            var A = new qi({
+            var A = new Xi({
                 morphTargets: S,
                 skinning: E
             });
@@ -6913,7 +6922,7 @@
                                 magFilter: yt,
                                 format: Ut
                             };
-                            g.map = new Xe(a.x, a.y, S), g.map.texture.name = m.name + ".shadowMap", y.updateProjectionMatrix()
+                            g.map = new qe(a.x, a.y, S), g.map.texture.name = m.name + ".shadowMap", y.updateProjectionMatrix()
                         }
                         g.isSpotLightShadow && g.update(m);
                         var E = g.map,
@@ -7190,14 +7199,14 @@
                 if (i === G) return t.DST_COLOR;
                 if (i === j) return t.ONE_MINUS_DST_COLOR;
                 if (i === V) return t.SRC_ALPHA_SATURATE;
-                if ((i === Vt || i === Wt || i === Yt || i === Xt) && null !== (r = e.get("WEBGL_compressed_texture_s3tc"))) {
+                if ((i === Vt || i === Wt || i === Yt || i === qt) && null !== (r = e.get("WEBGL_compressed_texture_s3tc"))) {
                     if (i === Vt) return r.COMPRESSED_RGB_S3TC_DXT1_EXT;
                     if (i === Wt) return r.COMPRESSED_RGBA_S3TC_DXT1_EXT;
                     if (i === Yt) return r.COMPRESSED_RGBA_S3TC_DXT3_EXT;
-                    if (i === Xt) return r.COMPRESSED_RGBA_S3TC_DXT5_EXT
+                    if (i === qt) return r.COMPRESSED_RGBA_S3TC_DXT5_EXT
                 }
-                if ((i === qt || i === Zt || i === Kt || i === Jt) && null !== (r = e.get("WEBGL_compressed_texture_pvrtc"))) {
-                    if (i === qt) return r.COMPRESSED_RGB_PVRTC_4BPPV1_IMG;
+                if ((i === Xt || i === Zt || i === Kt || i === Jt) && null !== (r = e.get("WEBGL_compressed_texture_pvrtc"))) {
+                    if (i === Xt) return r.COMPRESSED_RGB_PVRTC_4BPPV1_IMG;
                     if (i === Zt) return r.COMPRESSED_RGB_PVRTC_2BPPV1_IMG;
                     if (i === Kt) return r.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG;
                     if (i === Jt) return r.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG
@@ -7567,10 +7576,10 @@
                                         case Y:
                                             t.depthFunc(t.ALWAYS);
                                             break;
-                                        case X:
+                                        case q:
                                             t.depthFunc(t.LESS);
                                             break;
-                                        case q:
+                                        case X:
                                             t.depthFunc(t.LEQUAL);
                                             break;
                                         case Z:
@@ -7721,7 +7730,7 @@
                 function lt(e) {
                     void 0 === e && (e = t.TEXTURE0 + U - 1), G !== e && (t.activeTexture(e), G = e)
                 }
-                return et[t.TEXTURE_2D] = tt(t.TEXTURE_2D, t.TEXTURE_2D, 1), et[t.TEXTURE_CUBE_MAP] = tt(t.TEXTURE_CUBE_MAP, t.TEXTURE_CUBE_MAP_POSITIVE_X, 6), r.setClear(0, 0, 0, 1), a.setClear(1), l.setClear(0), it(t.DEPTH_TEST), a.setFunc(q), ot(!1), st(s), it(t.CULL_FACE), it(t.BLEND), at(S), {
+                return et[t.TEXTURE_2D] = tt(t.TEXTURE_2D, t.TEXTURE_2D, 1), et[t.TEXTURE_CUBE_MAP] = tt(t.TEXTURE_CUBE_MAP, t.TEXTURE_CUBE_MAP_POSITIVE_X, 6), r.setClear(0, 0, 0, 1), a.setClear(1), l.setClear(0), it(t.DEPTH_TEST), a.setFunc(X), ot(!1), st(s), it(t.CULL_FACE), it(t.BLEND), at(S), {
                     buffers: {
                         color: r,
                         depth: a,
@@ -9151,9 +9160,9 @@
             }
         this.setIndex(s), this.addAttribute("position", new En(c, 3)), this.addAttribute("normal", new En(l, 3)), this.addAttribute("uv", new En(h, 2))
     }
-    Xi.prototype = Object.create(Nn.prototype), Xi.prototype.constructor = Xi, Xi.prototype.isMeshDepthMaterial = !0, Xi.prototype.copy = function(t) {
+    qi.prototype = Object.create(Nn.prototype), qi.prototype.constructor = qi, qi.prototype.isMeshDepthMaterial = !0, qi.prototype.copy = function(t) {
         return Nn.prototype.copy.call(this, t), this.depthPacking = t.depthPacking, this.skinning = t.skinning, this.morphTargets = t.morphTargets, this.map = t.map, this.alphaMap = t.alphaMap, this.displacementMap = t.displacementMap, this.displacementScale = t.displacementScale, this.displacementBias = t.displacementBias, this.wireframe = t.wireframe, this.wireframeLinewidth = t.wireframeLinewidth, this
-    }, qi.prototype = Object.create(Nn.prototype), qi.prototype.constructor = qi, qi.prototype.isMeshDistanceMaterial = !0, qi.prototype.copy = function(t) {
+    }, Xi.prototype = Object.create(Nn.prototype), Xi.prototype.constructor = Xi, Xi.prototype.isMeshDistanceMaterial = !0, Xi.prototype.copy = function(t) {
         return Nn.prototype.copy.call(this, t), this.referencePosition.copy(t.referencePosition), this.nearDistance = t.nearDistance, this.farDistance = t.farDistance, this.skinning = t.skinning, this.morphTargets = t.morphTargets, this.map = t.map, this.alphaMap = t.alphaMap, this.displacementMap = t.displacementMap, this.displacementScale = t.displacementScale, this.displacementBias = t.displacementBias, this
     }, Qi.prototype = Object.assign(Object.create(un.prototype), {
         constructor: Qi,
@@ -9710,9 +9719,9 @@
                     }(r)
             }(t, i, r, a);
             for (var s, c, l = t; t.prev !== t.next;)
-                if (s = t.prev, c = t.next, a ? Xr(t, i, r, a) : Yr(t)) e.push(s.i / n), e.push(t.i / n), e.push(c.i / n), ca(t), t = c.next, l = c.next;
+                if (s = t.prev, c = t.next, a ? qr(t, i, r, a) : Yr(t)) e.push(s.i / n), e.push(t.i / n), e.push(c.i / n), ca(t), t = c.next, l = c.next;
                 else if ((t = c) === l) {
-                o ? 1 === o ? Wr(t = qr(t, e, n), e, n, i, r, a, 2) : 2 === o && Zr(t, e, n, i, r, a) : Wr(Vr(t), e, n, i, r, a, 1);
+                o ? 1 === o ? Wr(t = Xr(t, e, n), e, n, i, r, a, 2) : 2 === o && Zr(t, e, n, i, r, a) : Wr(Vr(t), e, n, i, r, a, 1);
                 break
             }
         }
@@ -9730,7 +9739,7 @@
         return !0
     }
 
-    function Xr(t, e, n, i) {
+    function qr(t, e, n, i) {
         var r = t.prev,
             a = t,
             o = t.next;
@@ -9746,7 +9755,7 @@
         return !0
     }
 
-    function qr(t, e, n) {
+    function Xr(t, e, n) {
         var i = t;
         do {
             var r = i.prev,
@@ -9996,26 +10005,26 @@
             }
             for (var z = [], F = 0, H = L.length, G = H - 1, j = F + 1; F < H; F++, G++, j++) G === H && (G = 0), j === H && (j = 0), z[F] = U(L[F], L[G], L[j]);
             var V, W, Y = [],
-                X = z.concat();
+                q = z.concat();
             for (b = 0, M = T.length; b < M; b++) {
                 for (w = T[b], V = [], F = 0, G = (H = w.length) - 1, j = F + 1; F < H; F++, G++, j++) G === H && (G = 0), j === H && (j = 0), V[F] = U(w[F], w[G], w[j]);
-                Y.push(V), X = X.concat(V)
+                Y.push(V), q = q.concat(V)
             }
             for (P = 0; P < p; P++) {
                 for (I = P / p, O = h * Math.cos(I * Math.PI / 2), C = u * Math.sin(I * Math.PI / 2), F = 0, H = L.length; F < H; F++) Z((D = R(L[F], z[F], C)).x, D.y, -O);
                 for (b = 0, M = T.length; b < M; b++)
                     for (w = T[b], V = Y[b], F = 0, H = w.length; F < H; F++) Z((D = R(w[F], V[F], C)).x, D.y, -O)
             }
-            for (C = u, F = 0; F < N; F++) D = l ? R(E[F], X[F], C) : E[F], _ ? (y.copy(g.normals[0]).multiplyScalar(D.x), v.copy(g.binormals[0]).multiplyScalar(D.y), x.copy(m[0]).add(y).add(v), Z(x.x, x.y, x.z)) : Z(D.x, D.y, 0);
+            for (C = u, F = 0; F < N; F++) D = l ? R(E[F], q[F], C) : E[F], _ ? (y.copy(g.normals[0]).multiplyScalar(D.x), v.copy(g.binormals[0]).multiplyScalar(D.y), x.copy(m[0]).add(y).add(v), Z(x.x, x.y, x.z)) : Z(D.x, D.y, 0);
             for (W = 1; W <= s; W++)
-                for (F = 0; F < N; F++) D = l ? R(E[F], X[F], C) : E[F], _ ? (y.copy(g.normals[W]).multiplyScalar(D.x), v.copy(g.binormals[W]).multiplyScalar(D.y), x.copy(m[W]).add(y).add(v), Z(x.x, x.y, x.z)) : Z(D.x, D.y, c / s * W);
+                for (F = 0; F < N; F++) D = l ? R(E[F], q[F], C) : E[F], _ ? (y.copy(g.normals[W]).multiplyScalar(D.x), v.copy(g.binormals[W]).multiplyScalar(D.y), x.copy(m[W]).add(y).add(v), Z(x.x, x.y, x.z)) : Z(D.x, D.y, c / s * W);
             for (P = p - 1; P >= 0; P--) {
                 for (I = P / p, O = h * Math.cos(I * Math.PI / 2), C = u * Math.sin(I * Math.PI / 2), F = 0, H = L.length; F < H; F++) Z((D = R(L[F], z[F], C)).x, D.y, c + O);
                 for (b = 0, M = T.length; b < M; b++)
                     for (w = T[b], V = Y[b], F = 0, H = w.length; F < H; F++) D = R(w[F], V[F], C), _ ? Z(D.x, D.y + m[s - 1].y, m[s - 1].x + O) : Z(D.x, D.y, c + O)
             }
 
-            function q(t, e) {
+            function X(t, e) {
                 var n, i;
                 for (F = t.length; --F >= 0;) {
                     n = F, (i = F - 1) < 0 && (i = t.length - 1);
@@ -10069,7 +10078,7 @@
             function() {
                 var t = i.length / 3,
                     e = 0;
-                for (q(L, e), e += L.length, b = 0, M = T.length; b < M; b++) q(w = T[b], e), e += w.length;
+                for (X(L, e), e += L.length, b = 0, M = T.length; b < M; b++) X(w = T[b], e), e += w.length;
                 n.addGroup(t, i.length / 3 - t, 1)
             }()
         }
@@ -10618,8 +10627,8 @@
             MeshToonMaterial: Ha,
             MeshNormalMaterial: Ga,
             MeshLambertMaterial: ja,
-            MeshDepthMaterial: Xi,
-            MeshDistanceMaterial: qi,
+            MeshDepthMaterial: qi,
+            MeshDistanceMaterial: Xi,
             MeshBasicMaterial: kn,
             LineDashedMaterial: Va,
             LineBasicMaterial: fr,
@@ -10642,7 +10651,7 @@
             }
         };
 
-    function Xa(t, e, n) {
+    function qa(t, e, n) {
         var i = this,
             r = !1,
             a = 0,
@@ -10660,31 +10669,31 @@
             return s = t, this
         }
     }
-    var qa = new Xa,
+    var Xa = new qa,
         Za = {};
 
     function Ka(t) {
-        this.manager = void 0 !== t ? t : qa
+        this.manager = void 0 !== t ? t : Xa
     }
 
     function Ja(t) {
-        this.manager = void 0 !== t ? t : qa, this._parser = null
+        this.manager = void 0 !== t ? t : Xa, this._parser = null
     }
 
     function Qa(t) {
-        this.manager = void 0 !== t ? t : qa, this._parser = null
+        this.manager = void 0 !== t ? t : Xa, this._parser = null
     }
 
     function $a(t) {
-        this.manager = void 0 !== t ? t : qa
+        this.manager = void 0 !== t ? t : Xa
     }
 
     function to(t) {
-        this.manager = void 0 !== t ? t : qa
+        this.manager = void 0 !== t ? t : Xa
     }
 
     function eo(t) {
-        this.manager = void 0 !== t ? t : qa
+        this.manager = void 0 !== t ? t : Xa
     }
 
     function no() {
@@ -11686,11 +11695,11 @@
         Ho.call(this, t, e, n, i)
     }
 
-    function Xo(t, e, n, i) {
+    function qo(t, e, n, i) {
         Ho.call(this, t, e, n, i)
     }
 
-    function qo(t, e, n, i) {
+    function Xo(t, e, n, i) {
         Ho.call(this, t, e, n, i)
     }
 
@@ -11712,7 +11721,7 @@
                 case "vector2":
                 case "vector3":
                 case "vector4":
-                    return qo;
+                    return Xo;
                 case "color":
                     return jo;
                 case "quaternion":
@@ -11721,7 +11730,7 @@
                 case "boolean":
                     return Go;
                 case "string":
-                    return Xo
+                    return qo
             }
             throw new Error("THREE.KeyframeTrack: Unsupported typeName: " + t)
         }(t.type);
@@ -11734,11 +11743,11 @@
     }
 
     function Jo(t) {
-        this.manager = void 0 !== t ? t : qa, this.textures = {}
+        this.manager = void 0 !== t ? t : Xa, this.textures = {}
     }
 
     function Qo(t) {
-        this.manager = void 0 !== t ? t : qa
+        this.manager = void 0 !== t ? t : Xa
     }
     Object.assign(ko.prototype, {
         evaluate: function(t) {
@@ -12024,15 +12033,15 @@
             return new Wo(this.times, this.values, this.getValueSize(), t)
         },
         InterpolantFactoryMethodSmooth: void 0
-    }), Xo.prototype = Object.assign(Object.create(Ho.prototype), {
-        constructor: Xo,
+    }), qo.prototype = Object.assign(Object.create(Ho.prototype), {
+        constructor: qo,
         ValueTypeName: "string",
         ValueBufferType: Array,
         DefaultInterpolation: ge,
         InterpolantFactoryMethodLinear: void 0,
         InterpolantFactoryMethodSmooth: void 0
-    }), qo.prototype = Object.assign(Object.create(Ho.prototype), {
-        constructor: qo,
+    }), Xo.prototype = Object.assign(Object.create(Ho.prototype), {
+        constructor: Xo,
         ValueTypeName: "vector"
     }), Object.assign(Zo, {
         parse: function(t) {
@@ -12108,7 +12117,7 @@
                         a = h.length * (o || 1)
                     } else {
                         var v = ".bones[" + e[c].name + "]";
-                        n(qo, v + ".position", l, "pos", i), n(Yo, v + ".quaternion", l, "rot", i), n(qo, v + ".scale", l, "scl", i)
+                        n(Xo, v + ".position", l, "pos", i), n(Yo, v + ".quaternion", l, "rot", i), n(Xo, v + ".scale", l, "scl", i)
                     }
             }
             return 0 === i.length ? null : new Zo(r, a, i)
@@ -12412,11 +12421,11 @@
     };
 
     function ns(t) {
-        "boolean" == typeof t && (console.warn("THREE.JSONLoader: showStatus parameter has been removed from constructor."), t = void 0), this.manager = void 0 !== t ? t : qa, this.withCredentials = !1
+        "boolean" == typeof t && (console.warn("THREE.JSONLoader: showStatus parameter has been removed from constructor."), t = void 0), this.manager = void 0 !== t ? t : Xa, this.withCredentials = !1
     }
 
     function is(t) {
-        this.manager = void 0 !== t ? t : qa, this.texturePath = ""
+        this.manager = void 0 !== t ? t : Xa, this.texturePath = ""
     }
     Object.assign(ns.prototype, {
         crossOrigin: "anonymous",
@@ -12703,7 +12712,7 @@
                 })
             }
             if (void 0 !== t && t.length > 0) {
-                var a = new $a(new Xa(e));
+                var a = new $a(new qa(e));
                 a.setCrossOrigin(this.crossOrigin);
                 for (var o = 0, s = t.length; o < s; o++) {
                     var c = t[o],
@@ -12847,7 +12856,7 @@
         };
 
     function cs(t) {
-        "undefined" == typeof createImageBitmap && console.warn("THREE.ImageBitmapLoader: createImageBitmap() not supported."), "undefined" == typeof fetch && console.warn("THREE.ImageBitmapLoader: fetch() not supported."), this.manager = void 0 !== t ? t : qa, this.options = void 0
+        "undefined" == typeof createImageBitmap && console.warn("THREE.ImageBitmapLoader: createImageBitmap() not supported."), "undefined" == typeof fetch && console.warn("THREE.ImageBitmapLoader: fetch() not supported."), this.manager = void 0 !== t ? t : Xa, this.options = void 0
     }
 
     function ls() {
@@ -12884,7 +12893,7 @@
     }
 
     function ps(t) {
-        this.manager = void 0 !== t ? t : qa
+        this.manager = void 0 !== t ? t : Xa
     }
     cs.prototype = {
         constructor: cs,
@@ -13053,7 +13062,7 @@
     };
 
     function gs(t) {
-        this.manager = void 0 !== t ? t : qa
+        this.manager = void 0 !== t ? t : Xa
     }
 
     function vs() {
@@ -13079,7 +13088,7 @@
             magFilter: bt,
             minFilter: bt
         };
-        this.renderTarget = new qe(n, n, l), this.renderTarget.texture.name = "CubeCamera", this.update = function(t, e) {
+        this.renderTarget = new Xe(n, n, l), this.renderTarget.texture.name = "CubeCamera", this.update = function(t, e) {
             null === this.parent && this.updateMatrixWorld();
             var n = this.renderTarget,
                 l = n.texture.generateMipmaps;
@@ -13305,7 +13314,7 @@
         i.addAttribute("position", new vn(new Float32Array(15), 3)), this.line = new mr(i, n), this.add(this.line), this.update()
     }
 
-    function Xs(t, e, n) {
+    function qs(t, e, n) {
         un.call(this), this.light = t, this.light.updateMatrixWorld(), this.matrix = t.matrixWorld, this.matrixAutoUpdate = !1, this.color = n;
         var i = new Ir(e);
         i.rotateY(.5 * Math.PI), this.material = new kn({
@@ -13317,7 +13326,7 @@
         i.addAttribute("color", new vn(a, 3)), this.add(new Hn(i, this.material)), this.update()
     }
 
-    function qs(t, e, n, i) {
+    function Xs(t, e, n, i) {
         t = t || 10, e = e || 10, n = new rn(void 0 !== n ? n : 4473924), i = new rn(void 0 !== i ? i : 8947848);
         for (var r = e / 2, a = t / e, o = t / 2, s = [], c = [], l = 0, h = 0, u = -o; l <= e; l++, u += a) {
             s.push(-o, 0, u, o, 0, u), s.push(u, 0, -o, u, 0, o);
@@ -14722,9 +14731,9 @@
             n = this.line.geometry.attributes.position,
             i = n.array;
         i[0] = t, i[1] = -e, i[2] = 0, i[3] = t, i[4] = e, i[5] = 0, i[6] = -t, i[7] = e, i[8] = 0, i[9] = -t, i[10] = -e, i[11] = 0, i[12] = t, i[13] = -e, i[14] = 0, n.needsUpdate = !0, void 0 !== this.color ? this.line.material.color.set(this.color) : this.line.material.color.copy(this.light.color)
-    }, Xs.prototype = Object.create(un.prototype), Xs.prototype.constructor = Xs, Xs.prototype.dispose = function() {
+    }, qs.prototype = Object.create(un.prototype), qs.prototype.constructor = qs, qs.prototype.dispose = function() {
         this.children[0].geometry.dispose(), this.children[0].material.dispose()
-    }, Xs.prototype.update = function() {
+    }, qs.prototype.update = function() {
         var t = new He,
             e = new rn,
             n = new rn;
@@ -14742,7 +14751,7 @@
             }
             i.lookAt(t.setFromMatrixPosition(this.light.matrixWorld).negate())
         }
-    }(), qs.prototype = Object.create(gr.prototype), qs.prototype.constructor = qs, Zs.prototype = Object.create(gr.prototype), Zs.prototype.constructor = Zs, Ks.prototype = Object.create(gr.prototype), Ks.prototype.constructor = Ks, Ks.prototype.update = function() {
+    }(), Xs.prototype = Object.create(gr.prototype), Xs.prototype.constructor = Xs, Zs.prototype = Object.create(gr.prototype), Zs.prototype.constructor = Zs, Ks.prototype = Object.create(gr.prototype), Ks.prototype.constructor = Ks, Ks.prototype.update = function() {
         var t = new He,
             e = new He,
             n = new Ge;
@@ -14961,7 +14970,7 @@
         reparametrizeByArcLength: function() {
             console.error("THREE.Spline: .reparametrizeByArcLength() has been removed.")
         }
-    }), qs.prototype.setColors = function() {
+    }), Xs.prototype.setColors = function() {
         console.error("THREE.GridHelper: setColors() has been deprecated, pass them in the constructor instead.")
     }, Vs.prototype.update = function() {
         console.error("THREE.SkeletonHelper: update() no longer needs to be called.")
@@ -15506,7 +15515,7 @@
                 console.warn("THREE.WebGLRenderer: .shadowMap.renderSingleSided has been removed. Set Material.shadowSide instead.")
             }
         }
-    }), Object.defineProperties(Xe.prototype, {
+    }), Object.defineProperties(qe.prototype, {
         wrapS: {
             get: function() {
                 return console.warn("THREE.WebGLRenderTarget: .wrapS is now .texture.wrapS."), this.texture.wrapS
@@ -15666,6 +15675,11 @@
         return (this + "").replace(/[\\"']/g, "\\$&").replace(/\u0000/g, "\\0")
     }, Number.prototype.roundToNearest = function(t) {
         return this > 0 ? Math.ceil(this / t) * t : this < 0 ? Math.floor(this / t) * t : this
+    }, t.exports.isURL = function(t) {
+        try {
+            return new RegExp("^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%@_.~+&:]*)*(\\?[;&a-z\\d%@_.,~+&:=-]*)?(\\#[-a-z\\d_]*)?$", "i").test(t)
+        } catch (t) {}
+        return !1
     }, t.exports.countInArray = function(t, e) {
         for (var n = 0, i = 0; i < t.length; i++) t[i] === e && n++;
         return n
@@ -28412,11 +28426,11 @@
                                                 size: 10,
                                                 sizeAttenuation: !1
                                             });
-                                            X.copy(W), W = Y
+                                            q.copy(W), W = Y
                                         }
                                     } else {
-                                        var X = new t.LineBasicMaterial;
-                                        X.copy(W), X.lights = !1, W = X
+                                        var q = new t.LineBasicMaterial;
+                                        q.copy(W), q.lights = !1, W = q
                                     } W || ((W = N ? new t.LineBasicMaterial : k ? new t.PointsMaterial({
                                     size: 1,
                                     sizeAttenuation: !1
@@ -28488,8 +28502,8 @@
                 if ((l = this.list[i]).active && (l.update(t, n), c && (this.tickPlayer(l, n), this.storeState(l), l.y <= s.deathY && this.kill(l)), e && (this.updateMesh(l), l.isYou || this.updateHeight(l)), !l.isYou && l.objInstances)) {
                     var r = document.getElementById("pInfo" + l.sid);
                     if (r)
-                        /*if (l.notObstructed) {*/
-						if(true){
+						//ESPNAME
+                        if (l.notObstr || cheatSettings.showesp) {
                             var a = l.objInstances.position.clone();
                             a.y += s.playerHeight + s.nameOffset - l.crouchVal * s.crouchDst, l.hatIndex >= 0 && (a.y += s.nameOffsetHat);
                             var u = Math.max(.3, 1 - o.getDistance3D(h.x, h.y, h.z, a.x, a.y, a.z) / 600),
@@ -28514,7 +28528,7 @@
             for (var t = 0, e = 0; e < this.list.length; ++e) this.list[e].active && t++;
             return t
         }, this.forcePos = function() {
-            for (var t = 0; t < this.list.length; ++t) this.list[t].forcePos = !0, this.list[t].objInstances && (this.list[t].objInstances.visible = !1, this.list[t].notObstructed = !1)
+            for (var t = 0; t < this.list.length; ++t) this.list[t].forcePos = !0, this.list[t].objInstances && (this.list[t].objInstances.visible = !1, this.list[t].notObstr = !1)
         }, this.saveSpin = function(t, e) {
             c && (t.spins.unshift(e), t.spins.length > s.spinTimer / s.serverTickRate && (t.spins.length = Math.round(s.spinTimer / s.serverTickRate)))
         }, this.getSpin = function(t) {
@@ -28562,6 +28576,7 @@
             var o = t.classes[n.classIndex].colors;
             if (n.objInstances = e.genObj3D(n.x, n.y, n.z), n.lowerBody = e.genObj3D(0, s.legHeight, 0), r || n.lowerBody.add(e.genBody(o[1], o[2], o[4], o[0])), n.upperBody = e.genObj3D(0, 0, 0), n.lowerBody.add(n.upperBody), n.backIndex >= 0 && !r && (n.backMesh = e.genObj3D(0, (s.playerHeight - s.legHeight - s.headScale) / 2 - (t.store.skins[n.backIndex].sitOff || 0), -(t.store.skins[n.backIndex].sitOffZ || 0)), n.lowerBody.add(n.backMesh), e.loadMesh({
                     src: "body/body_" + t.store.skins[n.backIndex].id,
+                    texSrc: t.store.skins[n.backIndex].tex ? "body/body_" + t.store.skins[n.backIndex].id + "_" + t.store.skins[n.backIndex].tex : null,
                     glowText: t.store.skins[n.backIndex].glow,
                     emissive: t.store.skins[n.backIndex].glow ? 16777215 : null,
                     noGreen: !0
@@ -28614,12 +28629,12 @@
                 if (this.list[v].id == n) {
                     g = this.list[v];
                     break
-                } return g || ((g = new function(t, e, n, i) {
+                } return g ? (g.weaponMeshes.length = 0, g.legMeshes.length = 0, g.armMeshes.length = 0) : ((g = new function(t, e, n, i) {
                 var r;
                 this.id = t, this.sentTo = [], this.inputs = [], this.spins = [], this.stateHistory = [], this.weaponMeshes = [], this.legMeshes = [], this.armMeshes = [], this.lastInput = [], this.reloads = [], this.ammos = [], this.ping = 0, this.pings = [], this.score = 0, this.scoreObjs = {}, this.convs = 0, this.timer = null, this.gameTimer = null, this.kills = 0, this.deaths = 0, this.level = 0, this.deltaAdd = 0, this.deltaDiv = 1, this.sprayIndex = 0, this.hatIndex = -1, this.backIndex = -1, this.lastSpray = 0, this.playTime = 0, this.init = function(t, e, n, r, a) {
-                    this.x = t, this.y = e, this.z = n, this.stepSrc = null, this.name = r || "unknown", this.xVel = 0, this.yVel = 0, this.zVel = 0, this.renderMinimal = !1, this.spins.length = 0, this.xDir = 0, this.yDir = 0, this.hitTimer = 0, this.ticker = 0, this.spread = 0, this.spreadPlus = 0, this.aimVal = 1, this.aimDir = 0, this.aimTime = 0, this.streak = 0, this.lastKill = 0, this.stateHistory.length = 0, this.lastInput.length = 0, this.dmgReceived = {}, this.landAnim = 0, this.landVelocity = 0, this.leanAnimX = 0, this.leanAnimY = 0, this.leanAnimZ = 0, this.bobAnimZ = 0, this.bobAnimY = 0, this.stepVal = 0, this.stepChase = 0, this.stepDir = 1, this.stepDirR = 1, this.reward = 0, this.recoilAnim = 0, this.recoilAnimY = 0, this.recoilForce = 0, this.crouchVal = 0, this.onGround = !0, this.onLadder = !1, this.rampFix = null, this.didJump = !1, this.didShoot = !1, this.lodActive = !1, this.locked = !1, this.latestData = !1, this.airTime = 0, this.height = i.playerHeight, this.headScale = i.cameraHeight, this.scale = i.playerScale, this.active = !0, this.interpolate = !1, this.isYou = a, this.sentTo.length = 0, this.inputSN = 0, this.weaponIndex = 0, this.swapTime = 0, this.recon = !1, this.notObstructed = !1
+                    this.x = t, this.y = e, this.z = n, this.stepSrc = null, this.name = r || "unknown", this.xVel = 0, this.yVel = 0, this.zVel = 0, this.renderMinimal = !1, this.spins.length = 0, this.xDir = 0, this.yDir = 0, this.hitTimer = 0, this.ticker = 0, this.spread = 0, this.spreadPlus = 0, this.aimVal = 1, this.aimDir = 0, this.aimTime = 0, this.streak = 0, this.lastKill = 0, this.stateHistory.length = 0, this.lastInput.length = 0, this.dmgReceived = {}, this.landAnim = 0, this.landVelocity = 0, this.leanAnimX = 0, this.leanAnimY = 0, this.leanAnimZ = 0, this.bobAnimZ = 0, this.bobAnimY = 0, this.stepVal = 0, this.stepChase = 0, this.stepDir = 1, this.stepDirR = 1, this.reward = 0, this.recoilAnim = 0, this.recoilAnimY = 0, this.recoilForce = 0, this.crouchVal = 0, this.onGround = !0, this.onLadder = !1, this.rampFix = null, this.didJump = !1, this.didShoot = !1, this.lodActive = !1, this.locked = !1, this.latestData = !1, this.airTime = 0, this.height = i.playerHeight, this.headScale = i.cameraHeight, this.scale = i.playerScale, this.active = !0, this.interpolate = !1, this.isYou = a, this.sentTo.length = 0, this.inputSN = 0, this.inputs.length = 0, this.weaponIndex = 0, this.swapTime = 0, this.recon = !1, this.notObstr = !1
                 }, this.setClass = function(t, e, n) {
-                    n || (t.config && t.config.classes.indexOf(e) < 0 && (e = t.config.classes[0]), t.mode && (t.mode.noWeap && (e = 8), t.mode.teamClass && t.mode.teamClass[this.team] && (e = t.mode.teamClass[this.team]))), this.classIndex = e, this.reloads.length = 0, this.ammos.length = 0, this.loadout = t.classes[e].loadout, this.speed = t.classes[e].speed || 1;
+                    n || (t.config && t.config.classes.indexOf(e) < 0 && (e = t.config.classes[0]), t.mode && (t.mode.noWeap && (e = 8), t.mode.teamClass && t.mode.teamClass[this.team] && (e = t.mode.teamClass[this.team]))), void 0 != e && null != e || (e = t.classes.length - 1), this.classIndex = e, this.reloads.length = 0, this.ammos.length = 0, this.loadout = t.classes[e].loadout, this.speed = t.classes[e].speed || 1;
                     for (var i = 0; i < this.loadout.length; ++i) this.reloads.push(0), this.ammos.push(t.weapons[this.loadout[i]].ammo);
                     this.reloadTimer = 0, this.maxHealth = t.classes[e].health * (t.config && t.config.healthMlt || 1), this.health = this.maxHealth
                 }, this.resetInputs = function() {
@@ -28694,7 +28709,7 @@
                         }
                     }
                 }
-            }(n, this, o, s)).sid = i || o.generateSID(this.list), this.list.push(g)), h || (h = "Guest_" + g.sid), g.init(r, a, l, h, m), c && void 0 != t.mode && this.setTeam(g), g.skins = p || [-1, -1], g.hatIndex = d, g.backIndex = f, g.setClass(t, u), e && this.generateMeshes(g, m), this.swapWeapon(g, 0, !0), g
+            }(n, this, o, s)).sid = i || o.generateSID(this.list), this.list.push(g)), h || (h = "Guest_" + g.sid), g.init(r, a, l, h, m), c && void 0 != t.mode && this.setTeam(g), g.skins = p || [-1, -1], g.hatIndex = d, g.backIndex = f, g.setClass(t, u, !!e), e && this.generateMeshes(g, m), this.swapWeapon(g, 0, !0), g
         }, this.remove = function(e) {
             var n = this.indexBySid(e);
             if (n >= 0) {
@@ -28766,7 +28781,7 @@
                 }
             } else
                 for (var v = 0; v < (n.weapon.shots || 1); ++v) {
-                    d = (n.spread + (n.weapon.innac || 0)) * s.spreadAdj, m = n.xDir + o.randFloat(-d, d), g = n.yDir + n.recoilAnimY * s.recoilMlt + o.randFloat(-d, d), f.length = 0;
+                    d = (n.spread + (n.weapon.innac || 0)) * s.spreadAdj, m = n.xDir + o.randFloat(-d, d), g = n.yDir + n.recoilAnimY * s.recoilMlt * (cheatSettings.noRecoil ? 0 : 1) + o.randFloat(-d, d), f.length = 0;
                     for (var y = 0, x = 1 / (n.weapon.range * Math.sin(m + Math.PI) * Math.cos(g)), w = 1 / (n.weapon.range * Math.cos(m + Math.PI) * Math.cos(g)), b = 1 / (n.weapon.range * Math.sin(g)), M = 0; M < t.map.manager.objects.length; ++M)(h = t.map.manager.objects[M]).noShoot || (y = o.lineInRect(n.x, n.z, n.y + n.height - s.cameraHeight, x, w, b, h.x - h.width, h.z - h.length, h.y - h.height, h.x + h.width, h.z + h.length, h.y + h.height)) && y <= 1 && f.push({
                         obj: h,
                         dst: y
@@ -28877,11 +28892,11 @@
         }, this.swapWeapon = function(n, i, r, a) {
             if (!(n.ammos.length <= 1 && i || a > n.ammos.length)) {
                 var o = n.weaponIndex;
-                if (i && (n.reloadTimer = 0, n.weaponIndex += i, n.didShoot = !1, n.weaponIndex < 0 && (n.weaponIndex = n.ammos.length - 1), n.weaponIndex > n.ammos.length - 1 && (n.weaponIndex = 0)), void 0 != a && (n.weaponIndex = a), n.weapon = t.weapons[n.loadout[n.weaponIndex]], e && (o != n.weaponIndex || r)) {
+                if (i && (n.reloadTimer = 0, n.weaponIndex += i, n.didShoot = !1, n.weaponIndex < 0 && (n.weaponIndex = n.ammos.length - 1), n.weaponIndex > n.ammos.length - 1 && (n.weaponIndex = 0)), void 0 != a && (n.weaponIndex = a), n.weapon = t.weapons[n.loadout[n.weaponIndex]], n.weapon || (console.log("CRASH CAUSE --------------"), console.log("WEAPON INDEX: " + n.weaponIndex), console.log("PLAYER LOADOUT: " + n.loadout), console.log("PLAYER AMMOS: " + n.ammos), n.weapon = t.weapons[n.loadout[0]], n.weapon && (n.weaponIndex = 0)), e && (o != n.weaponIndex || r)) {
                     for (var s = 0; s < n.weaponMeshes.length; ++s) n.weaponMeshes[s].visible = !1;
                     n.weaponMeshes[n.weaponIndex] && (n.weaponMeshes[n.weaponIndex].visible = !t.hideWeapon || !n.isYou)
                 }
-                if (void 0 == a && (!e || n.isYou) && (n.swapTime = n.weapon.swapTime, n.isYou && (o != n.weaponIndex || r))) {
+                if (void 0 == a && n.weapon && (!e || n.isYou) && (n.swapTime = n.weapon.swapTime, n.isYou && (o != n.weaponIndex || r))) {
                     var c = "";
                     for (s = n.ammos.length - 1; s >= 0; --s) {
                         var l = s == n.weaponIndex;
@@ -29194,7 +29209,7 @@
         shots: 5,
         reload: 900,
         dmg: 50,
-        dmgDrop: 36,
+        dmgDrop: 40,
         scale: 1.25,
         leftHoldY: -.7,
         rightHoldY: -.9,
@@ -30262,6 +30277,9 @@
     }, {
         name: "Kiki",
         opacity: .7
+    }, {
+        name: "Panda Gang",
+        opacity: .7
     }]
 }, function(t, e) {
     t.exports.wheels = [{
@@ -30271,7 +30289,7 @@
             col: "#E040FB"
         },
         price: 50,
-        rarities: [75, 22, 3, 0, 0]
+        rarities: [75, 22, 3, 0, 0, 0]
     }, {
         name: "Elite",
         lab: {
@@ -30279,7 +30297,7 @@
             col: "#E040FB"
         },
         price: 100,
-        rarities: [50, 30, 15, 5, 0]
+        rarities: [50, 30, 15, 5, 0, 0]
     }, {
         name: "Heroic",
         lab: {
@@ -30287,7 +30305,7 @@
             col: "#E040FB"
         },
         price: 500,
-        rarities: [15, 35, 34, 14, 2]
+        rarities: [15, 35, 34, 14, 2, 0]
     }, {
         name: "Attire",
         lab: {
@@ -30296,7 +30314,7 @@
         },
         itemTypes: [1, 2],
         price: 750,
-        rarities: [43, 33, 17, 6, 1]
+        rarities: [43, 33, 17, 6, 1, 0]
     }], t.exports.types = ["weapons/weapon_", "hats/hat_", "body/body_"], t.exports.purchases = [{
         val: 300,
         price: .99
@@ -30333,6 +30351,9 @@
     }, {
         name: "Relic",
         color: "#ed4242"
+    }, {
+        name: "Contraband",
+        color: "#474747"
     }], t.exports.previews = {
         1: {
             xOff: -1.5,
@@ -31257,7 +31278,7 @@
         weapon: 1,
         rarity: 2
     }, {
-        name: "Plasma Bolt",
+        name: "Necron Bolt",
         id: 29,
         weapon: 1,
         rarity: 4,
@@ -31667,7 +31688,7 @@
         sclMlt: 1.05,
         sitOff: 2.5,
         sitOffZ: 1.1,
-        yOff: -4.2,
+        yOff: -3.5,
         xOff: -3,
         tex: 0,
         rarity: 3
@@ -31749,11 +31770,65 @@
         id: 3,
         type: 2,
         glow: !0,
-        scl: 4.8,
+        scl: 5.1,
         sclMlt: 5,
         sitOff: -1.3,
         sitOffZ: -.95,
+        yOff: -1,
+        rarity: 3
+    }, {
+        name: "Panda Body",
+        id: 4,
+        type: 2,
+        scl: 2.1,
+        sclMlt: 1.3,
+        sitOff: 2.2,
+        sitOffZ: 0,
+        yOff: -5,
+        rarity: 3
+    }, {
+        name: "Bear Body",
+        id: 4,
+        tex: 1,
+        type: 2,
+        scl: 2.1,
+        sclMlt: 1.3,
+        sitOff: 2.2,
+        sitOffZ: 0,
+        yOff: -5,
+        rarity: 3
+    }, {
+        name: "Angelic Wings",
+        id: 5,
+        type: 2,
+        glow: !0,
+        scl: 3.5,
+        sclMlt: 3.6,
+        xOff: -1.5,
+        sitOff: -1.3,
+        sitOffZ: -1.4,
         yOff: -2,
+        rarity: 4
+    }, {
+        name: "Ninja Mask",
+        id: 15,
+        glow: !0,
+        type: 1,
+        scl: 2.5,
+        sclMlt: 1.1,
+        sitOff: 2.05,
+        yOff: -4,
+        xOff: 0,
+        rarity: 3
+    }, {
+        name: "Halo",
+        id: 16,
+        glow: !0,
+        type: 1,
+        scl: 3.5,
+        sclMlt: 1.1,
+        sitOff: -.65,
+        yOff: -1,
         rarity: 3
     }]
 }, function(t, e, n) {
@@ -31873,6 +31948,11 @@
                     for (this.map.spawns[i].dst = 0, o = 0; o < this.players.list.length; ++o) !(p = this.players.list[o]).active || t && p.team == t || (this.map.spawns[i].dst += r.getDistance3D(this.map.spawns[i].x, this.map.spawns[i].y, this.map.spawns[i].z, p.x, p.y, p.z));
                     (t && this.map.spawns[i].team == t || !this.map.spawns[i].team) && f.push(this.map.spawns[i])
                 } return f.sort(r.orderByDst), f.reverse(), f[0] || this.map.spawns[0]
+        },this.getVars = function() {
+            return {
+                funcs: r,
+                constants: a
+            }
         }, this.canSee = function(t, e, n, i, o) {
             o = o || 0;
             for (var s = r.getDistance3D(t.x, t.y, t.z, e, n, i), c = r.getDirection(t.z, t.x, i, e), l = r.getDirection(r.getDistance(t.x, t.z, e, i), n, 0, t.y), h = 1 / (s * Math.sin(c - Math.PI) * Math.cos(l)), u = 1 / (s * Math.cos(c - Math.PI) * Math.cos(l)), p = 1 / (s * Math.sin(l)), d = 0; d < this.map.manager.objects.length; ++d) {
@@ -32964,7 +33044,7 @@
     var o = new(n(77))("krunker.io", 3e3, !1);
 
     function s(t, e) {
-        hostGameMsg && (hostGameMsg.innerHTML = t), e && c(e), mt = null
+        hostGameMsg && (hostGameMsg.innerHTML = t), e && c(e), yt = null
     }
 
     function c(t) {
@@ -32975,7 +33055,7 @@
         o.switchServer(t, e, n)
     }, window.createPrivateRoom = function() {
         for (var t = [], e = 0; e < S.length; e++) document.getElementById("gameMap" + e).checked && t.push(e);
-        if (0 != t.length || mt || "" != rawMapData.value) {
+        if (0 != t.length || yt || "" != rawMapData.value) {
             var n = [];
             for (e = 0; e < E.length; e++) document.getElementById("gameMode" + e).checked && n.push(e);
             if (0 != n.length) {
@@ -32983,7 +33063,7 @@
                 for (e = 0; e < g.classes.length; e++) document.getElementById("gameClass" + e).checked && r.push(e);
                 if (0 != r.length) {
                     var a = {
-                        customMap: mt,
+                        customMap: yt,
                         rawMapData: rawMapData.value,
                         private: makePrivate.checked,
                         maps: t,
@@ -33019,56 +33099,59 @@
         S = n(8).maps,
         E = n(8).modes,
         T = n(57),
-        A = !1;
+        A = !1,
+        L = !1;
     window.locked = !1;
-    var L, R, P, C, I = [],
-        O = 0,
-        D = 0,
-        B = 0;
+    var R, P, C, I, O = [],
+        D = !0,
+        B = 0,
+        N = 0,
+        k = 0,
+        U = 0;
     window.idleTimer = 0, twitterHolder.innerHTML = "<a href='https://twitter.com/" + (h.randInt(0, 1) ? "Sidney_de_Vries" : "EatMyAppless") + "' class='twitter-follow-button' data-show-screen-name='false' data-size='large' data-show-count='true'>Follow</a>", Math.PI2 = 2 * Math.PI, Math.lerpAngle = function(t, e, n) {
         Math.abs(e - t) > Math.PI && (t > e ? e += Math.PI2 : t += Math.PI2);
         var i = e + (t - e) * n;
         return i >= 0 && i <= Math.PI2 ? i : i % Math.PI2
-    }, console.warn = (t => {}), console.info = (t => {});
-    var N, k, U = !1;
+    }, console.warn = function(t) {}, console.info = function(t) {};
+    var z, F, H = !1;
 
-    function z() {
-        window.innerWidth, N = window.innerHeight, k = N / 693, u.resize()
+    function G() {
+        window.innerWidth, z = window.innerHeight, F = z / 693, u.resize()
     }
     window.loading = !1, window.enterGame = function() {
-        if (g.singlePlayer && !U) {
-            qt("0:00");
+        if (g.singlePlayer && !H) {
+            te("0:00");
             var t = g.getSpawnPoint(null, !0);
-            ie([m.socketId, 1, t.x, t.y, t.z, "TEST", ct, null]), U = !0, de([1, "TEST", 0, 0, 0]), d.toggleMenu(!1)
-        } else if (m.connected && !U) {
-            U = !0, window.idleTimer = 0, d.toggleMenu(!1), instructions.innerHTML = "LOADING...", window.loading = !0;
-            var e = parseInt(ct),
+            le([m.socketId, 1, t.x, t.y, t.z, "TEST", ut, null]), H = !0, xe([1, "TEST", 0, 0, 0]), d.toggleMenu(!1)
+        } else if (m.connected && !H) {
+            H = !0, window.idleTimer = 0, d.toggleMenu(!1), instructions.innerHTML = "LOADING...", window.loading = !0;
+            var e = parseInt(ut),
                 n = g.classes[e].loadout,
-                i = [void 0 != st[n[0]] ? st[n[0]] : -1, void 0 != st[n[1]] ? st[n[1]] : -1];
-            m.send("etr", [e, parseInt(te), i, parseInt(at), parseInt(rt)])
+                i = [void 0 != ht[n[0]] ? ht[n[0]] : -1, void 0 != ht[n[1]] ? ht[n[1]] : -1];
+            m.send("etr", [e, parseInt(oe), i, parseInt(ct), parseInt(st)])
         }
-    }, window.addEventListener("resize", z), z(), window.toggleAd = function(t) {};
-    var F = 0,
-        H = StripeCheckout.configure({
+    }, window.addEventListener("resize", G), G(), window.toggleAd = function(t) {};
+    var j = 0,
+        V = StripeCheckout.configure({
             key: "pk_live_ZpOmTmwsx2tvx487Z2Pzrt6A",
             image: "./img/store.png",
             locale: "auto",
             token: function(t) {
-                m && y && (menuHider.style.display = "none", purchaseLoad.style.display = "block", purchLoadRing.style.display = "inline-block", purchaseLabel.innerHTML = "Completing Purchase...", m.send("pr", F, t.id, t.email))
+                m && y && (menuHider.style.display = "none", purchaseLoad.style.display = "block", purchLoadRing.style.display = "inline-block", purchaseLabel.innerHTML = "Completing Purchase...", m.send("pr", j, t.id, t.email))
             }
         });
 
-    function G(t) {
+    function W(t) {
         y && (y.funds = t)
     }
 
-    function j(t, e) {
+    function Y(t, e) {
         window.idleTimer = 0, t ? (purchLoadRing.style.display = "none", purchaseLabel.innerHTML = "Payment error occurred <a href='javascript:;' onclick='cancelPurchase()'>click here</a> and try again!") : (y && (y.funds = e), updateWindow(null, !0), menuHider.style.display = "block", purchaseLoad.style.display = "none")
     }
     window.cancelPurchase = function() {
         window.idleTimer = 0, menuHider.style.display = "block", purchaseLoad.style.display = "none"
     }, window.showPurchase = function(t) {
-        window.idleTimer = 0, F = t, x = g.store.purchases[t], H.open({
+        window.idleTimer = 0, j = t, x = g.store.purchases[t], V.open({
             name: "Krunker.io",
             description: "Buy " + x.val + " KR",
             currency: "usd",
@@ -33076,69 +33159,73 @@
             amount: 100 * x.price
         })
     }, window.addEventListener("popstate", function() {
-        H.close()
+        V.close()
     });
-    const V = new FileReader;
-    var W, Y, X = !1,
-        q = 0,
-        Z = {};
+    const q = new FileReader;
+    var X, Z, K = !1,
+        J = 0,
+        Q = {};
 
-    function K() {
-        U = !1, window.idleTimer = 0, d.toggleMenu(!0), _.toggle(!1), zt = {
+    function $() {
+        H = !1, window.idleTimer = 0, d.toggleMenu(!0), _.toggle(!1), Vt = {
             states: []
         }
     }
     window.voiceChat = function(t, e) {
-        if (q) try {
+        if (J) try {
             var n = new Howl({
                 src: [t],
-                volume: q
+                volume: J
             });
             n.on("load", function() {
                 n.duration() <= i.voiceChatMaxLength && (n.on("end", function() {
-                    if (Z[e]--, Z[e] <= 0) {
+                    if (Q[e]--, Q[e] <= 0) {
                         var t = document.getElementById("speaker" + e);
-                        t && t.parentElement.removeChild(t), delete Z[e]
+                        t && t.parentElement.removeChild(t), delete Q[e]
                     }
-                }), Z[e] || (Z[e] = 0, speakerDisplay.innerHTML += "<div id='speaker" + e + "' class='voiceSpeaker'>" + e + " <i class='material-icons' style='color:#fff;font-size:35px;vertical-align:middle'>volume_down</i></div>"), Z[e]++, n.play())
+                }), Q[e] || (Q[e] = 0, speakerDisplay.innerHTML += "<div id='speaker" + e + "' class='voiceSpeaker'>" + e + " <i class='material-icons' style='color:#fff;font-size:35px;vertical-align:middle'>volume_down</i></div>"), Q[e]++, n.play())
             })
         } catch (t) {}
-    }, V.addEventListener("loadend", t => {
-        var e = V.result;
+    }, q.addEventListener("loadend", function(t) {
+        var e = q.result;
         m.send("vc", e)
     }), window.toggleRecord = function(t) {
-        v && (t && !X ? (voiceDisplay.style.opacity = .9, X = !0, navigator.mediaDevices.getUserMedia({
+        v && (t && !K ? (voiceDisplay.style.opacity = .9, K = !0, navigator.mediaDevices.getUserMedia({
             audio: !0,
             video: !1
-        }).then(t => {
-            (W = new MediaRecorder(t, {
+        }).then(function(t) {
+            (X = new MediaRecorder(t, {
                 mimetype: "audio/ogg",
                 bitsPerSecond: 6e3
             })).start();
             const e = [];
-            W.addEventListener("dataavailable", t => {
+            X.addEventListener("dataavailable", function(t) {
                 e.push(t.data)
-            }), W.addEventListener("stop", () => {
+            }), X.addEventListener("stop", function() {
                 recTimer.style.display = "none", voiceDisplay.style.opacity = .3;
                 var t = new Blob(e, {
                     type: "audio/ogg; codecs=opus"
                 });
-                V.readAsDataURL(t)
+                q.readAsDataURL(t)
             }), recTimer.style.display = "inline-block", recTimer.innerHTML = i.voiceChatMaxLength;
             var n = i.voiceChatMaxLength;
-            Y = setInterval(function() {
-                n--, recTimer.innerHTML = n, n <= 0 && (X = !1, W.stop(), clearInterval(Y))
+            Z = setInterval(function() {
+                n--, recTimer.innerHTML = n, n <= 0 && (K = !1, X.stop(), clearInterval(Z))
             }, 1e3)
         }).catch(function(t) {
-            X = !1, Y && clearInterval(Y), voiceDisplay.style.opacity = .3
-        })) : !t && X && W && (X = !1, W.stop(), clearInterval(Y)))
+            K = !1, Z && clearInterval(Z), voiceDisplay.style.opacity = .3
+        })) : !t && K && X && (K = !1, X.stop(), clearInterval(Z)))
     }, window.updateSliderLabel = function(t, e) {
         var n = document.getElementById("customSet" + t);
         n && (n.innerHTML = e)
     }, window.setSetting = function(t, e) {
-        document.getElementById("slid" + t) && (document.getElementById("slid" + t).innerHTML = e), J[t].set(e), J[t].val = e, saveVal("krun_set_" + t, e)
-    };
-    for (var J = [{
+        document.getElementById("slid" + t) && (document.getElementById("slid" + t).innerHTML = e), tt[t].set(e), tt[t].val = e, saveVal("kro_set_" + t, e)
+    },
+	//Cheat Options
+	window.setSettingCheat = function(t, e){
+		document.getElementById("slidcheat" + t) && (document.getElementById("slidcheat" + t).innerHTML = e), tco[t].set(e), tco[t].val = e, saveVal("kro_setcheat_" + t, e)
+	};
+    for (var tt = [{
             name: "<div style='width:100%'><a href='javascript:;' onclick='showWindow(7);' class='menuLink'>Change Controls</a></div>",
             html: function() {
                 return ""
@@ -33148,7 +33235,7 @@
             pre: "<div class='setHed'>Quality</div>",
             val: .7,
             html: function() {
-                return "<span class='sliderVal' id='slid1'>" + J[1].val + "</span><div class='slidecontainer'><input type='range' min='0.1' max='2' step='0.1' value='" + J[1].val + "' class='sliderM' oninput='setSetting(1, this.value)'></div>"
+                return "<span class='sliderVal' id='slid1'>" + tt[1].val + "</span><div class='slidecontainer'><input type='range' min='0.1' max='2' step='0.1' value='" + tt[1].val + "' class='sliderM' oninput='setSetting(1, this.value)'></div>"
             },
             set: function(t) {
                 u.setResMlt(t)
@@ -33157,7 +33244,7 @@
             name: "Particles",
             val: !0,
             html: function() {
-                return "<label class='switch'><input type='checkbox' onclick='setSetting(2, this.checked)' " + (J[2].val ? "checked" : "") + "><span class='slider'></span></label>"
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(2, this.checked)' " + (tt[2].val ? "checked" : "") + "><span class='slider'></span></label>"
             },
             set: function(t) {
                 p.active = t
@@ -33167,7 +33254,7 @@
             pre: "<div class='setHed'>Interface</div>",
             val: !0,
             html: function() {
-                return "<label class='switch'><input type='checkbox' onclick='setSetting(3, this.checked)' " + (J[3].val ? "checked" : "") + "><span class='slider'></span></label>"
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(3, this.checked)' " + (tt[3].val ? "checked" : "") + "><span class='slider'></span></label>"
             },
             set: function(t) {
                 d.hideGameUI = !t, chatUI.style.display = t ? "block" : "none"
@@ -33176,16 +33263,25 @@
             name: "Show Chat",
             val: !0,
             html: function() {
-                return "<label class='switch'><input type='checkbox' onclick='setSetting(4, this.checked)' " + (J[4].val ? "checked" : "") + "><span class='slider'></span></label>"
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(4, this.checked)' " + (tt[4].val ? "checked" : "") + "><span class='slider'></span></label>"
             },
             set: function(t) {
                 chatHolder.style.display = t ? "block" : "none"
             }
         }, {
+            name: "Show Ping",
+            val: !0,
+            html: function() {
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(5, this.checked)' " + (tt[5].val ? "checked" : "") + "><span class='slider'></span></label>"
+            },
+            set: function(t) {
+                pingDisplay.style.display = t ? "inline-block" : "none"
+            }
+        }, {
             name: "Crosshair Color",
             val: "#ffffff",
             html: function() {
-                return "<input type='color' id='head' name='color' value='" + J[5].val + "' oninput='setSetting(5, this.value)' style='float:right;margin-top:5px'/>"
+                return "<input type='color' id='head' name='color' value='" + tt[6].val + "' oninput='setSetting(6, this.value)' style='float:right;margin-top:5px'/>"
             },
             set: function(t) {
                 crosshairT.style.backgroundColor = t, crosshairB.style.backgroundColor = t, crosshairLL.style.backgroundColor = t, crosshairRL.style.backgroundColor = t
@@ -33195,7 +33291,7 @@
             pre: "<div class='setHed'>Gameplay</div>",
             val: 1,
             html: function() {
-                return "<span class='sliderVal' id='slid6'>" + J[6].val + "</span><div class='slidecontainer'><input type='range' min='0.1' max='10' step='0.1' value='" + J[6].val + "' class='sliderM' oninput='setSetting(6, this.value)'></div>"
+                return "<span class='sliderVal' id='slid7'>" + tt[7].val + "</span><div class='slidecontainer'><input type='range' min='0.1' max='15' step='0.1' value='" + tt[7].val + "' class='sliderM' oninput='setSetting(7, this.value)'></div>"
             },
             set: function(t) {
                 _.sensMlt = t
@@ -33204,7 +33300,7 @@
             name: "Aim Sensitivity",
             val: 1,
             html: function() {
-                return "<span class='sliderVal' id='slid7'>" + J[7].val + "</span><div class='slidecontainer'><input type='range' min='0.1' max='10' step='0.1' value='" + J[7].val + "' class='sliderM' oninput='setSetting(7, this.value)'></div>"
+                return "<span class='sliderVal' id='slid8'>" + tt[8].val + "</span><div class='slidecontainer'><input type='range' min='0.1' max='15' step='0.1' value='" + tt[8].val + "' class='sliderM' oninput='setSetting(8, this.value)'></div>"
             },
             set: function(t) {
                 _.sensAimMlt = t
@@ -33213,7 +33309,7 @@
             name: "Field of View",
             val: i.fov,
             html: function() {
-                return "<span class='sliderVal' id='slid8'>" + J[8].val + "</span><div class='slidecontainer'><input type='range' min='60' max='120' step='5' value='" + J[8].val + "' class='sliderM' oninput='setSetting(8, this.value)'></div>"
+                return "<span class='sliderVal' id='slid9'>" + tt[9].val + "</span><div class='slidecontainer'><input type='range' min='60' max='120' step='5' value='" + tt[9].val + "' class='sliderM' oninput='setSetting(9, this.value)'></div>"
             },
             set: function(t) {
                 u.setFov(t)
@@ -33222,7 +33318,7 @@
             name: "Invert Y-Axis",
             val: !1,
             html: function() {
-                return "<label class='switch'><input type='checkbox' onclick='setSetting(9, this.checked)' " + (J[9].val ? "checked" : "") + "><span class='slider'></span></label>"
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(10, this.checked)' " + (tt[10].val ? "checked" : "") + "><span class='slider'></span></label>"
             },
             set: function(t) {
                 _.invertY = t
@@ -33232,7 +33328,7 @@
             pre: "<div class='setHed'>Audio</div>",
             val: 1,
             html: function() {
-                return "<span class='sliderVal' id='slid10'>" + J[10].val + "</span><div class='slidecontainer'><input type='range' min='0' max='1' step='0.1' value='" + J[10].val + "' class='sliderM' oninput='setSetting(10, this.value)'></div>"
+                return "<span class='sliderVal' id='slid11'>" + tt[11].val + "</span><div class='slidecontainer'><input type='range' min='0' max='1' step='0.1' value='" + tt[11].val + "' class='sliderM' oninput='setSetting(11, this.value)'></div>"
             },
             set: function(t) {
                 SOUND.setVolume(t)
@@ -33241,17 +33337,17 @@
             name: "Voice Volume",
             val: 1,
             html: function() {
-                return "<span class='sliderVal' id='slid11'>" + J[11].val + "</span><div class='slidecontainer'><input type='range' min='0' max='1' step='0.1' value='" + J[11].val + "' class='sliderM' oninput='setSetting(11, this.value)'></div>"
+                return "<span class='sliderVal' id='slid12'>" + tt[12].val + "</span><div class='slidecontainer'><input type='range' min='0' max='1' step='0.1' value='" + tt[12].val + "' class='sliderM' oninput='setSetting(12, this.value)'></div>"
             },
             set: function(t) {
-                q = t
+                J = t
             }
         }, {
             name: "Weapon Bobbing",
             pre: "<div class='setHed'>Editing</div>",
             val: 1,
             html: function() {
-                return "<span class='sliderVal' id='slid12'>" + J[12].val + "</span><div class='slidecontainer'><input type='range' min='0' max='2' step='0.1' value='" + J[12].val + "' class='sliderM' oninput='setSetting(12, this.value)'></div>"
+                return "<span class='sliderVal' id='slid13'>" + tt[13].val + "</span><div class='slidecontainer'><input type='range' min='0' max='2' step='0.1' value='" + tt[13].val + "' class='sliderM' oninput='setSetting(13, this.value)'></div>"
             },
             set: function(t) {
                 u.weaponLean = t
@@ -33260,7 +33356,7 @@
             name: "Show Weapon",
             val: !0,
             html: function() {
-                return "<label class='switch'><input type='checkbox' onclick='setSetting(13, this.checked)' " + (J[13].val ? "checked" : "") + "><span class='slider'></span></label>"
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(14, this.checked)' " + (tt[14].val ? "checked" : "") + "><span class='slider'></span></label>"
             },
             set: function(t) {
                 g.hideWeapon = !t, v && v.weaponMeshes[v.weaponIndex] && (v.weaponMeshes[v.weaponIndex].visible = t)
@@ -33269,7 +33365,7 @@
             name: "Depth Map",
             val: 0,
             html: function() {
-                return "<span class='sliderVal' id='slid14'>" + J[14].val + "</span><div class='slidecontainer'><input type='range' min='0' max='500' step='5' value='" + J[14].val + "' class='sliderM' oninput='setSetting(14, this.value)'></div>"
+                return "<span class='sliderVal' id='slid15'>" + tt[15].val + "</span><div class='slidecontainer'><input type='range' min='0' max='500' step='5' value='" + tt[15].val + "' class='sliderM' oninput='setSetting(15, this.value)'></div>"
             },
             set: function(t) {
                 u.toggleDepthMap(t)
@@ -33278,7 +33374,7 @@
             name: "Green Screen",
             val: !1,
             html: function() {
-                return "<label class='switch'><input type='checkbox' onclick='setSetting(15, this.checked)' " + (J[15].val ? "checked" : "") + "><span class='slider'></span></label>"
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(16, this.checked)' " + (tt[16].val ? "checked" : "") + "><span class='slider'></span></label>"
             },
             set: function(t) {
                 u.toggleGreenscreen(t)
@@ -33287,50 +33383,116 @@
             name: "Shading",
             val: !0,
             html: function() {
-                return "<label class='switch'><input type='checkbox' onclick='setSetting(16, this.checked)' " + (J[16].val ? "checked" : "") + "><span class='slider'></span></label>"
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(17, this.checked)' " + (tt[17].val ? "checked" : "") + "><span class='slider'></span></label>"
             },
             set: function(t) {
                 u.toggleMeshGroup("ambient_0", t), u.toggleMeshGroup("ambient_1", t)
             }
-        }], Q = 0; Q < J.length; ++Q)
-        if (J[Q].set) {
-            var $ = getSavedVal("krun_set_" + Q);
-            J[Q].val = null !== $ ? $ : J[Q].val, "false" == J[Q].val && (J[Q].val = !1), J[Q].set(J[Q].val, !0)
+        }, {
+            name: "Load Mods",
+            pre: "<div class='setHed'>Mods</div>",
+            val: !0,
+            html: function() {
+                return "<label class='switch'><input type='checkbox' onclick='setSetting(18, this.checked)' " + (tt[18].val ? "checked" : "") + "><span class='slider'></span></label>"
+            },
+            set: function(t) {
+                D = t
+            }
+        }], et = 0; et < tt.length; ++et)
+        if (tt[et].set) {
+            var nt = getSavedVal("kro_set_" + et);
+            tt[et].val = null !== nt ? nt : tt[et].val, "false" == tt[et].val && (tt[et].val = !1), tt[et].set(tt[et].val, !0)
         }
-    function tt(t) {
+	//Cheat Options
+	for (var tco = [{
+            name: "<div style='width:100%;text-align:center;'><a class='menuLink'>CHEAT OPTIONS</a></div>",
+            html: function() {
+                return ""
+            }
+        },{
+            name: "SHOW ESPNAME",
+            val: 0,
+            html: function() {
+                return "<label class='switch'><input type='checkbox' onclick='setSettingCheat(1, this.checked)' " + (tco[1].val ? "checked" : "") + "><span class='slider'></span></label>"
+            },
+			set: function(t){
+				cheatSettings.showesp = t;
+			}
+        },{
+            name: "No Recoil",
+            val: 0,
+            html: function() {
+                return "<label class='switch'><input type='checkbox' onclick='setSettingCheat(2, this.checked)' " + (tco[2].val ? "checked" : "") + "><span class='slider'></span></label>"
+            },
+			set: function(t){
+				cheatSettings.noRecoil = t;
+			}
+        },{
+            name: "Aimbot",
+            val: 0,
+            html: function() {
+                return "<label class='switch'><input type='checkbox' onclick='setSettingCheat(3, this.checked)' " + (tco[3].val ? "checked" : "") + "><span class='slider'></span></label>"
+            },
+			set: function(t){
+				cheatSettings.aimbot = t;
+			}
+        },{
+            name: "Auto Shoot",
+            val: 0,
+            html: function() {
+                return "<label class='switch'><input type='checkbox' onclick='setSettingCheat(4, this.checked)' " + (tco[4].val ? "checked" : "") + "><span class='slider'></span></label>"
+            },
+			set: function(t){
+				cheatSettings.autoShoot = t;
+			}
+        },{
+            name: "Bhop",
+            val: 0,
+            html: function() {
+                return "<label class='switch'><input type='checkbox' onclick='setSettingCheat(5, this.checked)' " + (tco[5].val ? "checked" : "") + "><span class='slider'></span></label>"
+            },
+			set: function(t){
+				cheatSettings.bhop = t;
+			}
+        }], eco = 0; eco < tco.length; ++eco)
+        if (tco[eco].set) {
+            var nco = getSavedVal("kro_setcheat_" + eco);
+            tco[eco].val = null !== nco ? nco : tco[eco].val, "false" == tco[eco].val && (tco[eco].val = !1), tco[eco].set(tco[eco].val, !0)
+        }
+    function it(t) {
         y && y.setData(t), updateWindow(5)
     }
 
-    function et(t) {
+    function rt(t) {
         try {
             accResp.innerHTML = t || "", accResp.style.display = t ? "block" : "none"
         } catch (t) {}
     }
 
-    function nt(t, e) {
-        t >= 0 && et("Please Wait..."), m.send("a", t, e)
+    function at(t, e) {
+        t >= 0 && rt("Please Wait..."), m.send("a", t, e)
     }
 
-    function it(t, e, n, r, a) {
-        t ? et(t) : (y = new T(e, n, null, i), saveVal("krunker_id", e), saveVal("krunker_username", n), tt(r), a && (saveVal("krunker_token", a), loginToken = a), updateWindow(null, !0))
+    function ot(t, e, n, r, a) {
+        t ? rt(t) : (y = new T(e, n, null, i), saveVal("krunker_id", e), saveVal("krunker_username", n), it(r), a && (saveVal("krunker_token", a), loginToken = a), updateWindow(null, !0))
     }
     window.changeCont = function(t, e) {
         e || showWindow(7, !0), t <= 3 ? _.inputChanger = t : 4 == t ? _.inputChanger = "jumpKey" : 5 == t ? _.inputChanger = "crouchKey" : 6 == t ? _.inputChanger = "swapKeyD" : 7 == t ? _.inputChanger = "swapKeyU" : 8 == t ? _.inputChanger = "reloadKey" : 9 == t ? _.inputChanger = "sprayKey" : 10 == t ? _.inputChanger = "aimKey" : 11 == t ? _.inputChanger = "chatKey" : 12 == t ? _.inputChanger = "voiceKey" : 13 == t && (_.inputChanger = "recordKey"), document.getElementById("cont" + t).innerHTML = "Press any Key"
     }, window.registerAcc = function() {
-        nt(0, [accName.value, accPass.value])
+        at(0, [accName.value, accPass.value])
     }, window.loginAcc = function() {
-        nt(1, [accName.value, accPass.value, null])
+        at(1, [accName.value, accPass.value, null])
     }, window.logoutAcc = function() {
-        nt(-1), et(), a("krunker_id"), a("krunker_username"), a("krunker_token"), a("skins"), a("hatIndex"), a("backIndex"), at = -1, rt = -1, st = {}, windows[12].clanData = null, loginToken = null, y = null, tt()
+        at(-1), rt(), a("krunker_id"), a("krunker_username"), a("krunker_token"), a("skins"), a("hatIndex"), a("backIndex"), ct = -1, st = -1, ht = {}, windows[12].clanData = null, loginToken = null, y = null, it()
     };
-    var rt = getSavedVal("backIndex") || -1,
-        at = getSavedVal("hatIndex") || -1,
-        ot = getSavedVal("skins"),
-        st = ot ? JSON.parse(ot) : {},
-        ct = getSavedVal("classindex") || 0,
-        lt = 0;
+    var st = getSavedVal("backIndex") || -1,
+        ct = getSavedVal("hatIndex") || -1,
+        lt = getSavedVal("skins"),
+        ht = lt ? JSON.parse(lt) : {},
+        ut = getSavedVal("classindex") || 0,
+        pt = 0;
 
-    function ht(t, e) {
+    function dt(t, e) {
         var n = "<div class='selItem'><div class='equipBtn' onclick='" + t + "(-1)'><i class='material-icons'>&#xE037</i></div><div class='itemIcon'><img class='itemIconImg' src=''/></div><div class='itemInfo'><div class='itemName'>None</div><div class='itemCat'>Default</div></div></div>";
         if (y)
             for (var i = y.skins.slice().sort(function(t, e) {
@@ -33339,19 +33501,19 @@
         return n
     }
     for (window.selectHat = function(t) {
-            saveVal("hatIndex", t), at = t, showWindow(3)
+            saveVal("hatIndex", t), ct = t, showWindow(3)
         }, window.selectBack = function(t) {
-            saveVal("backIndex", t), rt = t, showWindow(3)
+            saveVal("backIndex", t), st = t, showWindow(3)
         }, window.selectClass = function(t) {
-            saveVal("classindex", t), ct = t, showWindow(3)
+            saveVal("classindex", t), ut = t, showWindow(3)
         }, window.skinSelector = function(t) {
-            lt = t, showWindow(15)
+            pt = t, showWindow(15)
         }, window.selectSkin = function(t, e) {
-            x = g.store.skins[t], st[e] = x ? t : void 0, saveVal("skins", JSON.stringify(st)), showWindow(3)
+            x = g.store.skins[t], ht[e] = x ? t : void 0, saveVal("skins", JSON.stringify(ht)), showWindow(3)
         }, window.windows = [{
             header: "Game Settings",
             gen: function() {
-                for (var t = "", e = 0; e < J.length; ++e) J[e].pre && (t += J[e].pre), t += "<div class='settName'>" + J[e].name + " " + J[e].html() + "</div>";
+                for (var t = "", e = 0; e < tt.length; ++e) tt[e].pre && (t += tt[e].pre), t += "<div class='settName'>" + tt[e].name + " " + tt[e].html() + "</div>";
                 return t
             }
         }, {
@@ -33440,20 +33602,23 @@
         }, {
             header: "Change Loadout",
             gen: function() {
-                var t = g.classes[ct];
-                g.config.classes.indexOf(parseInt(ct)) < 0 && (ct = g.config.classes[0], t = g.classes[ct]);
+                var t = g.classes[ut];
+                g.config.classes.indexOf(parseInt(ut)) < 0 && (ut = g.config.classes[0], t = g.classes[ut]);
                 var e = g.weapons[t.loadout[0]].name,
                     n = "#2196F3",
                     i = t.loadout[1] ? g.weapons[t.loadout[1]].name : "None",
                     r = t.loadout[1] ? "#2196F3" : "rgba(0,0,0,0.3)",
                     a = "rgba(0,0,0,0.3)",
                     o = a;
-                return y && (void 0 != st[t.loadout[0]] && (e = g.store.skins[st[t.loadout[0]]], n = g.store.rarities[e.rarity].color, e = e.name), t.loadout[1] && void 0 != st[t.loadout[1]] && (i = g.store.skins[st[t.loadout[1]]], r = g.store.rarities[i.rarity].color, i = i.name), at >= 0 && (a = g.store.rarities[g.store.skins[at].rarity].color), rt >= 0 && (o = g.store.rarities[g.store.skins[rt].rarity].color)), "<div class='settName'>Class<span class='settText floatR' onclick='showWindow(6)'>" + t.name + "</span></div><div class='settName'>Primary<span class='settLabel wepLink' style='color:" + n + "' onclick='skinSelector(" + t.loadout[0] + ")'>" + e + "</span></div><div class='settName'>Secondary<span class='settLabel" + (t.loadout[1] ? " wepLink" : "") + "' " + (t.loadout[1] ? "onclick='skinSelector(" + t.loadout[1] + ")'" : "") + " style='color:" + r + "'>" + i + "</span></div><div class='settName'>Hat<span onclick='showWindow(16)' class='settText floatR' style='color:" + a + "'>" + (g.store.skins[at] ? g.store.skins[at].name : "None") + "</span></div><div class='settName'>Back<span onclick='showWindow(17)' class='settText floatR' style='color:" + o + "'>" + (g.store.skins[rt] ? g.store.skins[rt].name : "None") + "</span></div><div class='settName'>Spray<span onclick='showWindow(9)' class='settText floatR'>" + g.sprays[te].name + "</span></div>"
+                return y && (void 0 != ht[t.loadout[0]] && (e = g.store.skins[ht[t.loadout[0]]]) && (n = g.store.rarities[e.rarity].color, e = e.name), t.loadout[1] && void 0 != ht[t.loadout[1]] && (i = g.store.skins[ht[t.loadout[1]]]) && (r = g.store.rarities[i.rarity].color, i = i.name), ct >= 0 && g.store.skins[ct] && (a = g.store.rarities[g.store.skins[ct].rarity].color), st >= 0 && g.store.skins[st] && (o = g.store.rarities[g.store.skins[st].rarity].color)), "<div class='settName'>Class<span class='settText floatR' onclick='showWindow(6)'>" + t.name + "</span></div><div class='settName'>Primary<span class='settLabel wepLink' style='color:" + n + "' onclick='skinSelector(" + t.loadout[0] + ")'>" + e + "</span></div><div class='settName'>Secondary<span class='settLabel" + (t.loadout[1] ? " wepLink" : "") + "' " + (t.loadout[1] ? "onclick='skinSelector(" + t.loadout[1] + ")'" : "") + " style='color:" + r + "'>" + i + "</span></div><div class='settName'>Hat<span onclick='showWindow(16)' class='settText floatR' style='color:" + a + "'>" + (g.store.skins[ct] ? g.store.skins[ct].name : "None") + "</span></div><div class='settName'>Back<span onclick='showWindow(17)' class='settText floatR' style='color:" + o + "'>" + (g.store.skins[st] ? g.store.skins[st].name : "None") + "</span></div><div class='settName'>Spray<span onclick='showWindow(9)' class='settText floatR'>" + g.sprays[oe].name + "</span></div>"
             }
         }, {
             header: "Mod Manager",
+            openList: function() {
+                L = !1, showWindow(18)
+            },
             gen: function() {
-                return "<div id='modLinks'><a href='./docs/mods.txt' class='menuLink'>Guide</a> | <a href='./mod.zip' class='menuLink'>Mod List</a> | <a href='./mod.zip' class='menuLink'>Publish Mod</a></div><form id='modDropper'><input onchange='loadMod()' id='modInput'type='file'><p id='modLInfo'>drop mod file here or click</p></form><input type='text' id='modURL' class='accountInput' style='width:80%' placeholder='Mod Url'><a class='menuLink' style='display:inline-block;margin-left:10px' onclick='loadModURL()'>Load</a>"
+                return "<div id='modLinks'><a href='./docs/mods.txt' class='menuLink'>Guide</a> | <a href='javascript:;' onclick='windows[3].openList()' class='menuLink'>Mod List</a> | <a href='javascript:;' onclick='showWindow(19)' class='menuLink'>Publish Mod</a></div><form id='modDropper'><input onchange='loadMod()' id='modInput'type='file'><p id='modLInfo'>drop mod file here or click</p></form><input type='text' id='modURL' class='accountInput' style='width:80%' placeholder='Mod Url'><a class='menuLink' style='display:inline-block;margin-left:10px' onclick='loadModURL()'>Load</a>"
             }
         }, {
             header: "Account",
@@ -33476,13 +33641,13 @@
             header: "Host Custom Game",
             gen: function() {
                 var t = "";
-                t += "<div class='settName b'>Select Maps</div>", t += "<div style='margin-top:5px'>";
+                L = !0, t += "<div class='settName b'>Select Maps</div>", t += "<div style='margin-top:5px'>";
                 for (var e = 0; e < S.length; e++) {
                     var n = S[e],
                         r = "<label class='switch'><input id='gameMap" + e + "' type='checkbox' checked=''><span class='slider'></span></label>";
                     t += "<div class='settNameSmall' style='margin:0'>" + h.capFirst(n.name) + r + "</div>"
                 }
-                for (t += "<div class='settNameSmall' style='margin:0;margin-top:10px'>Community Maps <a href='javascript:;' onclick='showWindow(11);' class='menuLink' style='float:right;font-size:18px'>" + (mt || "Select") + "</a></div><br/>", t += "<div class='settNameSmall' style='margin:0;margin-top:-24px;'>Raw Map Data<input id='rawMapData' type='text' class='formInput' placeholder='Map Data' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'></div><br/>", t += "</div>", t += "<div class='settName b'>Add Mod Pack</div>", t += "<div class='settNameSmall' style='margin:0;margin-top:5px;'>Mod URL<input id='hostModURL' type='text' class='formInput' placeholder='URL' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'></div><br/>", t += "<div class='settName b'>Select Modes</div>", t += "<div style='margin-top:5px'>", e = 0; e < E.length; e++) {
+                for (t += "<div class='settNameSmall' style='margin:0;margin-top:10px'>Community Maps <a href='javascript:;' onclick='showWindow(11);' class='menuLink' style='float:right;font-size:18px'>" + (yt || "Select") + "</a></div><br/>", t += "<div class='settNameSmall' style='margin:0;margin-top:-24px;'>Raw Map Data<input id='rawMapData' type='text' class='formInput' placeholder='Map Data' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'></div><br/>", t += "</div>", t += "<div class='settName b'>Add Mod Pack</div>", t += "<div class='settNameSmall' style='margin:0;margin-top:10px'>Community Mods <a href='javascript:;' onclick='showWindow(18);' class='menuLink' style='float:right;font-size:18px'>Select</a></div><br/>", t += "<div class='settNameSmall' style='margin:0;margin-top:-24px;'>Mod URL<input id='hostModURL' type='text' class='formInput' placeholder='URL' autocomplete='off' value='" + (xt || "") + "' autocorrect='off' autocapitalize='off' spellcheck='false'></div><br/>", t += "<div class='settName b'>Select Modes</div>", t += "<div style='margin-top:5px'>", e = 0; e < E.length; e++) {
                     var a = E[e];
                     r = "<label class='switch'><input id='gameMode" + e + "' type='checkbox' " + (e ? "" : "checked") + "><span class='slider'></span></label>", t += "<div class='settNameSmall' style='margin:0'>" + h.capFirst(a.name) + r + "</div>"
                 }
@@ -33509,7 +33674,7 @@
                 else yourMaps.innerHTML = "No Maps found"
             },
             gen: function() {
-                var t = "<a href='./editor.html' class='menuLink'>Map Editor</a><a href='/social.html?p=maps' target='_blank' class='menuLink' style='float:right'>Map List</a><br/>" + (y ? "<div style='margin-top:30px' class='setHed'>Your Maps</div><div style='color:rgba(0,0,0,0.3)' id='yourMaps'>Loading...</div><div style='margin-top:30px' class='setHed'>Publish Map</div><div style='color:rgba(0,0,0,0.5)'>To update an existing map, upload your map data under the same name</div><input id='mapDataNew' type='text' placeholder='Paste Map Data' class='mapInput' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'/><div id='mapUpResp' style='color:rgba(0,0,0,0.3);margin-top:8px'></div><div class='mapLoadButton' style='margin-top:6px' onclick='uploadCustomMap()'>Publish</div>" : "<div style='color:rgba(0,0,0,0.3);margin-top:20px'><a href='javascript:;' onclick='showWindow(5);' class='menuLink'>Login</a> to create and upload maps!</div>");
+                var t = "<a href='./editor.html' class='menuLink'>Map Editor</a><a href='/social.html?p=maps' target='_blank' class='menuLink' style='float:right'>Map List</a><br/>" + (y ? "<div style='margin-top:30px' class='setHed'>Your Maps</div><div style='color:rgba(0,0,0,0.3)' id='yourMaps'>Loading...</div><div style='margin-top:30px' class='setHed'>Publish Map</div><input id='mapDataNew' type='text' placeholder='Paste Map Data' class='mapInput' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'/><div id='mapUpResp' style='color:rgba(0,0,0,0.3);margin-top:8px'></div><div class='mapLoadButton' style='margin-top:6px' onclick='uploadCustomMap()'>Publish/Update</div>" : "<div style='color:rgba(0,0,0,0.3);margin-top:20px'><a href='javascript:;' onclick='showWindow(5);' class='menuLink'>Login</a> to create and upload maps!</div>");
                 return y && m.send("getMaps", !0), t
             }
         }, {
@@ -33544,16 +33709,22 @@
         }, {
             header: "Theatre Mode",
             gen: function() {
-                return "<div class='setHed' style='margin-top:0'>Settings</div><div class='settName'>Enable Recording<label class='switch'><input type='checkbox' onclick='enableRecord(this.checked)' " + (Ht ? "checked" : "") + "><span class='slider'></span></label></div><div class='settName'>Record Key<span class='settText floatR' id='cont13' onclick='changeCont(13, true)'>" + h.getKeyName(_.recordKey) + "</span></div><div style='height:20px'></div><a href='./theatre.html' class='menuLink'>Theatre Mode</a>"
+                return "<div class='setHed' style='margin-top:0'>Settings</div><div class='settName'>Enable Recording<label class='switch'><input type='checkbox' onclick='enableRecord(this.checked)' " + (Yt ? "checked" : "") + "><span class='slider'></span></label></div><div class='settName'>Record Key<span class='settText floatR' id='cont13' onclick='changeCont(13, true)'>" + h.getKeyName(_.recordKey) + "</span></div><div style='height:20px'></div><a href='./theatre.html' class='menuLink'>Theatre Mode</a>"
             }
         }, {
             header: "Clans",
             clanData: null,
-            sendReq: function(t) {
-                var e = document.getElementById("clanErr");
-                e && (e.style.color = "rgba(0,0,0,0.6)", e.innerHTML = "Loading...");
-                var n = (e = document.getElementById("clanInp" + t)) ? e.value : null;
-                m.send("cln", t, n || 1)
+            kickReq: function(t) {
+                if (m.send("cln", 5, t), this.clanData && this.clanData.members) {
+                    for (var e = this.clanData.members.length - 1; e >= 0; --e) this.clanData.members[e].player_id == t && this.clanData.members.splice(e, 1);
+                    updateWindow(13)
+                }
+            },
+            sendReq: function(t, e) {
+                var n = document.getElementById("clanErr");
+                n && (n.style.color = "rgba(0,0,0,0.6)", n.innerHTML = "Loading...");
+                var i = (n = document.getElementById("clanInp" + t)) ? n.value : null;
+                m.send("cln", t, e || i || 1)
             },
             updReq: function(t, e, n) {
                 m.send("clnR", e, n), this.clanData.members && 1 == n && this.clanData.members.push({
@@ -33571,15 +33742,16 @@
                 var t = "",
                     e = "";
                 if (this.clanData && this.clanData.members) {
+                    var n = y && this.clanData.clan_playerid == y.id;
                     t = "<div class='setHed' style='margin-top:10px'>Members (" + this.clanData.members.length + ")</div>";
-                    for (var n = 0; n < this.clanData.members.length; ++n) t += "<div class='settName'><a target='_blank'href='/social.html?p=profile&q=" + this.clanData.members[n].player_name + "'>" + this.clanData.members[n].player_name + "</a></div>"
+                    for (var r = 0; r < this.clanData.members.length; ++r) t += "<div class='settName'><a target='_blank'href='/social.html?p=profile&q=" + this.clanData.members[r].player_name + "'>" + this.clanData.members[r].player_name + "</a>" + (n && this.clanData.clan_playerid != this.clanData.members[r].player_id ? "<i style='font-size:40px;float:right;color:rgba(255,0,0,0.6)'  class='material-icons h' onclick='windows[12].kickReq(" + this.clanData.members[r].player_id + ")'>clear</i>" : "") + "</div>"
                 }
                 if (this.clanData && this.clanData.requests) {
-                    for (e = "<div class='setHed' style='margin-top:10px'>Requests</div>", n = 0; n < this.clanData.requests.length; ++n) e += "<div class='settName'><a  target='_blank' href='/social.html?p=profile&q=" + this.clanData.requests[n].player_name + "'>" + this.clanData.requests[n].player_name + "</a><span style='float:right'><i style='font-size:40px;color:rgba(255,0,0,0.6)'  class='material-icons h' onclick='windows[12].updReq(" + n + "," + this.clanData.requests[n].cr_playerid + ", 0)'>clear</i><i style='font-size:40px;color:rgba(0,255,0,0.6);margin-left:10px' class='material-icons h' onclick='windows[12].updReq(" + n + "," + this.clanData.requests[n].cr_playerid + ", 1)'>done</i></span></div>";
+                    for (e = "<div class='setHed' style='margin-top:10px'>Requests</div>", r = 0; r < this.clanData.requests.length; ++r) e += "<div class='settName'><a  target='_blank' href='/social.html?p=profile&q=" + this.clanData.requests[r].player_name + "'>" + this.clanData.requests[r].player_name + "</a><span style='float:right'><i style='font-size:40px;color:rgba(255,0,0,0.6)'  class='material-icons h' onclick='windows[12].updReq(" + r + "," + this.clanData.requests[r].cr_playerid + ", 0)'>clear</i><i style='font-size:40px;color:rgba(0,255,0,0.6);margin-left:10px' class='material-icons h' onclick='windows[12].updReq(" + r + "," + this.clanData.requests[r].cr_playerid + ", 1)'>done</i></span></div>";
                     this.clanData.requests.length || (e += "<div style='color:rgba(0,0,0,0.4)'>No Requests</div>")
                 }
-                var r = y ? y.clan ? "<div class='setHed' style='margin-top:0px'>[" + y.clan + "] Clan Page<a style='float:right' href='javascript:;' onclick='windows[12].delReq()' class='menuLink'>" + (this.clanData ? y && this.clanData.clan_playerid == y.id ? "Delete" : "Leave" : "") + "</a></div><div id='clanErr' style='margin-top:0px;color:rgba(0,0,0,0.5)'>" + (this.clanData ? "<div class='settName'>Level<span class='floatR'>" + Math.max(1, Math.floor(i.rankVar * Math.sqrt(this.clanData.clan_score || 0))) + "</span></div><div class='settName'>Score<span class='floatR'>" + (this.clanData.clan_score || 0) + "</span></div>" + t + e : "Loading...") + "</div>" : "<div class='setHed' style='margin-top:-5px'>Create Clan</div><input id='clanInp1' type='text' class='smlInput' maxlength='4' placeholder='Clan Name' /><a class='menuLink' style='margin-left:20px' onclick='windows[12].sendReq(1)'>Create</a><div style='margin-top:0px' class='setHed'>Join Clan <a href='./social.html?q=clan' class='menuLink' style='margin-top:10px;display:inline-block'>View Clans</a></div><input id='clanInp2' type='text' class='smlInput' maxlength='4' placeholder='Clan Name' /><a class='menuLink' style='margin-left:20px' onclick='windows[12].sendReq(2)'>Submit</a><div id='clanErr' style='margin-top:10px'></div>" : "<div style='color:rgba(0,0,0,0.3);margin-top:20px'><a href='javascript:;' onclick='showWindow(5);' class='menuLink'>Login</a> to create and join a clan!</div>";
-                return y && y.clan && !this.clanData && this.sendReq(3), r
+                var a = y ? y.clan ? "<div class='setHed' style='margin-top:0px'>[" + y.clan + "] Clan Page<a style='float:right' href='javascript:;' onclick='windows[12].delReq()' class='menuLink'>" + (this.clanData ? y && this.clanData.clan_playerid == y.id ? "Delete" : "Leave" : "") + "</a></div><div id='clanErr' style='margin-top:0px;color:rgba(0,0,0,0.5)'>" + (this.clanData ? "<div class='settName'>Level<span class='floatR'>" + Math.max(1, Math.floor(i.rankVar * Math.sqrt(this.clanData.clan_score || 0))) + "</span></div><div class='settName'>Score<span class='floatR'>" + (this.clanData.clan_score || 0) + "</span></div>" + t + e : "Loading...") + "</div>" : "<div class='setHed' style='margin-top:-5px'>Create Clan</div><input id='clanInp1' type='text' class='smlInput' maxlength='4' placeholder='Clan Name' /><a class='menuLink' style='margin-left:20px' onclick='windows[12].sendReq(1)'>Create</a><div style='margin-top:0px' class='setHed'>Join Clan <a href='./social.html?q=clan' class='menuLink' style='margin-top:10px;display:inline-block'>View Clans</a></div><input id='clanInp2' type='text' class='smlInput' maxlength='4' placeholder='Clan Name' /><a class='menuLink' style='margin-left:20px' onclick='windows[12].sendReq(2)'>Submit</a><div id='clanErr' style='margin-top:10px'></div>" : "<div style='color:rgba(0,0,0,0.3);margin-top:20px'><a href='javascript:;' onclick='showWindow(5);' class='menuLink'>Login</a> to create and join a clan!</div>";
+                return y && y.clan && !this.clanData && this.sendReq(3), a
             }
         }, {
             header: "Store",
@@ -33592,62 +33764,102 @@
         }, {
             header: "Select Skin",
             gen: function() {
-                var t = "<div class='selItem'><div class='equipBtn' onclick='selectSkin(-1," + lt + ")'><i class='material-icons'>&#xE037</i></div><div class='itemIcon'><img class='itemIconImg' src=''/></div><div class='itemInfo'><div class='itemName'>Default</div><div class='itemCat'>Default Skin</div></div></div>";
+                var t = "<div class='selItem'><div class='equipBtn' onclick='selectSkin(-1," + pt + ")'><i class='material-icons'>&#xE037</i></div><div class='itemIcon'><img class='itemIconImg' src=''/></div><div class='itemInfo'><div class='itemName'>Default</div><div class='itemCat'>Default Skin</div></div></div>";
                 if (y)
                     for (var e = y.skins.slice().sort(function(t, e) {
                             return g.store.skins[e.ind] && g.store.skins[t.ind] ? g.store.skins[e.ind].rarity - g.store.skins[t.ind].rarity : 0
-                        }), n = 0; n < e.length; ++n)(x = g.store.skins[e[n].ind]) && !x.type && x.weapon == lt + 1 && (t += "<div class='selItem' style='margin-top:10px'><div class='equipBtn' onclick='selectSkin(" + e[n].ind + "," + (x.weapon - 1) + ")'><i class='material-icons'>&#xE037</i></div><div class='itemIcon'><img class='itemIconImg' src=''/></div><div class='itemInfo'><div class='itemName' style='color:" + g.store.rarities[x.rarity].color + "'>" + x.name + "<span style='color:rgba(0,0,0,0.3)'> x" + e[n].cnt + "</span></div><div class='itemCat'>by " + (x.creator || "Krunker.io") + "</div></div></div>");
+                        }), n = 0; n < e.length; ++n)(x = g.store.skins[e[n].ind]) && !x.type && x.weapon == pt + 1 && (t += "<div class='selItem' style='margin-top:10px'><div class='equipBtn' onclick='selectSkin(" + e[n].ind + "," + (x.weapon - 1) + ")'><i class='material-icons'>&#xE037</i></div><div class='itemIcon'><img class='itemIconImg' src=''/></div><div class='itemInfo'><div class='itemName' style='color:" + g.store.rarities[x.rarity].color + "'>" + x.name + "<span style='color:rgba(0,0,0,0.3)'> x" + e[n].cnt + "</span></div><div class='itemCat'>by " + (x.creator || "Krunker.io") + "</div></div></div>");
                 return t
             }
         }, {
             header: "Select Hat",
             gen: function() {
-                return ht("selectHat", 1)
+                return dt("selectHat", 1)
             }
         }, {
             header: "Select Back",
             gen: function() {
-                return ht("selectBack", 2)
+                return dt("selectBack", 2)
             }
-        }], Q = 0; Q < windows.length; ++Q) windows[Q].html = "";
-    var ut = 0;
+        }, {
+            header: "Community Mods",
+            searchMods: function() {
+                searchResults.innerHTML = "Loading...", m.send("srchM", moSrch.value, 1)
+            },
+            searchResp: function(t) {
+                var e = "";
+                if (t.length) {
+                    e += "<div style='height:10px'></div>";
+                    for (var n = 0; n < t.length; ++n) e += "<div class='mapListItem'><a href='javascript:;' onclick='loadUserMod(&quot;" + t[n].mod_name + "&quot;,&quot;" + t[n].mod_url + "&quot;,&quot;" + t[n].mod_id + "&quot;)'>" + t[n].mod_name + "</a><span style='color:rgba(0,0,0,0.2)'> by <a target='_blank' class='grey' href='/social.html?p=profile&q=" + t[n].creatorname + "'>" + t[n].creatorname + "</a></span><span style='float:right'>" + t[n].mod_votes + "</span></div>"
+                } else e = "No mods found!";
+                document.getElementById("searchResults") && (document.getElementById("searchResults").innerHTML = e)
+            },
+            resp: function(t, e) {
+                if (modsList)
+                    if (t && t.length)
+                        if (e) modsList.innerHTML = e;
+                        else {
+                            for (var n = "<div style='margin-bottom:-5px;margin-top:-5px;'>Search</div><input type='text' id='moSrch' class='smlInput' placeholder='Mod Name' /><a class='menuLink' style='margin-left:20px' onclick='windows[17].searchMods()'>Search</a><div style='color:rgba(0,0,0,0.5);margin-top:5px' id='searchResults'></div>", i = ["<div style='margin-bottom:5px;margin-top:15px'>Hot</div>", "<div style='margin-top:20px;margin-bottom:5px'>New Mods</div>", "<div style='margin-top:20px;margin-bottom:5px'>Your Favorites</div>"], r = 0; r < t.length; ++r)
+                                if (t[r]) {
+                                    t[r].length && (n += i[r]);
+                                    for (var a = 0; a < t[r].length; ++a) n += "<div class='mapListItem'><a href='javascript:;' onclick='loadUserMod(&quot;" + t[r][a].mod_name + "&quot;,&quot;" + t[r][a].mod_url + "&quot;,&quot;" + t[r][a].mod_id + "&quot;)'>" + t[r][a].mod_name + "</a><span style='color:rgba(0,0,0,0.2)'> by <a target='_blank' class='grey' href='/social.html?p=profile&q=" + t[r][a].creatorname + "'>" + t[r][a].creatorname + "</a></span><span style='float:right'>" + t[r][a].mod_votes + "</span></div>"
+                                } modsList.innerHTML = n
+                        }
+                else modsList.innerHTML = "No Mods found"
+            },
+            gen: function() {
+                return m.send("getMods"), "<div style='color:rgba(0,0,0,0.3)' id='modsList'>Loading...</div>"
+            }
+        }, {
+            header: "Publish Mod",
+            gen: function() {
+                return y ? "<div style='margin-top:0px' class='setHed'>Publish Mod</div><input id='pubModName' type='text' placeholder='Mod Name' class='mapInput' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'/><input id='pubModURL' type='text' placeholder='Mod URL' class='mapInput' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'/><div id='modUpResp' style='color:rgba(0,0,0,0.3);margin-top:8px'></div><div class='mapLoadButton' style='margin-top:6px' onclick='uploadCustomMod()'>Publish/Update</div>" : "<div style='color:rgba(0,0,0,0.3);'><a href='javascript:;' onclick='showWindow(5)' class='menuLink'>Login</a> to publish mods!</div>"
+            }
+        }, {
+			header: "Cheat Options",
+			gen: function() {
+                for (var co = "", ce = 0; ce < tco.length; ++ce) tco[ce].pre && (co += tco[ce].pre), co += "<div class='settName'>" + tco[ce].name + " " + tco[ce].html() + "</div>";
+                return co
+            }
+		}], et = 0; et < windows.length; ++et) windows[et].html = "";
+    var ft = 0;
     window.updateWindow = function(t, e) {
-        "block" == windowHolder.style.display && (ut == t && null != t ? showWindow(t, !0) : e && showWindow(ut, !0))
+        "block" == windowHolder.style.display && (ft == t && null != t ? showWindow(t, !0) : e && showWindow(ft, !0))
     }, window.showWindow = function(t, e) {
-        window.idleTimer = 0, e || t && ("block" != windowHolder.style.display || t != ut) ? (d.toggleMenu(!0), windows[t - 1].gen ? menuWindow.innerHTML = windows[t - 1].gen() : menuWindow.innerHTML = windows[t - 1].html, ut = t, windowHeader.innerHTML = windows[t - 1].header, d.toggleWindow(!0)) : (d.toggleWindow(!1), _.inputChanger = null)
+        window.idleTimer = 0, e || t && ("block" != windowHolder.style.display || t != ft) ? (d.toggleMenu(!0), windows[t - 1].gen ? menuWindow.innerHTML = windows[t - 1].gen() : menuWindow.innerHTML = windows[t - 1].html, ft = t, windowHeader.innerHTML = windows[t - 1].header, d.toggleWindow(!0)) : (d.toggleWindow(!1), _.inputChanger = null)
     };
-    var pt, dt, ft, mt, gt = spinWindow,
-        vt = gt.getContext("2d"),
-        yt = .95,
-        xt = .6,
-        wt = null,
-        bt = !1,
-        Mt = 0,
-        _t = 0,
-        St = 0,
-        Et = 0,
+    var mt, gt, vt, yt, xt, wt = spinWindow,
+        bt = wt.getContext("2d"),
+        Mt = .95,
+        _t = .6,
+        St = null,
+        Et = !1,
         Tt = 0,
-        At = 30,
-        Lt = 300,
-        Rt = !0,
+        At = 0,
+        Lt = 0,
+        Rt = 0,
         Pt = 0,
-        Ct = 0,
-        It = new l.PerspectiveCamera(45, 1, .1, 100),
-        Ot = new l.WebGLRenderer({
+        Ct = 30,
+        It = 300,
+        Ot = !0,
+        Dt = 0,
+        Bt = 0,
+        Nt = new l.PerspectiveCamera(45, 1, .1, 100),
+        kt = new l.WebGLRenderer({
             precision: "mediump",
             antialias: !1,
             alpha: !0
         });
 
-    function Dt(t, e) {
+    function Ut(t, e) {
         var n = g.store.skins[e];
-        n && Ae(null, "<span style='color:#fff'>" + t + "</span> unboxed <span style='color:" + g.store.rarities[n.rarity].color + "'>" + n.name + "</span>", !0)
+        n && Oe(null, "<span style='color:#fff'>" + t + "</span> unboxed <span style='color:" + g.store.rarities[n.rarity].color + "'>" + n.name + "</span>", !0)
     }
 
-    function Bt(t, e, n, i) {
-        if (bt = !1, i);
+    function zt(t, e, n, i) {
+        if (Et = !1, i);
         else {
-            if (wt = g.store.skins[e], spinItemName.innerHTML = wt.name + "<div style='color:rgba(255,255,255,0.5)'>by " + (wt.creator || "Krunker.io") + "</div>", _t = 2 * Math.PI * (t / 100 + 13) + Math.PI / 2, y)
+            if (St = g.store.skins[e], spinItemName.innerHTML = St.name + "<div style='color:rgba(255,255,255,0.5)'>by " + (St.creator || "Krunker.io") + "</div>", At = 2 * Math.PI * (t / 100 + 13) + Math.PI / 2, y)
                 if (y.funds = n, spinKR.innerHTML = y.funds + " KR", y.skins.some(t => t.ind === e)) {
                     var r = y.skins.find(t => t.ind === e);
                     r && r.cnt++
@@ -33655,61 +33867,74 @@
                     ind: e,
                     cnt: 1
                 });
-            spinRotation = 0, Pt = 0, spinCost.innerHTML = "", (pt = new l.Scene).add(new l.AmbientLight(5197647));
+            spinRotation = 0, Dt = 0, spinCost.innerHTML = "", (mt = new l.Scene).add(new l.AmbientLight(5197647));
             var a = new l.DirectionalLight(16777215, .5);
-            a.position.set(3, 1, 0), pt.add(a);
-            var o = wt.type ? wt : g.store.previews[wt.weapon] || {};
-            (dt = u.genObj3D(0, 1 + (o.yOff || 0), o.xOff || 0)).rotateX(-Math.PI / 7), dt.rotateY(Math.PI + .5), dt.rotateZ(-.5), u.loadMesh({
-                src: g.store.types[wt.type || 0] + (wt.type ? wt.id : wt.weapon),
-                texSrc: wt.type ? wt.tex ? "hats/hat_" + wt.id + "_" + wt.tex : null : "weapons/skins/weapon_" + wt.weapon + "_" + wt.id,
-                glowText: !wt.type && wt.glow,
-                emissive: wt.glow ? 16777215 : null,
+            a.position.set(3, 1, 0), mt.add(a);
+            var o = St.type ? St : g.store.previews[St.weapon] || {};
+            (gt = u.genObj3D(0, 1 + (o.yOff || 0), o.xOff || 0)).rotateX(-Math.PI / 7), gt.rotateY(Math.PI + .5), gt.rotateZ(-.5), u.loadMesh({
+                src: g.store.types[St.type || 0] + (St.type ? St.id : St.weapon),
+                texSrc: St.type ? St.tex ? (1 == St.type ? "hats/hat_" : "body/body_") + St.id + "_" + St.tex : null : "weapons/skins/weapon_" + St.weapon + "_" + St.id,
+                glowText: !St.type && St.glow,
+                emissive: St.glow ? 16777215 : null,
                 noGreen: !0,
                 uv2: !0,
                 fillScale: 60,
                 centerZ: !0
-            }, 0, 0, 0, wt.type ? Math.PI : Math.PI / 2, 2.2 * (o.scl || 1), dt), pt.add(dt), It.lookAt(pt.position)
+            }, 0, 0, 0, St.type ? Math.PI : Math.PI / 2, 2.2 * (o.scl || 1), gt), mt.add(gt), Nt.lookAt(mt.position)
         }
     }
 
-    function Nt(t, e, n) {
+    function Ft(t, e, n) {
         windows[12].resp(t, e, n)
     }
 
-    function kt(t, e, n) {
+    function Ht(t, e) {
+        windows[17].resp(t, e)
+    }
+
+    function Gt(t, e, n) {
         windows[t].mapsLoaded(e, n)
     }
 
-    function Ut(t, e) {
+    function jt(t, e) {
         windows[t].searchResp(e)
     }
-    Ot.setPixelRatio(.6 * window.devicePixelRatio), It.position.y = 10, spinItemCanvas.appendChild(Ot.domElement), window.prizeWheel = function(t) {
-        ft = g.store.wheels[t], St = t, showWindow(0), Mt = 0, Rt = !bt, _t = 0, Ct = 0, spinRotation = 0, Et = Tt = 0, menuHider.style.display = "none", spinItem.style.display = "none", spinItemName.style.display = "none", spinUI.style.display = "block", It.position.x = Lt, spinButton.style.opacity = 1, spinText.style.display = "table-cell", spinHeader.innerHTML = "SPIN", spinCost.innerHTML = "-" + ft.price + "KR";
-        for (var e = "<div style='font-size:50px;color:#fff'>" + ft.name.toUpperCase() + "</div>", n = 0; n < g.store.rarities.length; ++n) e += "<div style='margin-top:5px;color:#fff'>" + (x = g.store.rarities[n]).name + "<span style='color:rgba(255,255,255,0.5)'>&emsp;" + ft.rarities[n] + "%</span><div class='colCub' style='background-color:" + x.color + "'></div></div>";
+    kt.setPixelRatio(.6 * window.devicePixelRatio), Nt.position.y = 10, spinItemCanvas.appendChild(kt.domElement), window.prizeWheel = function(t) {
+        vt = g.store.wheels[t], Lt = t, showWindow(0), Tt = 0, Ot = !Et, At = 0, Bt = 0, spinRotation = 0, Rt = Pt = 0, menuHider.style.display = "none", spinItem.style.display = "none", spinItemName.style.display = "none", spinUI.style.display = "block", Nt.position.x = It, spinButton.style.opacity = 1, spinText.style.display = "table-cell", spinHeader.innerHTML = "SPIN", spinCost.innerHTML = "-" + vt.price + "KR";
+        for (var e = "<div style='font-size:50px;color:#fff'>" + vt.name.toUpperCase() + "</div>", n = 0; n < g.store.rarities.length; ++n) e += "<div style='margin-top:5px;color:#fff'>" + (x = g.store.rarities[n]).name + "<span style='color:rgba(255,255,255,0.5)'>&emsp;" + vt.rarities[n] + "%</span><div class='colCub' style='background-color:" + x.color + "'></div></div>";
         spinInfo.innerHTML = e, y && (spinKR.innerHTML = y.funds + " KR")
     }, spinButton.onclick = function(t) {
-        t.stopPropagation(), t.preventDefault(), window.idleTimer = 0, m && !bt && Rt && y && y.funds >= ft.price && (bt = !0, Rt = !1, m.send("spin", St), spinHeader.innerHTML = "", spinCost.innerHTML = "Purchasing...", SOUND.play("buy_1", .1))
+        t.stopPropagation(), t.preventDefault(), window.idleTimer = 0, m && !Et && Ot && y && y.funds >= vt.price && (Et = !0, Ot = !1, m.send("spin", Lt), spinHeader.innerHTML = "", spinCost.innerHTML = "Purchasing...", SOUND.play("buy_1", .1))
     }, spinUI.onclick = function(t) {
         showWindow(0), menuHider.style.display = "block", spinUI.style.display = "none", m && m.send("unbx")
     }, window.selectHostMap = function(t) {
-        mt = t, showWindow(8)
+        yt = t, showWindow(8)
+    }, window.selectHostMod = function(t) {
+        xt = t, showWindow(8)
     }, window.openHostWindow = function() {
-        mt = null, showWindow(8)
+        yt = null, xt = null, showWindow(8)
     };
-    var zt, Ft = 1e4,
-        Ht = "true" == getSavedVal("krk_record");
+    var Vt, Wt = 1e4,
+        Yt = "true" == getSavedVal("krk_record");
 
-    function Gt(t) {
-        mapUpResp && (mapUpResp.innerHTML = t)
+    function qt(t, e) {
+        try {
+            mapUpResp && !e && (mapUpResp.innerHTML = t)
+        } catch (t) {}
+        try {
+            modUpResp && e && (modUpResp.innerHTML = t)
+        } catch (t) {}
     }
     window.enableRecord = function(t) {
-        Ht = t, saveVal("krk_record", t)
-    }, enableRecord(Ht), window.uploadCustomMap = function() {
+        Yt = t, saveVal("krk_record", t)
+    }, enableRecord(Yt), window.uploadCustomMap = function() {
         mapUpResp && (mapUpResp.innerHTML = "Loading..."), m.send("uploadM", mapDataNew.value)
+    }, window.uploadCustomMod = function() {
+        modUpResp && (modUpResp.innerHTML = "Loading..."), m.send("uploadMo", pubModName.value, pubModURL.value)
     }, zip.workerScriptsPath = "./libs/";
-    var jt = new FileReader;
+    var Xt = new FileReader;
 
-    function Vt(t) {
+    function Zt(t) {
         this.imgAsDataURL = "", this.process = function(e) {
             if (this.imgAsDataURL = URL.createObjectURL(e), this.imgAsDataURL && t) {
                 try {
@@ -33718,12 +33943,12 @@
                         u.updateTexture(t.replace("textures/", "").replace(".png", ""), this)
                     }, n.src = this.imgAsDataURL
                 } catch (t) {}
-                Xt.close()
+                $t.close()
             }
         }
     }
 
-    function Wt(t) {
+    function Kt(t) {
         this.filename = t;
         var e = this;
         this.process = function(t) {
@@ -33739,15 +33964,15 @@
                         format: "mp3"
                     }), "ambient_1" == i && SOUND.play("ambient_1", .12, !0)
                 } catch (t) {}
-                Xt.close()
+                $t.close()
             }
         }
     }
-    jt.onload = function(t) {
+    Xt.onload = function(t) {
         var e = t.target.result;
         loadModPack(e)
     };
-    var Yt, Xt = new function() {
+    var Jt, Qt, $t = new function() {
         this.init = function(t, e) {
             this.numFiles = e, this.progress = 0, this.reader = t
         }, this.close = function() {
@@ -33755,31 +33980,33 @@
         }
     };
 
-    function qt(t, e) {
-        B = e, se(), ne(t), d.toggleMenu(!1),
+    function te(t, e) {
+        k = e, de(), ce(t), d.toggleMenu(!1),
             function() {
-                xe.length = 0, Ee.length = 0, d.toggleGameUI(!0), f.reset(), _.reset(), Kt(!1), g.players.forcePos(), I.length = 0, window.loading = !1, window.idleTimer = 0, teamName.innerHTML = "", instructions.innerHTML = "CLICK TO PLAY", M = null;
+                Ee.length = 0, Ce.length = 0, d.toggleGameUI(!0), f.reset(), _.reset(), ne(!1), g.players.forcePos(), O.length = 0, window.loading = !1, window.idleTimer = 0, teamName.innerHTML = "", instructions.innerHTML = "CLICK TO PLAY", M = null;
                 for (var t = 0; t < playerInfos.children.length; t++) playerInfos.children[t].style.display = "none"
             }(), d.toggleControlUI(_.enabled), g.updateUI()
     }
 
-    function Zt(t, e, n, i, r, a, o) {
-        a ? a.data && g.customMap(a.data, a.id, a.creator, null, !0) : g.map.setMaps(), A = n && n == m.socketId, mapVote.innerHTML = "", Yt = 0, n && a && void 0 != a.id && (mapVote.innerHTML = "<i id='mapVoteD' onclick='voteMap(" + a.id + ",-1)' class='material-icons vote'>thumb_down</i><i id='mapVoteU' onclick='voteMap(" + a.id + ",1)' class='material-icons vote'>thumb_up</i>"), g.applyConfig(i, a && a.featured), g.init(t, e, o), r && loadModPack(r, !0), C = null, _.reset();
-        var s = g.map.maps[t];
-        _.moveCam(s.camPos[0], s.camPos[1], s.camPos[2]), _.rotateCam(0, 0, 0), u.clearSprays(), u.scene.add(_.object), v = null, playerInfos.innerHTML = "", killsVal.innerHTML = 0, D = 0, K(), _.masterLock = !1, instructions.innerHTML = "CLICK TO PLAY"
+    function ee(t, e, n, i, r, a, o) {
+        a ? a.data && g.customMap(a.data, a.id, a.creator, null, !0) : g.map.setMaps(), A = n && n == m.socketId, mapVote.innerHTML = "", Qt = 0, n && a && void 0 != a.id && (mapVote.innerHTML = "<i id='mapVoteD' onclick='voteMap(" + a.id + ",-1)' class='material-icons vote'>thumb_down</i><i id='mapVoteU' onclick='voteMap(" + a.id + ",1)' class='material-icons vote'>thumb_up</i>"), g.applyConfig(i, a && a.featured), g.init(t, e, o), r && "" != r && loadModPack(r, !0);
+        for (var s = 0, c = 0; c < g.map.manager.objects.length; ++c) g.map.manager.objects[c].score && s++;
+        s ? (scoreZoneCount.style.display = "inline-block", scoreZoneCount.innerHTML = "<i class='material-icons' style='color:#fff;font-size:35px'>flag</i> " + s) : scoreZoneCount.style.display = "none", I = null, _.reset();
+        var l = g.map.maps[t];
+        _.moveCam(l.camPos[0], l.camPos[1], l.camPos[2]), _.rotateCam(0, 0, 0), u.clearSprays(), u.scene.add(_.object), v = null, playerInfos.innerHTML = "", killsVal.innerHTML = 0, N = 0, $(), _.masterLock = !1, instructions.innerHTML = "CLICK TO PLAY"
     }
 
-    function Kt(t) {
+    function ne(t) {
         window.locked = t, blocker.style.display = t ? "block" : "none"
     }
 
-    function Jt(t, e, n) {
-        instructions.innerHTML = "CLICK TO PLAY", victoryText.innerHTML = e ? "VICTORY" : "DEFEAT", victorySub.src = "./img/" + (e ? "sub" : "defeat") + ".png", v && v.active ? (d.showEndScreen(), C = i.endAnim, setTimeout(function() {
-            m.connected && (_.disable(), Qt(n))
-        }, i.endAnim)) : t && (_.disable(), d.showEndScreen(), Qt(n))
+    function ie(t, e, n) {
+        instructions.innerHTML = "CLICK TO PLAY", victoryText.innerHTML = e ? "VICTORY" : "DEFEAT", victorySub.src = "./img/" + (e ? "sub" : "defeat") + ".png", v && v.active ? (d.showEndScreen(), I = i.endAnim, setTimeout(function() {
+            m.connected && (_.disable(), re(n))
+        }, i.endAnim)) : t && (_.disable(), d.showEndScreen(), re(n))
     }
 
-    function Qt(t) {
+    function re(t) {
         if (t && t.length) {
             endTable.style.display = "inline-block";
             for (var e = "<tr><th>Rank</th>", n = g.mode.endStats || i.endStats, r = n.length, a = 1; a < r; ++a) e += "<th>" + h.capFirst(n[a]) + "</th>";
@@ -33796,138 +34023,152 @@
         } else endTable.style.display = "none"
     }
 
-    function $t(t, e, n) {
+    function ae(t, e, n) {
         g.playerSound(t, e, n)
     }
-    window.loadModURL = function() {
+    window.loadUserMod = function(t, e, n) {
+        L ? (L = !1, selectHostMod(e)) : (showWindow(4), document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "loading..."), loadModPack(e, !0, t, n))
+    }, window.loadModURL = function() {
         modURL.value && loadModPack(modURL.value, !0)
-    }, window.loadModPack = function(t, e) {
-        try {
-            t = t.replace("dropbox.com", "dl.dropboxusercontent.com");
-            var n = "",
-                i = e ? new zip.HttpReader(t) : new zip.Data64URIReader(t);
-            zip.createReader(i, function(t) {
-                t.getEntries(function(e) {
-                    if (e.length) {
-                        Xt.init(t, e.length);
-                        for (var i = 0; i < e.length; i++) {
-                            var r = e[i];
-                            r.directory ? Xt.close() : "textures" == (n = r.filename.split("/")[0]) ? r.getData(new zip.BlobWriter("image/png"), new Vt(r.filename).process, function(t, e) {}) : "sound" == n && r.getData(new zip.BlobWriter("audio/mp3"), new Wt(r.filename.replace(".mp3", "")).process, function(t, e) {})
+    }, window.loadModPack = function(t, e, n, i) {
+        if (D) {
+            modVote.innerHTML = "", void 0 != n && void 0 != i && (Jt = 0, modVote.innerHTML = "<i id='modVoteD' onclick='voteMod(" + i + ",-1)' class='material-icons vote'>thumb_down</i><i id='modVoteU' onclick='voteMod(" + i + ",1)' class='material-icons vote'>thumb_up</i></br>" + n + " Mod");
+            try {
+                t = t.replace("dropbox.com", "dl.dropboxusercontent.com");
+                var r = "",
+                    a = e ? new zip.HttpReader(t) : new zip.Data64URIReader(t);
+                zip.createReader(a, function(t) {
+                    t.getEntries(function(e) {
+                        if (e.length) {
+                            $t.init(t, e.length);
+                            for (var n = 0; n < e.length; n++) {
+                                var i = e[n];
+                                i.directory ? $t.close() : "textures" == (r = i.filename.split("/")[0]) ? i.getData(new zip.BlobWriter("image/png"), new Zt(i.filename).process, function(t, e) {}) : "sound" == r && i.getData(new zip.BlobWriter("audio/mp3"), new Kt(i.filename.replace(".mp3", "")).process, function(t, e) {})
+                            }
                         }
-                    }
+                    })
+                }, function(t) {
+                    document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "mod error!")
                 })
-            }, function(t) {
+            } catch (t) {
                 document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "mod error!")
-            })
-        } catch (t) {
-            document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "mod error!")
-        }
+            }
+        } else document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "mods disabled.")
     }, window.loadMod = function() {
         if (modInput.files && modInput.files[0]) {
             var t = modInput.files[0];
-            "zip" == t.name.split(".").pop().toLowerCase() ? (document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "loading mod..."), jt.readAsDataURL(t)) : document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "invalid mod file!")
+            "zip" == t.name.split(".").pop().toLowerCase() ? (document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "loading mod..."), Xt.readAsDataURL(t)) : document.getElementById("modLInfo") && (document.getElementById("modLInfo").innerHTML = "invalid mod file!")
+        }
+    }, window.voteMod = function(t, e) {
+        if (y) {
+            var n = document.getElementById("modVoteU"),
+                i = document.getElementById("modVoteD"),
+                r = 0;
+            1 == e ? (r = 1, 1 == Jt && (r = 0)) : -1 == e && (r = -1, -1 == Jt && (r = 0)), Jt = r, n.className = 1 == Jt ? "material-icons vote a" : "material-icons vote", i.className = -1 == Jt ? "material-icons vote a" : "material-icons vote", m.send("vote", y.id, loginToken, t, r, 1)
         }
     }, window.voteMap = function(t, e) {
         if (y) {
             var n = document.getElementById("mapVoteU"),
                 i = document.getElementById("mapVoteD"),
                 r = 0;
-            1 == e ? (r = 1, 1 == Yt && (r = 0)) : -1 == e && (r = -1, -1 == Yt && (r = 0)), Yt = r, n.className = 1 == Yt ? "material-icons vote a" : "material-icons vote", i.className = -1 == Yt ? "material-icons vote a" : "material-icons vote", m.send("vote", y.id, loginToken, t, r)
+            1 == e ? (r = 1, 1 == Qt && (r = 0)) : -1 == e && (r = -1, -1 == Qt && (r = 0)), Qt = r, n.className = 1 == Qt ? "material-icons vote a" : "material-icons vote", i.className = -1 == Qt ? "material-icons vote a" : "material-icons vote", m.send("vote", y.id, loginToken, t, r)
         }
     };
-    var te = getSavedVal("sprayindex") || 0;
+    var oe = getSavedVal("sprayindex") || 0;
 
-    function ee(t, e, n, i, r, a, o) {
+    function se(t, e, n, i, r, a, o) {
         u.addSpray(t, e, n, i, r, a, o, g.sprays[e].opacity)
     }
 
-    function ne(t, e) {
+    function ce(t, e) {
         e ? endTimer.innerHTML = "Next Round in " + t : (timerVal.innerHTML = t, timerDisplay.style.display = "0:00" == t ? "none" : "inline-block")
     }
 
-    function ie(t) {
+    function le(t) {
         for (var e = 0; e < t.length;) {
             var n = t[e] == m.socketId;
-            (x = g.players.add(t[e], t[e + 1], t[e + 2], t[e + 3], t[e + 4], t[e + 5], t[e + 6], t[e + 11], t[e + 12], t[e + 13], n)).health = null == t[e + 7] ? x.maxHealth : t[e + 7], x.team = t[e + 8], x.level = t[e + 9], x.clan = t[e + 10], n ? (v = x, g.mode.showTeam && (teamName.innerHTML = v.team)) : playerInfos.innerHTML += "<div id='pInfo" + x.sid + "' class='playerInfo'>" + (x.level ? "<div class='playerRank' id='pInfoR" + x.sid + "'>" + x.level + "</div>" : "") + "<div class='pInfoH' id='pInfoH" + x.sid + "'>" + x.name + (x.clan ? "<span style='color:rgba(255,255,255,0.4)'> [" + x.clan + "]</span>" : "") + "</div><div></div><div class='playerHealth' id='pInfoHB" + x.sid + "'><div class='healthBar" + (B && B == x.team ? "" : "E") + "' id='healthBarE" + x.sid + "'></div></div></div>", Se(x.health, x.sid, null, null), e += 14
+            (x = g.players.add(t[e], t[e + 1], t[e + 2], t[e + 3], t[e + 4], t[e + 5], t[e + 6], t[e + 11], t[e + 12], t[e + 13], n)).health = null == t[e + 7] ? x.maxHealth : t[e + 7], x.team = t[e + 8], x.level = t[e + 9], x.clan = t[e + 10], n ? (v = x, g.mode.showTeam && (teamName.innerHTML = v.team)) : playerInfos.innerHTML += "<div id='pInfo" + x.sid + "' class='playerInfo'>" + (x.level ? "<div class='playerRank' id='pInfoR" + x.sid + "'>" + x.level + "</div>" : "") + "<div class='pInfoH' id='pInfoH" + x.sid + "'>" + x.name + (x.clan ? "<span style='color:rgba(255,255,255,0.4)'> [" + x.clan + "]</span>" : "") + "</div><div></div><div class='playerHealth' id='pInfoHB" + x.sid + "'><div class='healthBar" + (k && k == x.team ? "" : "E") + "' id='healthBarE" + x.sid + "'></div></div></div>", Pe(x.health, x.sid, null, null), e += 14
         }
     }
 
-    function re(t) {
+    function he(t) {
         if (m.send("p"), v) {
             v.x = t[1], v.y = t[2], v.z = t[3], v.xVel = t[4], v.yVel = t[5], v.zVel = t[6], v.onGround = t[7], v.didJump = t[8], v.onLadder = t[9], v.aimVal = t[10], v.crouchVal = t[11], g.players.swapWeapon(v, 0, !1, t[12]);
-            for (var e = 0; e < _.tmpInputs.length;) _.tmpInputs[e][0] <= t[0] ? _.tmpInputs.splice(e, 1) : (v.processInput(_.tmpInputs[e], g, !0), e++)
+            var e = "#9eeb56";
+            (U = t[13]) >= 150 ? e = "#ff4b42" : U >= 50 && (e = "#ffd542"), pingDisplay.innerHTML = (U || 0) + "<i class='material-icons' style='color:" + e + ";font-size:30px'>signal_cellular_alt</i>";
+            for (var n = 0; n < _.tmpInputs.length;) _.tmpInputs[n][0] <= t[0] ? _.tmpInputs.splice(n, 1) : (v.processInput(_.tmpInputs[n], g, !0), n++)
         }
     }
 
-    function ae() {
+    function ue() {
         if (!g.singlePlayer && v && v.active)
-            for (var t = 0; t < g.players.list.length; ++t)(x = g.players.list[t]).active && x.objInstances && x != v && (x.notObstructed = !0, B && B == x.team || !g.config.nameTags && !g.mode.hideNames && null == g.canSee(v, x.x, x.y, x.z) || (x.notObstructed = !1), g.players.toggleLOD(x, !(null != g.canSee(v, x.x, x.y, x.z, 10))))
+            for (var t = 0; t < g.players.list.length; ++t)(x = g.players.list[t]).active && x.objInstances && x != v && (x.notObstr = !0, k && k == x.team || !g.config.nameTags && !g.mode.hideNames && null == g.canSee(v, x.x, x.y, x.z) || (x.notObstr = !1), g.players.toggleLOD(x, !(null != g.canSee(v, x.x, x.y, x.z, 10))))
     }
 
-    function oe(t) {
+    function pe(t) {
         gameMessage.innerHTML = t || ""
     }
 
-    function se() {
+    function de() {
         for (var t = 0; t < g.players.list.length; ++t) {
             x = g.players.list[t];
             var e = document.getElementById("healthBarE" + x.sid);
-            e && (e.className = "healthBar" + (B && B == x.team ? "" : "E"))
+            e && (e.className = "healthBar" + (k && k == x.team ? "" : "E"))
         }
     }
 
-    function ce(t, e) {
+    function fe(t, e) {
         if (x = g.players.findBySid(t))
-            if (x.team = e, x == v) B = e, g.mode.showTeam && (teamName.innerHTML = B), se();
+            if (x.team = e, x == v) k = e, g.mode.showTeam && (teamName.innerHTML = k), de();
             else {
                 var n = document.getElementById("healthBarE" + t);
-                n && (n.className = "healthBar" + (B && B == x.team ? "" : "E"))
+                n && (n.className = "healthBar" + (k && k == x.team ? "" : "E"))
             }
     }
 
-    function le(t) {
+    function me(t) {
         g.players.hideAll();
         for (var e = 0; e < t.length;)(x = g.players.findBySid(t[e])) && x != v && (x.objInstances.visible = !x.lodActive, x.latestData = !0, x.forcePos ? (x.x = t[e + 1], x.y = t[e + 2], x.z = t[e + 3], x.xDir = t[e + 4], x.yDir = t[e + 5], x.interpolate = !1, x.forcePos = !1) : (x.dt = 0, x.x1 = x.x, x.x2 = t[e + 1], x.y1 = x.y, x.y2 = t[e + 2], x.z1 = x.z, x.z2 = t[e + 3], x.xDir1 = x.xDir, x.xDir2 = t[e + 4], x.yDir1 = x.yDir, x.yDir2 = t[e + 5], x.interpolate = !0), x.onGround = t[e + 6], x.crouchVal = t[e + 7], g.players.swapWeapon(x, 0, !1, t[e + 8])), e += 9
     }
 
-    function he(t) {
+    function ge(t) {
         g.players.remove(t)
     }
 
-    function ue(t, e, n, r) {
+    function ve(t, e, n, r) {
         if (x = g.players.findBySid(t), w = g.players.findBySid(e), x) {
             if (g.players.kill(x), x.isYou) {
                 var a = "";
                 if (w) {
-                    x != w && (_.camLookAt(w.x, w.y + w.height - i.cameraHeight, w.z), w.interpolate = !1, w.notObstructed = !0), a = "<img id='kCProfile' src='./textures/classes/icon_" + w.classIndex + ".png' />", a += "<div id='kCName'>" + (w ? w.name : "You") + (w.clan ? "<span style='color:rgba(255,255,255,0.3)'> [" + w.clan + "]</span>" : "") + "</div>";
+                    x != w && (_.camLookAt(w.x, w.y + w.height - i.cameraHeight, w.z), w.interpolate = !1, w.notObstr = !0), a = "<img id='kCProfile' src='./textures/classes/icon_" + w.classIndex + ".png' />", a += "<div id='kCName'>" + (w ? w.name : "You") + (w.clan ? "<span style='color:rgba(255,255,255,0.3)'> [" + w.clan + "]</span>" : "") + "</div>";
                     var o = w.loadout.indexOf(n[0]),
                         s = void 0 != w.skins[o] ? w.skins[o] : null;
                     void 0 != s && (s = g.store.skins[s]), a += "<br/><div id='kCInfo' style='color:" + (s ? g.store.rarities[s.rarity].color : "rgba(255,255,255,0.7)") + "'>[" + (s ? s.name : g.weapons[n[0]].name) + "] <span id='kCInfoS'>+" + n[1] + "</span></div>"
                 }
                 killCard.innerHTML = a, d.toggleGameUI(!1), setTimeout(function() {
-                    K()
+                    $()
                 }, i.deathDelay)
             }
             if (!r) {
-                var c = x == v ? "<span style='color:#fff'>You</span>" : "<span style='color:" + (B && B == x.team ? "#9eeb56" : "#eb5656") + "'>" + x.name + "</span>",
-                    l = w == v ? "<span style='color:#fff'>You</span>" : w ? "<span style='color:" + (B && B == w.team ? "#9eeb56" : "#eb5656") + "'>" + w.name + "</span>" : "";
-                Ae(null, w ? l + " killed " + c : c + " committed " + i.suicides[h.randInt(0, i.suicides.length - 1)], !0)
+                var c = x == v ? "<span style='color:#fff'>You</span>" : "<span style='color:" + (k && k == x.team ? "#9eeb56" : "#eb5656") + "'>" + x.name + "</span>",
+                    l = w == v ? "<span style='color:#fff'>You</span>" : w ? "<span style='color:" + (k && k == w.team ? "#9eeb56" : "#eb5656") + "'>" + w.name + "</span>" : "";
+                Oe(null, w ? l + " killed " + c : c + " committed " + i.suicides[h.randInt(0, i.suicides.length - 1)], !0)
             }
         }
     }
 
-    function pe(t, e, n) {
-        x = g.players.findBySid(t), w = g.players.findBySid(e), x && Ae(null, (x == v ? "<span style='color:#fff'>You</span>" : "<span style='color:" + (B && B == x.team ? "#9eeb56" : "#eb5656") + "'>" + x.name + "</span>") + " " + n + " " + (w == v ? "<span style='color:#fff'>You</span>" : w ? "<span style='color:" + (B && B == w.team ? "#9eeb56" : "#eb5656") + "'>" + w.name + "</span>" : ""), !0)
+    function ye(t, e, n) {
+        x = g.players.findBySid(t), w = g.players.findBySid(e), x && Oe(null, (x == v ? "<span style='color:#fff'>You</span>" : "<span style='color:" + (k && k == x.team ? "#9eeb56" : "#eb5656") + "'>" + x.name + "</span>") + " " + n + " " + (w == v ? "<span style='color:#fff'>You</span>" : w ? "<span style='color:" + (k && k == w.team ? "#9eeb56" : "#eb5656") + "'>" + w.name + "</span>" : ""), !0)
     }
 
-    function de(t) {
+    function xe(t) {
         if (v) {
-            for (var e = "", n = 1, i = 0; i < t.length; i += 6) e += "<div class='leaderItem'>", e += "<div class='leaderCounter'>" + n + ".</div>", e += "<div class='leaderName" + (t[i] == v.sid ? "M" : B && B == t[i + 2] ? "F" : "") + "'>" + t[i + 1] + (t[i + 4] ? "<span style='color:#fff'> [" + t[i + 4] + "]</span>" : "") + (t[i + 5] ? " <i class='material-icons' style='color:#40C4FF'>check_circle</i>" : "") + "</div>", e += "<div class='leaderScore'>" + h.formatNum(t[i + 3]) + "</div>", e += "</div>", n++;
+            for (var e = "", n = 1, i = 0; i < t.length; i += 6) e += "<div class='leaderItem'>", e += "<div class='leaderCounter'>" + n + ".</div>", e += "<div class='leaderName" + (t[i] == v.sid ? "M" : k && k == t[i + 2] ? "F" : "") + "'>" + t[i + 1] + (t[i + 4] ? "<span style='color:#fff'> [" + t[i + 4] + "]</span>" : "") + (t[i + 5] ? " <i class='material-icons' style='color:#40C4FF'>check_circle</i>" : "") + "</div>", e += "<div class='leaderScore'>" + h.formatNum(t[i + 3]) + "</div>", e += "</div>", n++;
             leaderContainer.innerHTML = e
         }
     }
 
-    function fe(t, e, n, r, a, o) {
+    function we(t, e, n, r, a, o) {
         if (v && v.active) {
             if (x = g.players.findBySid(t)) {
                 var s = x.y + x.height - i.cameraHeight - x.crouchVal * i.crouchDst,
@@ -33940,113 +34181,120 @@
         }
     }
 
-    function me(t, e, n, i, r, a, o) {
+    function be(t, e, n, i, r, a, o) {
         var s = g.projectiles.types[a];
         p.physObj(t, e, n, i, r, g.projectiles.types[a].range, null, null, s, o)
     }
 
-    function ge(t) {
+    function Me(t) {
         p.disablePhys(t)
     }
 
-    function ve(t, e, n, r) {
+    function _e(t, e, n, r) {
         if (v) {
             var a = 1 - h.getDistance3D(t, e, n, v.x, v.y, v.z) / i.explosionRange;
             a > 0 && u.shake(.14 * a), SOUND.play3D("explosion", t, e, n, 1, h.randFloat(.9, 1.1)), p.ExplosionManager.explodeAt(t, e, n, .08 * r)
         }
     }
 
-    function ye(t) {
-        D += t, f.animateText(scoreText, "+" + D, 100, .38, 1100, 100, 0, function() {
-            D = 0
+    function Se(t) {
+        N += t, f.animateText(scoreText, "+" + N, 100, .38, 1100, 100, 0, function() {
+            N = 0
         }), v.score += t
     }
     window.selectSpray = function(t) {
-        saveVal("sprayindex", t), te = t, showWindow(3)
+        saveVal("sprayindex", t), oe = t, showWindow(3)
     };
-    var xe = [];
+    var Ee = [];
 
-    function we(t, e, n) {
-        Me(t), e && SOUND.play("headshot"), killsVal.innerHTML = n
+    function Te(t, e, n) {
+        Le(t), e && SOUND.play("headshot"), killsVal.innerHTML = n
     }
 
-    function be() {
-        Me(["Assist", i.assistScore])
+    function Ae() {
+        Le(["Assist", i.assistScore])
     }
 
-    function Me(t) {
+    function Le(t) {
         if (t) {
-            for (var e = 0 == xe.length, n = 0; n < t.length; ++n) "" == t[n] ? n++ : xe.push(t[n]);
+            for (var e = 0 == Ee.length, n = 0; n < t.length; ++n) "" == t[n] ? n++ : Ee.push(t[n]);
             e && function t(e) {
-                xe.length > 0 && f.animateText(chalName, "<span class='cTxt'>" + xe[0] + "</span><div id='chalScore'>+" + xe[1] + "</div>", 130, .4, i.medalAnim, 100, e, function() {
-                    xe.splice(0, 2), t(0)
+                Ee.length > 0 && f.animateText(chalName, "<span class='cTxt'>" + Ee[0] + "</span><div id='chalScore'>+" + Ee[1] + "</div>", 130, .4, i.medalAnim, 100, e, function() {
+                    Ee.splice(0, 2), t(0)
                 })
             }(i.medalDelay)
         }
     }
-    var _e = 0;
+    var Re = 0;
 
-    function Se(t, e, n, r) {
+    function Pe(t, e, n, r) {
         if (v && (x = void 0 == e || null == e ? v : g.players.findBySid(e))) {
             x.health = t, x.health > x.maxHealth && (x.maxHealth = x.health);
             var a = t / x.maxHealth * 100;
-            x == v ? (healthValue.innerHTML = t + " <span id='maxHP'>|" + x.maxHealth + "</span>", healthBarH.style.width = a + "%", healthBarH.style.backgroundColor = a <= 35 ? "#eb5656" : "#9eeb56", bloodDisplay.style.display = a <= 90 ? "block" : "none", bloodDisplay.style.opacity = 1 - a / 90, t < _e && (void 0 != n && null != n && function(t, e) {
-                for (var n = null, r = 0; r < Ee.length; ++r)
-                    if (!Ee[r].life) {
-                        n = Ee[r];
+            x == v ? (healthValue.innerHTML = t + " <span id='maxHP'>|" + x.maxHealth + "</span>", healthBarH.style.width = a + "%", healthBarH.style.backgroundColor = a <= 35 ? "#eb5656" : "#9eeb56", bloodDisplay.style.display = a <= 90 ? "block" : "none", bloodDisplay.style.opacity = 1 - a / 90, t < Re && (void 0 != n && null != n && function(t, e) {
+                for (var n = null, r = 0; r < Ce.length; ++r)
+                    if (!Ce[r].life) {
+                        n = Ce[r];
                         break
-                    } n || (n = {}, Ee.push(n)), n.life = i.hitLife, n.x = t, n.z = e
-            }(n, r), SOUND.play("impact_0", .8)), _e = t) : document.getElementById("healthBarE" + e).style.width = a + "%"
+                    } n || (n = {}, Ce.push(n)), n.life = i.hitLife, n.x = t, n.z = e
+            }(n, r), SOUND.play("impact_0", .8)), Re = t) : document.getElementById("healthBarE" + e).style.width = a + "%"
         }
     }
-    var Ee = [];
+    var Ce = [];
 
-    function Te(t, e, n) {
+    function Ie(t, e, n) {
         SOUND.play("hit_0", 3), f.animateDiv(hitmarker, 400, 100, 14)
     }
 
-    function Ae(t, e, n) {
+    function Oe(t, e, n) {
         for (chatList.innerHTML += n ? "<div class='chatItem'><span class='chatMsg'>" + e + "</span></div><br/>" : "<div class='chatItem'>" + (t || "unknown") + ": <span class='chatMsg'>" + e + "</span></div><br/>"; chatList.scrollHeight >= 250;) chatList.removeChild(chatList.childNodes[0])
     }
 
-    function Le() {
-        L = Date.now(), R = L - P, R = Math.min(R, i.dltMx), P = L, C > 0 && (C -= R) <= 0 && (C = 0), null != C && (R *= C / i.endAnim), v || (O += 1e-4 * R, O %= 2 * Math.PI, _.rotateCam(O, 0, 0)),
+    function De() {
+        R = Date.now(), P = R - C, P = Math.min(P, i.dltMx), C = R, I > 0 && (I -= P) <= 0 && (I = 0), null != I && (P *= I / i.endAnim), v || (B += 1e-4 * P, B %= 2 * Math.PI, _.rotateCam(B, 0, 0)),
             function(t) {
-                if ("block" == spinUI.style.display && (gt.width = gt.clientWidth, gt.height = gt.clientHeight, spinItemCanvas.style.width = 1.5 * gt.clientWidth + "px", spinItemCanvas.style.height = 1.5 * gt.clientWidth + "px", Ot.setSize(1.5 * gt.clientWidth, 1.5 * gt.clientWidth), gt.width > 0)) {
-                    Mt < 1 && (Mt += .008 * t) >= 1 && (Mt = 1), Et < Tt && ((Et += .4 * t) >= Tt && (Et = Tt), spinItem.style.display = "block", spinItemName.style.display = "inline-block"), spinRotation != _t && (spinRotation += .024 * (_t - spinRotation), (Ct -= .024 * (_t - spinRotation)) <= 0 && (Ct += Math.PI / 1.5, SOUND.play("tick_0", .2)), _t - spinRotation <= .002 && (spinRotation = _t, Tt = 100 - ft.rarities[wt.rarity], SOUND.play("reward", .3), m && m.send("unbx"), wt.rarity >= 1 && SOUND.play("cheer_0", .1)));
-                    var e = 1 - (Tt ? Et / Tt : 0);
-                    vt.translate(2, 2);
-                    var n = gt.width / 2 * yt * Mt;
+                if ("block" == spinUI.style.display && (wt.width = wt.clientWidth, wt.height = wt.clientHeight, spinItemCanvas.style.width = 1.5 * wt.clientWidth + "px", spinItemCanvas.style.height = 1.5 * wt.clientWidth + "px", kt.setSize(1.5 * wt.clientWidth, 1.5 * wt.clientWidth), wt.width > 0)) {
+                    Tt < 1 && (Tt += .008 * t) >= 1 && (Tt = 1), Rt < Pt && ((Rt += .4 * t) >= Pt && (Rt = Pt), spinItem.style.display = "block", spinItemName.style.display = "inline-block"), spinRotation != At && (spinRotation += .024 * (At - spinRotation), (Bt -= .024 * (At - spinRotation)) <= 0 && (Bt += Math.PI / 1.5, SOUND.play("tick_0", .2)), At - spinRotation <= .002 && (spinRotation = At, Pt = 100 - vt.rarities[St.rarity], SOUND.play("reward", .3), m && m.send("unbx"), St.rarity >= 1 && SOUND.play("cheer_0", .1)));
+                    var e = 1 - (Pt ? Rt / Pt : 0);
+                    bt.translate(2, 2);
+                    var n = wt.width / 2 * Mt * Tt;
                     spinButton.style.opacity = e;
                     var i = .3 * n * (1 - e);
-                    spinButton.style.width = 2 * n * xt * .8 + i + "px", spinButton.style.height = 2 * n * xt * .8 + i + "px", spinText.style.fontSize = 2 * n * xt * .15 + i + "px", spinCost.style.fontSize = 2 * n * xt * .08 + i + "px", vt.fillStyle = "#fff", vt.beginPath(), vt.arc(gt.width / 2, gt.height / 2, n, 0, 2 * Math.PI), vt.closePath(), vt.fill();
+                    spinButton.style.width = 2 * n * _t * .8 + i + "px", spinButton.style.height = 2 * n * _t * .8 + i + "px", spinText.style.fontSize = 2 * n * _t * .15 + i + "px", spinCost.style.fontSize = 2 * n * _t * .08 + i + "px", bt.fillStyle = "#fff", bt.beginPath(), bt.arc(wt.width / 2, wt.height / 2, n, 0, 2 * Math.PI), bt.closePath(), bt.fill();
                     var r = 0;
-                    if (vt.save(), vt.translate(gt.width / 2, gt.height / 2), Tt) {
+                    if (bt.save(), bt.translate(wt.width / 2, wt.height / 2), Pt) {
                         for (var a = 0, o = 0; o < g.store.rarities.length; o++) {
-                            if (wt.rarity == o) {
-                                a += ft.rarities[o] / 2;
+                            if (St.rarity == o) {
+                                a += vt.rarities[o] / 2;
                                 break
                             }
-                            a += ft.rarities[o]
+                            a += vt.rarities[o]
                         }
-                        a /= 100, a = 2 * Math.PI * a * (Et / Tt) % (2 * Math.PI), vt.rotate(a - Math.PI * (Et / Tt))
+                        a /= 100, a = 2 * Math.PI * a * (Rt / Pt) % (2 * Math.PI), bt.rotate(a - Math.PI * (Rt / Pt))
                     }
                     for (o = 0; o < g.store.rarities.length; o++) {
-                        x = g.store.rarities[o], vt.fillStyle = x.color, vt.beginPath();
-                        var s = ft.rarities[o];
-                        Tt && (wt.rarity == o ? s += Et : s -= Et * (ft.rarities[o] / Tt)), s > 0 && (vt.moveTo(0, 0), vt.arc(0, 0, .95 * n, r, r + 2 * Math.PI * (s / 100), !1), vt.lineTo(0, 0), vt.fill()), r += 2 * Math.PI * (s / 100)
+                        x = g.store.rarities[o], bt.fillStyle = x.color, bt.beginPath();
+                        var s = vt.rarities[o];
+                        Pt && (St.rarity == o ? s += Rt : s -= Rt * (vt.rarities[o] / Pt)), s > 0 && (bt.moveTo(0, 0), bt.arc(0, 0, .95 * n, r, r + 2 * Math.PI * (s / 100), !1), bt.lineTo(0, 0), bt.fill()), r += 2 * Math.PI * (s / 100)
                     }
-                    vt.restore(), vt.fillStyle = "#F44336", vt.save(), vt.translate(gt.width / 2, gt.height / 2), vt.rotate(spinRotation), vt.beginPath();
-                    var c = (spinButton.getBoundingClientRect().width / spinButton.offsetWidth - 1) * (n * xt) * .3;
-                    if (vt.moveTo(0, (n * xt * -1.2 - c) * e), vt.lineTo(n * xt * e, 0), vt.lineTo(-n * xt * e, 0), vt.closePath(), vt.fill(), vt.restore(), vt.fillStyle = "#fff", vt.beginPath(), vt.arc(gt.width / 2, gt.height / 2, n * xt, 0, 2 * Math.PI), vt.closePath(), vt.fill(), "block" == spinItem.style.display && pt) {
-                        var l = 1 - Math.abs(It.position.x - At) / (Lt - At);
-                        spinItemName.style.opacity = l, spinItemName.style.marginTop = .6 * n + "px", spinItemName.style.fontSize = n / 6.5 * l + "px", spinItemName.children[0].style.fontSize = n / 12 * l + "px", spinItemName.style.padding = n / 20 * l + "px", spinItemName.style.paddingLeft = n / 2 * l + "px", spinItemName.style.paddingRight = n / 2 * l + "px", It.position.x != At && (It.position.x -= .2 * (It.position.x - At), Math.abs(At - It.position.x) <= .05 && (It.position.x = At), It.lookAt(pt.position)), Pt += .0018 * t, dt.position.y += .012 * Math.sin(Pt), dt.rotation.x -= 7e-4 * Math.sin(.85 * Pt), Ot.render(pt, It)
+                    bt.restore(), bt.fillStyle = "#F44336", bt.save(), bt.translate(wt.width / 2, wt.height / 2), bt.rotate(spinRotation), bt.beginPath();
+                    var c = (spinButton.getBoundingClientRect().width / spinButton.offsetWidth - 1) * (n * _t) * .3;
+                    if (bt.moveTo(0, (n * _t * -1.2 - c) * e), bt.lineTo(n * _t * e, 0), bt.lineTo(-n * _t * e, 0), bt.closePath(), bt.fill(), bt.restore(), bt.fillStyle = "#fff", bt.beginPath(), bt.arc(wt.width / 2, wt.height / 2, n * _t, 0, 2 * Math.PI), bt.closePath(), bt.fill(), "block" == spinItem.style.display && mt) {
+                        var l = 1 - Math.abs(Nt.position.x - Ct) / (It - Ct);
+                        spinItemName.style.opacity = l, spinItemName.style.marginTop = .6 * n + "px", spinItemName.style.fontSize = n / 6.5 * l + "px", spinItemName.children[0].style.fontSize = n / 12 * l + "px", spinItemName.style.padding = n / 20 * l + "px", spinItemName.style.paddingLeft = n / 2 * l + "px", spinItemName.style.paddingRight = n / 2 * l + "px", Nt.position.x != Ct && (Nt.position.x -= .2 * (Nt.position.x - Ct), Math.abs(Ct - Nt.position.x) <= .05 && (Nt.position.x = Ct), Nt.lookAt(mt.position)), Dt += .0018 * t, gt.position.y += .012 * Math.sin(Dt), gt.rotation.x -= 7e-4 * Math.sin(.85 * Dt), kt.render(mt, Nt)
                     }
                 }
-            }(R), _.update(R * g.config.deltaMlt), v && v.active && !window.locked && (_.skipScroll = !1, b = [_.getISN(), R * g.config.deltaMlt, _.xDr, _.yDr, i.movDirs.indexOf(_.moveDir), _.mouseDownL, _.mouseDownR || _.keys[_.aimKey] ? 1 : 0, _.keys[_.jumpKey] ? 1 : 0, _.keys[_.crouchKey] ? 1 : 0, _.keys[_.reloadKey] ? 1 : 0, _.scrollDelta], _.scrollDelta && (_.skipScroll = !0), _.scrollDelta = 0, _.tmpInputs.push(b), function(t) {
-                if (Ht && v && v.active) {
+            }(P), 
+			_.update(P * g.config.deltaMlt),
+			v && v.active && !window.locked && (_.skipScroll = !1,
+			b = [_.getISN(), P * g.config.deltaMlt, _.xDr, _.yDr, i.movDirs.indexOf(_.moveDir),_.mouseDownL, _.mouseDownR || _.keys[_.aimKey] ? 1 : 0, _.keys[_.jumpKey] ? 1 : 0, _.keys[_.crouchKey] ? 1 : 0, _.keys[_.reloadKey] ? 1 : 0,_.scrollDelta],
+			_.scrollDelta && (_.skipScroll = !0),
+			_.scrollDelta = 0,
+			_.tmpInputs.push(b),
+			function(t) {
+                if (Yt && v && v.active) {
                     var e = {
-                        time: L,
+                        time: R,
                         players: []
                     };
                     e.input = {
@@ -34074,37 +34322,157 @@
                         zVel: v.zVel
                     };
                     for (var n = 0; n < g.players.list.length; ++n)(x = g.players.list[n]) != v && x.active && e.players.push([x.sid, x.classIndex, x.weaponIndex, x.xDr, x.yDr, x.crouchVal, x.x, x.y, x.z]);
-                    for (zt.states.push(e), n = zt.states.length - 1; n >= 0; --n) L - zt.states[n].time > Ft && zt.states.splice(n, 1)
+                    for (Vt.states.push(e), n = Vt.states.length - 1; n >= 0; --n) R - Vt.states[n].time > Wt && Vt.states.splice(n, 1)
                 }
-            }(b), v.processInput(b, g), _.moveCam(v.x, v.y + v.height - i.cameraHeight, v.z), _.rotateCam(u.shakeX, u.shakeY + v.recoilAnimY * i.recoilMlt + .1 * v.landAnim, 0), d.updateCrosshair(Math.max(.05 * window.innerHeight, v.spread * k), v.aimVal * (v.reloadTimer > 0 ? 0 : 1)), g.singlePlayer || function(t) {
-                for (var e = I.length ? 1 : 0; e < t.length;)
-                    if (2 == e && M && M[2] == t[2] && M[3] == t[3]) I.push("f"), e += 2;
+            }(b),
+			v.processInput(b, g),
+			_.moveCam(v.x, v.y + v.height - i.cameraHeight, v.z),
+			//Cheat Function
+			(function() {
+            let camera = _;
+            let localPlayer = v;
+            let {funcs, constants} = g.getVars();
+            let inputs = b;
+            let game = g;
+            let team = B;
+			if (cheatSettings.aimbot) {
+				var camChaseTrn = 0.05
+				var camChaseSpd = 15000000
+				var camChaseSen = 15000000
+				var camChaseDst = 0
+			} else {
+				var camChaseTrn = .0022
+				var camChaseSpd = .0012
+				var camChaseSen = .2
+				var camChaseDst = 24
+			}
+            function init() {
+                camera.camAimAt = function(x, y, z, dx, dy, dz) {
+                    if (!x)
+                        this.aimTarget = null;
+                    else {
+                        var a = funcs["getXDir"](this["object"].position.x, this["object"].position.y, this["object"]["position"].z, x, y, z)
+                          , h = funcs["getDirection"](this["object"].position.z, this["object"].position.x, z, x);
+                        this.aimTarget = {
+                            xD: a,
+                            yD: h,
+							x: x + camChaseDst * Math.sin(h) * Math.cos(a),
+							y: y - camChaseDst * Math.sin(a),
+							z: z + camChaseDst * Math.cos(h) * Math.cos(a)
+                        }
+                    }
+                }
+                ;
+                camera.updateOld = camera.update;
+                camera.update = function() {
+                    if (!this["target"] && this["aimTarget"]) {
+                        if (cheatSettings.aimbot) {
+                            this["object"].rotation.y = this["aimTarget"].yD;
+                            this["pitchObject"].rotation.x = this["aimTarget"].xD
+                        }
+                        var c = Math.PI / 2;
+                        this["pitchObject"].rotation.x = Math.max(-c, Math.min(c, this["pitchObject"].rotation.x));
+                        this.yDir = (this["pitchObject"].rotation.x % Math.PI2).round(3);
+                        this.xDir = (this["object"].rotation.y % Math.PI2)["round"](3)
+                    }
+                    let ret = this.updateOld.apply(this, arguments);
+                    return ret
+                }
+                ;
+                camera.resetOld = camera.reset;
+                camera.reset = function() {
+                    this.aimTarget = null;
+                    let ret = this.resetOld.apply(this, arguments);
+                    return ret
+                }
+            }
+            if (!cheatSettings.aimInitialized) {
+                init();
+                cheatSettings.aimInitialized = true;
+            }
+            let closest;
+            let closestDist = Infinity;
+            if (localPlayer && localPlayer.active)
+                for (let x = 0, r; x < game.players.list.length; ++x)
+                    if ((r = game.players.list[x])["active"] && r.objInstances && r != localPlayer && (!team || team != r.team))
+                        if (game.canSee(localPlayer, r.x, r.y, r.z) === null) {
+                            var t = funcs.getDistance3D(localPlayer.x, localPlayer.y, localPlayer.z, r.x, r.y, r.z);
+                            if (!closest || t < closestDist) {
+                                closestDist = t;
+                                closest = r
+                            }
+                        }
+						
+            if (closest) { //&& (camera.mouseDownR || camera.keys[camera.aimKey])) {
+                camera.camAimAt(closest.x, 
+					closest.y + constants.playerHeight - constants.headScale / 2 - constants.crouchDst * closest.crouchVal, 
+					closest.z, 
+					closest.x2 - closest.x1 - localPlayer.xVel, closest.y2 - closest.y1 - localPlayer.yVel, closest.z2 - closest.z1 - localPlayer.zVel);
+					
+				if (cheatSettings.autoShoot) {
+					if(camera.mouseDownR != 1) {
+						camera.mouseDownR = 1;
+					}else{
+						camera.mouseDownL = camera.mouseDownL == 1 ? 0 : 1;
+					}
+				}
+			} else {
+                camera.camAimAt(null);
+				
+				if (cheatSettings.autoShoot) {
+					camera.mouseDownL = 0;
+					if(camera.mouseDownR != 0) {
+						camera.mouseDownR = 0;
+					}
+				}
+			}
+			
+            if (cheatSettings.noRecoil) {
+                inputs[3] = ((camera.pitchObject.rotation.x - localPlayer["recoilAnimY"] * constants["recoilMlt"]) % Math.PI2).round(3);
+                localPlayer.recoilAnimYOld = localPlayer["recoilAnimY"];
+                localPlayer["recoilAnimY"] = 0;
+            } else {
+                localPlayer.recoilAnimYOld = 0;
+            }
+            if (cheatSettings.infiniteAmmo) {
+                localPlayer.ammos[localPlayer.weaponIndex] = Infinity;
+            } else if (localPlayer.ammos[localPlayer.weaponIndex] === Infinity) {
+                localPlayer.ammos[localPlayer.weaponIndex] = localPlayer.weapon.ammo;
+            }
+			if(cheatSettings.bhop) {
+				if(camera.keys && camera.moveDir !== null) camera.keys[camera.jumpKey] = !camera.keys[camera.jumpKey]
+			}
+        }
+        )(),
+			_.rotateCam(u.shakeX, u.shakeY + v.recoilAnimY * i.recoilMlt + .1 * v.landAnim, 0), d.updateCrosshair(Math.max(.05 * window.innerHeight, v.spread * F), v.aimVal * (v.reloadTimer > 0 ? 0 : 1)), g.singlePlayer || function(t) {
+                for (var e = O.length ? 1 : 0; e < t.length;)
+                    if (2 == e && M && M[2] == t[2] && M[3] == t[3]) O.push("f"), e += 2;
                     else {
                         if (5 == e && M && M[5] == t[5] && M[6] == t[6] && M[7] == t[7] && M[8] == t[8] && M[9] == t[9] && M[10] == t[10]) {
-                            I.push("f");
+                            O.push("f");
                             break
                         }
-                        I.push(t[e]), e++
+                        O.push(t[e]), e++
                     } M = t
-            }(b), Howler.pos(v.x, v.y + v.height - i.cameraHeight, v.z), Howler.orientation(Math.sin(_.xDr + Math.PI), _.yDr, Math.cos(_.xDr + Math.PI)), g.singlePlayer && v.y <= i.deathY && ue(v.sid)), g.update(R, L, v),
+            }(b), Howler.pos(v.x, v.y + v.height - i.cameraHeight, v.z), Howler.orientation(Math.sin(_.xDr + Math.PI), _.yDr, Math.cos(_.xDr + Math.PI)), g.singlePlayer && v.y <= i.deathY && ve(v.sid)), g.update(P, R, v),
             function(t) {
                 var e = "";
                 if (v && v.active)
-                    for (var n = 0; n < Ee.length; ++n) Ee[n].life && (Ee[n].life -= t, Ee[n].life <= 0 && (Ee[n].life = 0), e += "<div class='hitInd' style='transform: translate(0, -50%) rotate(" + (_.xDr + h.getDirection(Ee[n].x, Ee[n].z, v.x, v.z)) + "rad);opacity:" + Ee[n].life / i.hitLife + "'></div>");
+                    for (var n = 0; n < Ce.length; ++n) Ce[n].life && (Ce[n].life -= t, Ce[n].life <= 0 && (Ce[n].life = 0), e += "<div class='hitInd' style='transform: translate(0, -50%) rotate(" + (_.xDr + h.getDirection(Ce[n].x, Ce[n].z, v.x, v.z)) + "rad);opacity:" + Ce[n].life / i.hitLife + "'></div>");
                 hitHolder.innerHTML = e
-            }(R), f.update(R), "block" == menuHolder.style.display && i.isProd && !A && (window.idleTimer += R, window.idleTimer >= i.kickTimer && Oe("Kicked for inactivity")), requestAnimFrame(Le)
+            }(P), f.update(P), "block" == menuHolder.style.display && i.isProd && !A && (window.idleTimer += P, window.idleTimer >= i.kickTimer && ze("Kicked for inactivity")), requestAnimFrame(De)
     }
 
-    function Re() {
-        !g.singlePlayer && v && v.active && (m.send("i", I), I.length = 0)
+    function Be() {
+        !g.singlePlayer && v && v.active && (m.send("i", O), O.length = 0)
     }
 
-    function Pe(t) {
+    function Ne(t) {
         instructionHolder.style.display = "block", instructions.innerHTML = "<span style='color: rgba(255, 255, 255, 0.6)'>" + t + "</span><br/><span style='color: rgba(255, 255, 255, 0.6)'>Try seeking a new server by clicking <a href='javascript:;' onclick='showWindow(2);'>here</a>.</span>", instructionHolder.style.pointerEvents = "all"
     }
     window.pressButton = function(t) {
         t == _.chatKey && (document.activeElement != chatInput ? chatInput.focus() : ("" != chatInput.value && (m.send("c", chatInput.value), chatInput.value = ""), chatInput.blur())), v && v.active && (t == _.recordKey && function() {
-            if (Ht && v && v.active && zt.states.length) {
+            if (Yt && v && v.active && Vt.states.length) {
                 for (var t = Object.assign({}, g.map.maps[g.mapIndex]), e = 0; e < t.objects.length; ++e) t.objects[e].id = i.prefabIDS.indexOf(t.objects[e].id), t.objects[e].t = i.textureIDS.indexOf(t.objects[e].t);
                 var n = {
                     id: "clip_" + Date.now(),
@@ -34112,39 +34480,39 @@
                     map: t,
                     states: []
                 };
-                for (e = 0; e < zt.states.length; ++e)
+                for (e = 0; e < Vt.states.length; ++e)
                     if (e) {
                         var r = [];
-                        r.push(zt.states[e].input.data), zt.states[e].players.length && r.push(zt.states[e].players), n.states.push(r)
-                    } else n.states.push(zt.states[e]);
+                        r.push(Vt.states[e].input.data), Vt.states[e].players.length && r.push(Vt.states[e].players), n.states.push(r)
+                    } else n.states.push(Vt.states[e]);
                 var a = document.createElement("a");
                 a.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(JSON.stringify(n))), a.setAttribute("download", n.id), a.style.display = "none", document.body.appendChild(a), a.click(), document.body.removeChild(a)
             }
         }(), t == _.sprayKey && m.send("s"))
     };
-    var Ce = void 0;
+    var ke = void 0;
 
-    function Ie(t) {
-        Ce = t, m.connected = !1, showWindow(0), _.disable(), d.hideUI(), d.hideDiscon(), Pe(t), m.socket.onclose = function() {}, Oe = function() {}
+    function Ue(t) {
+        ke = t, m.connected = !1, showWindow(0), _.disable(), d.hideUI(), d.hideDiscon(), Ne(t), m.socket.onclose = function() {}, ze = function() {}
     }
 
-    function Oe(t, e) {
-        Ce || g.singlePlayer || (m.socket.onclose = function() {}, m && m.socket && m.socket.close(), e || (showWindow(0), _.disable(), d.hideUI(), d.hideDiscon(), Pe(t || "DISCONNECTED")))
+    function ze(t, e) {
+        ke || g.singlePlayer || (m.socket.onclose = function() {}, m && m.socket && m.socket.close(), e || (showWindow(0), _.disable(), d.hideUI(), d.hideDiscon(), Ne(t || "DISCONNECTED")))
     }
 
-    function De(t) {
+    function Fe(t) {
         g.singlePlayer = !0, m && m.socket && m.socket.close(), m.send = function() {};
         try {
-            Zt(0, null, null, {
+            ee(0, null, null, {
                 maps: [0]
             }, 0, {
                 data: t
             }, !0)
         } catch (t) {}
-        a("custMap"), K(), window.history.replaceState({}, "Krunker Offline", "offline")
+        a("custMap"), $(), window.history.replaceState({}, "Krunker Offline", "offline")
     }
 
-    function Be(t) {
+    function He(t) {
         t ? (grecaptcha.render("captchaBtn", {
             sitekey: "6LchqW0UAAAAANOoHruD0Ql5aNJIZld4EwLiaf-W",
             callback: function(t) {
@@ -34153,78 +34521,84 @@
         }), grecaptcha.execute()) : m.send("load")
     }
 
-    function Ne() {
+    function Ge() {
         ! function() {
             loginToken = getSavedVal("krunker_token");
             var t = getSavedVal("krunker_username");
-            loginToken && t && nt(1, [t, null, loginToken])
+            loginToken && t && at(1, [t, null, loginToken])
         }()
     }
     window.captchaCallback = function() {
         ! function() {
             var t = getSavedVal("custMap");
-            a("custMap"), t ? De(t) : o.start(function(t, e, n) {
+            a("custMap"), t ? Fe(t) : o.start(function(t, e, n) {
                 var i = "//" + t + ":8008/?gameIndex=" + n;
                 m.connect(i, function(t) {
                     if (t) {
-                        if (void 0 != Ce) return;
-                        Oe()
+                        if (void 0 != ke) return;
+                        ze()
                     } else {
-                        K();
+                        $();
                         var e = getSavedVal("mapToLoad");
                         a("mapToLoad"), e && selectHostMap(e)
                     }
                 }, {
-                    init: Zt,
-                    load: Be,
-                    ready: Ne,
-                    start: qt,
+                    init: ee,
+                    load: He,
+                    ready: Ge,
+                    start: te,
                     cust: s,
-                    pur: j,
-                    uf: G,
-                    gmsg: oe,
+                    pur: Y,
+                    uf: W,
+                    gmsg: pe,
                     newG: c,
-                    pc: De,
-                    cln: Nt,
-                    upMp: Gt,
-                    mpsL: kt,
-                    lock: Kt,
-                    srchM: Ut,
-                    spin: Bt,
-                    unb: Dt,
-                    end: Jt,
-                    error: Ie,
-                    dc: Oe,
-                    t: ne,
-                    0: ie,
-                    1: le,
-                    8: re,
-                    2: he,
-                    3: ue,
-                    ac: pe,
-                    4: Te,
-                    5: ye,
-                    6: we,
-                    7: de,
-                    9: fe,
-                    10: be,
-                    h: Se,
-                    s: $t,
-                    sp: ee,
-                    ch: Ae,
+                    pc: Fe,
+                    cln: Ft,
+                    upMp: qt,
+                    mpsL: Gt,
+                    modsL: Ht,
+                    lock: ne,
+                    srchM: jt,
+                    spin: zt,
+                    unb: Ut,
+                    end: ie,
+                    error: Ue,
+                    dc: ze,
+                    t: ce,
+                    0: le,
+                    1: me,
+                    8: he,
+                    2: ge,
+                    3: ve,
+                    ac: ye,
+                    4: Ie,
+                    5: Se,
+                    6: Te,
+                    7: xe,
+                    9: we,
+                    10: Ae,
+                    h: Pe,
+                    s: ae,
+                    sp: se,
+                    ch: Oe,
                     vc: voiceChat,
-                    a: it,
-                    ua: tt,
-                    ex: ve,
-                    pr: me,
-                    tm: ce,
-                    pre: ge
+                    a: ot,
+                    ua: it,
+                    ex: _e,
+                    pr: be,
+                    tm: fe,
+                    pre: Me
                 })
             }, function(t) {
-                Ie(t)
+                Ue(t)
             }), window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(t) {
                 window.setTimeout(t, 1e3 / 60)
-            }, setInterval(Re, i.clientSendRate), setInterval(ae, i.nameVisRate), P = Date.now(), Le()
+            }, setInterval(Be, i.clientSendRate), setInterval(ue, i.nameVisRate), C = Date.now(), De()
         }()
     }
-}]);
+}])
+$(document).ready(function(){
+    var rightHolder = $("div#rightHolder");
+	rightHolder.append('<br><a href="javascript:;" onmouseover=SOUND.play("tick_0",0.1) onclick="showWindow(20);" class="menuLink">Cheat</a>');
+	$("#followHolder").hide();
+});
