@@ -1,5 +1,6 @@
 # Krunker Cheat Update 0.9.9.94
-Log Update
+
+## Update Logs
 ```
 fix game check ban & send ban
 fix aimbot
