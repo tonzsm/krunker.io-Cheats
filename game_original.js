@@ -84,7 +84,7 @@
     }
 }, function(t, e, n) {
     (function(e) {
-        t.exports.isProd = void 0 !== e && !!e.env.IS_PROD || "undefined" != typeof location && "127.0.0.1" !== location.hostname && "localhost" !== location.hostname && !location.hostname.startsWith("192.168."), t.exports.enableHttps = t.exports.isProd, t.exports.serverTickRate = 1e3 / 30, t.exports.serverSendRate = 100, t.exports.clientSendRate = 1e3 / 30, t.exports.updateBids = 3e5, t.exports.dltMx = Math.round(1e3 / 30), t.exports.maxPlayers = 8, t.exports.serverSpread = 3, t.exports.minServerSpace = 3, t.exports.gamesPerServer = 5, t.exports.serverBrowserRate = 1e4, t.exports.maxPlayersTotal = t.exports.maxPlayers * t.exports.gamesPerServer + 46, t.exports.kickTimer = 9e4, t.exports.endTimer = 2e4, t.exports.endAnim = 5e3, t.exports.serverConfig = [{
+        t.exports.isProd = void 0 !== e && !!e.env.IS_PROD || "undefined" != typeof location && "127.0.0.1" !== location.hostname && "localhost" !== location.hostname && !location.hostname.startsWith("192.168."), t.exports.enableHttps = t.exports.isProd, t.exports.serverTickRate = 1e3 / 30, t.exports.serverSendRate = 100, t.exports.clientSendRate = 1e3 / 30, t.exports.dltMx = Math.round(1e3 / 30), t.exports.maxPlayers = 8, t.exports.serverSpread = 3, t.exports.minServerSpace = 3, t.exports.gamesPerServer = 5, t.exports.serverBrowserRate = 1e4, t.exports.maxPlayersTotal = t.exports.maxPlayers * t.exports.gamesPerServer + 46, t.exports.kickTimer = 9e4, t.exports.endTimer = 2e4, t.exports.endAnim = 5e3, t.exports.serverConfig = [{
             name: "Players",
             varN: "maxPlayers",
             def: 2,
@@ -147,7 +147,7 @@
             name: "Hide Nametags",
             varN: "nameTags",
             bool: !0
-        }], t.exports.prefabIDS = ["CUBE", "CRATE", "BARREL", "LADDER", "PLANE", "SPAWN_POINT", "CAMERA_POSITION", "VEHICLE", "STACK", "RAMP", "SCORE_ZONE", "BILLBOARD", "DEATH_ZONE"], t.exports.textureIDS = ["WALL", "DIRT", "FLOOR", "GRID", "GREY", "DEFAULT", "ROOF", "FLAG"], t.exports.objectLimit = 2500, t.exports.objectLimitF = 5e3, t.exports.spawnLimit = 15, t.exports.gravity = 15e-5, t.exports.deathY = -100, t.exports.skyScale = 18e3, t.exports.shadowDst = 1200, t.exports.shadowRes = 1024, t.exports.shadowOff = .004, t.exports.lightDistance = 500, t.exports.cornerPad = 1, t.exports.cornerScl = 2.5, t.exports.cornerH = 7, t.exports.wallH = 5, t.exports.wallW = .8, t.exports.crateScale = 6, t.exports.stackScale = 6, t.exports.barrelScale = 4, t.exports.vehicleScale = 20, t.exports.barrelMlt = 1.5, t.exports.ladderWidth = 3.2, t.exports.ladderScale = .5, t.exports.terrainGrid = 8, t.exports.otherSoundMlt = .55, t.exports.maxParticles = 100, t.exports.explosionRange = 200, t.exports.chatMaxLength = 70, t.exports.chatInterval = 800, t.exports.voiceChatInterval = 2e3, t.exports.voiceChatMaxLength = 5, t.exports.movDirs = [];
+        }], t.exports.prefabIDS = ["CUBE", "CRATE", "BARREL", "LADDER", "PLANE", "SPAWN_POINT", "CAMERA_POSITION", "VEHICLE", "STACK", "RAMP", "SCORE_ZONE", "BILLBOARD", "DEATH_ZONE", "PARTICLES"], t.exports.textureIDS = ["WALL", "DIRT", "FLOOR", "GRID", "GREY", "DEFAULT", "ROOF", "FLAG"], t.exports.objectLimit = 2500, t.exports.objectLimitF = 5e3, t.exports.spawnLimit = 15, t.exports.gravity = 15e-5, t.exports.deathY = -100, t.exports.skyScale = 18e3, t.exports.shadowDst = 1200, t.exports.shadowRes = 1024, t.exports.shadowOff = .004, t.exports.lightDistance = 500, t.exports.cornerPad = 1, t.exports.cornerScl = 2.5, t.exports.cornerH = 7, t.exports.wallH = 5, t.exports.wallW = .8, t.exports.crateScale = 6, t.exports.stackScale = 6, t.exports.barrelScale = 4, t.exports.vehicleScale = 20, t.exports.barrelMlt = 1.5, t.exports.ladderWidth = 3.2, t.exports.ladderScale = .5, t.exports.terrainGrid = 8, t.exports.otherSoundMlt = .55, t.exports.maxParticles = 100, t.exports.explosionRange = 200, t.exports.chatMaxLength = 70, t.exports.chatInterval = 800, t.exports.voiceChatInterval = 2e3, t.exports.voiceChatMaxLength = 5, t.exports.movDirs = [];
         for (var n = 0; n < 8; ++n) t.exports.movDirs.push(-Math.PI + (n + 1) * Math.PI / 4);
         t.exports.interpolation = 1.1, t.exports.stateHistory = 1e3, t.exports.syncFreq = 800, t.exports.pingCount = 10, t.exports.mouseSens = .0024, t.exports.camChaseTrn = .0022, t.exports.camChaseSpd = .0012, t.exports.camChaseSen = .2, t.exports.camChaseDst = 24, t.exports.menuCamDist = 200, t.exports.menuCamAngle = -.5, t.exports.menuCamSpeed = .1, t.exports.animMult = 1.2, t.exports.leanPull = .99, t.exports.leanSens = .04, t.exports.leanMax = .16, t.exports.leanPullZ = .99, t.exports.leanMltZ = .02, t.exports.bobMltY = .03, t.exports.bobMltZ = .05, t.exports.bobPullY = .985, t.exports.bobPullZ = .99, t.exports.landPull = .994, t.exports.landPullV = .985, t.exports.aimAnimMlt = .18, t.exports.aimSlow = .55, t.exports.aimJumpSlow = .85, t.exports.stepAnim = .075, t.exports.stepMlt = .25, t.exports.stepPull = .995, t.exports.maxHealth = 100, t.exports.passiveInc = 500, t.exports.cameraHeight = 1.5, t.exports.playerSpeed = 42e-5, t.exports.ladderSpeed = .035, t.exports.ladderDecel = .97, t.exports.groundDecel = .99, t.exports.airSpeed = 47e-6, t.exports.airDecel = .9996, t.exports.jumpVel = .072, t.exports.jumpPush = .1, t.exports.decelMin = 1e-4, t.exports.climbHeight = 3, t.exports.wpnSpin = .018, t.exports.materialDens = {
             flesh: .2,
@@ -16134,7 +16134,6 @@
         PLANE: {
             defaultSize: [4, .01, 4],
             dontRound: !0,
-            particles: !0,
             scalable: !0,
             canTerrain: !0,
             scaleWithSize: !0,
@@ -16149,6 +16148,17 @@
             dummy: !1,
             castShadow: !0,
             receiveShadow: !0
+        },
+        PARTICLES: {
+            defaultSize: [20, 20, 20],
+            hasParticles: !0,
+            scalable: !0,
+            noTexture: !0,
+            opacity: .3,
+            lineCol: 3080191,
+            tool: !0,
+            genGeo: async (t, e) => h(...t, e),
+            stepSrc: "a"
         },
         BILLBOARD: {
             defaultSize: [40, .01, 10],
@@ -26224,7 +26234,15 @@
                             noCol: s.col,
                             noVis: s.v
                         })
-                    } else "PLANE" == s.id || "BILLBOARD" == s.id ? this.manager.addPlane(v, y, x, s.s[2] / 2, s.s[0] / 2, {
+                    } else "PARTICLES" == s.id ? e && e.area(v, y, x, s.s[0], s.s[1], s.s[2], {
+                        src: "glow_0",
+                        blending: 2,
+                        count: Math.round((s.s[0] + s.s[2] + s.s[1]) / 9),
+                        spd: .008,
+                        grav: [-.015, -.005],
+                        scl: [.7, 1],
+                        dir: 0
+                    }) : "PLANE" == s.id || "BILLBOARD" == s.id ? this.manager.addPlane(v, y, x, s.s[2] / 2, s.s[0] / 2, {
                         src: "BILLBOARD" == s.id ? "pubs/bill_1" : s.t.toLowerCase() + "_0",
                         emissive: s.e || 0,
                         opacity: 1 != s.o && void 0 != s.o ? s.o : 1,
@@ -28550,16 +28568,16 @@
                     p = t.swapTime / t.weapon.swapTime,
                     d = t.weapon.xOff,
                     f = 0;
-                t.reloadTimer > 0 && (f = (f = 1 - t.reloadTimer / t.weapon.reload) > .5 ? .5 - (f - .5) : f), e.moveMesh(t.objInstances, t.x, t.y + (t.isYou ? 0 : Math.abs(3.5 * a)), t.z), e.rotateMesh(t.objInstances, t.xDir + (t.isYou ? 0 : 2 * -a)), o -= o * (t.crouchVal * s.crouchAnimMlt), a -= a * (t.crouchVal * s.crouchAnimMlt);
+                t.reloadTimer > 0 && (f = (f = 1 - t.reloadTimer / t.weapon.reload) > .5 ? .5 - (f - .5) : f), e.moveMesh(t.objInstances, t.x, t.y + (t.isYou ? 0 : Math.abs(3.5 * a)), t.z), e.rotateMesh(t.objInstances, t.xDire + (t.isYou ? 0 : 2 * -a)), o -= o * (t.crouchVal * s.crouchAnimMlt), a -= a * (t.crouchVal * s.crouchAnimMlt);
                 for (var m = 0; m < t.legMeshes.length; ++m) t.legMeshes[m].rotation.x = a * (1 == m || 3 == m ? 1 : -1) * 7 + (m > 1 ? -.6 : 0);
                 for (m = 0; m < t.armMeshes.length; ++m) t.armMeshes[m].position.z = a * (m ? -1 : 1) * 12;
-                e.rotateMesh(t.upperBody, -1 * f, -2.8 * f + t.yDir * (t.isYou ? 1 : .5) + (-Math.PI / 4 * p + .6 * t.landAnim + t.recoilAnimY * s.recoilMlt - t.bobAnimY * n)), e.moveMesh(t.upperBody, 0, t.height - s.cameraHeight - s.legHeight, 0), e.rotateMesh(t.weaponMeshes[t.weaponIndex], (t.leanAnimX * (t.weapon.leanMlt || 0) + .4 * c + .2 * t.leanAnimZ) * n, (t.recoilAnim * ((t.weapon.recoilY || 0) * i) + 2 * t.leanAnimY - .5 * l) * n, u + t.leanAnimZ * r + .5 * c * n), e.moveMesh(t.weaponMeshes[t.weaponIndex], (1.2 * t.leanAnimZ + a) * t.aimVal * n + d - (d - t.weapon.xOrg) * h, (o + t.bobAnimY) * n + t.weapon.yOff - (t.weapon.yOff - t.weapon.yOrg) * h, t.weapon.zOff - (t.weapon.zOff - t.weapon.zOrg) * h + t.bobAnimZ * n + t.recoilAnim * (t.weapon.recoilZ || 0) * i)
+                e.rotateMesh(t.upperBody, -1 * f, -2.8 * f + t.yDire * (t.isYou ? 1 : .5) + (-Math.PI / 4 * p + .6 * t.landAnim + t.recoilAnimY * s.recoilMlt - t.bobAnimY * n)), e.moveMesh(t.upperBody, 0, t.height - s.cameraHeight - s.legHeight, 0), e.rotateMesh(t.weaponMeshes[t.weaponIndex], (t.leanAnimX * (t.weapon.leanMlt || 0) + .4 * c + .2 * t.leanAnimZ) * n, (t.recoilAnim * ((t.weapon.recoilY || 0) * i) + 2 * t.leanAnimY - .5 * l) * n, u + t.leanAnimZ * r + .5 * c * n), e.moveMesh(t.weaponMeshes[t.weaponIndex], (1.2 * t.leanAnimZ + 1.5 * a) * t.aimVal * n + d - (d - t.weapon.xOrg) * h, (o + t.bobAnimY) * n + t.weapon.yOff - (t.weapon.yOff - t.weapon.yOrg) * h, t.weapon.zOff - (t.weapon.zOff - t.weapon.zOrg) * h + t.bobAnimZ * n + t.recoilAnim * (t.weapon.recoilZ || 0) * i)
             }
         }, this.updateHeight = function(t) {
             var n = s.crouchDst * t.crouchVal;
             if (e && !t.isYou) {
                 var i = s.crouchLean * t.crouchVal;
-                e.rotateMesh(t.lowerBody, 0, i + .5 * t.yDir, 0), t.upperBody.rotation.x -= i, e.moveMesh(t.lowerBody, 0, s.legHeight - n, 0);
+                e.rotateMesh(t.lowerBody, 0, i + .5 * t.yDire, 0), t.upperBody.rotation.x -= i, e.moveMesh(t.lowerBody, 0, s.legHeight - n, 0);
                 for (var r = 0; r < 4; ++r) t.legMeshes[r].visible = r <= 1 ? !t.crouchVal : !!t.crouchVal
             } else t.height = s.playerHeight - n
         }, this.generateMeshes = function(n, r) {
@@ -28622,7 +28640,7 @@
                 } return g ? (g.weaponMeshes.length = 0, g.legMeshes.length = 0, g.armMeshes.length = 0) : ((g = new function(t, e, n, i) {
                 var r;
                 this.id = t, this.sentTo = [], this.inputs = [], this.spins = [], this.stateHistory = [], this.weaponMeshes = [], this.legMeshes = [], this.armMeshes = [], this.lastInput = [], this.reloads = [], this.ammos = [], this.ping = 0, this.pings = [], this.score = 0, this.scoreObjs = {}, this.convs = 0, this.timer = null, this.gameTimer = null, this.kills = 0, this.deaths = 0, this.level = 0, this.deltaAdd = 0, this.deltaDiv = 1, this.sprayIndex = 0, this.hatIndex = -1, this.backIndex = -1, this.lastSpray = 0, this.playTime = 0, this.init = function(t, e, n, r, a) {
-                    this.x = t, this.y = e, this.z = n, this.stepSrc = null, this.name = r || "unknown", this.xVel = 0, this.yVel = 0, this.zVel = 0, this.renderMinimal = !1, this.spins.length = 0, this.xDir = 0, this.yDir = 0, this.hitTimer = 0, this.ticker = 0, this.spread = 0, this.spreadPlus = 0, this.aimVal = 1, this.aimDir = 0, this.aimTime = 0, this.streak = 0, this.lastKill = 0, this.stateHistory.length = 0, this.lastInput.length = 0, this.dmgReceived = {}, this.landAnim = 0, this.landVelocity = 0, this.leanAnimX = 0, this.leanAnimY = 0, this.leanAnimZ = 0, this.bobAnimZ = 0, this.bobAnimY = 0, this.stepVal = 0, this.stepChase = 0, this.stepDir = 1, this.stepDirR = 1, this.reward = 0, this.recoilAnim = 0, this.recoilAnimY = 0, this.recoilForce = 0, this.crouchVal = 0, this.onGround = !0, this.onLadder = !1, this.rampFix = null, this.didJump = !1, this.didShoot = !1, this.lodActive = !1, this.locked = !1, this.latestData = !1, this.airTime = 0, this.height = i.playerHeight, this.headScale = i.cameraHeight, this.scale = i.playerScale, this.active = !0, this.interpolate = !1, this.isYou = a, this.sentTo.length = 0, this.inputSN = 0, this.inputs.length = 0, this.weaponIndex = 0, this.swapTime = 0, this.recon = !1, this.notObstr = !1
+                    this.x = t, this.y = e, this.z = n, this.stepSrc = null, this.name = r || "unknown", this.xVel = 0, this.yVel = 0, this.zVel = 0, this.renderMinimal = !1, this.spins.length = 0, this.xDire = 0, this.yDire = 0, this.hitTimer = 0, this.ticker = 0, this.spread = 0, this.spreadPlus = 0, this.aimVal = 1, this.aimDir = 0, this.aimTime = 0, this.streak = 0, this.lastKill = 0, this.stateHistory.length = 0, this.lastInput.length = 0, this.dmgReceived = {}, this.landAnim = 0, this.landVelocity = 0, this.leanAnimX = 0, this.leanAnimY = 0, this.leanAnimZ = 0, this.bobAnimZ = 0, this.bobAnimY = 0, this.stepVal = 0, this.stepChase = 0, this.stepDir = 1, this.stepDirR = 1, this.reward = 0, this.recoilAnim = 0, this.recoilAnimY = 0, this.recoilForce = 0, this.crouchVal = 0, this.onGround = !0, this.onLadder = !1, this.rampFix = null, this.didJump = !1, this.didShoot = !1, this.lodActive = !1, this.locked = !1, this.latestData = !1, this.airTime = 0, this.height = i.playerHeight, this.headScale = i.cameraHeight, this.scale = i.playerScale, this.active = !0, this.interpolate = !1, this.isYou = a, this.sentTo.length = 0, this.inputSN = 0, this.inputs.length = 0, this.weaponIndex = 0, this.swapTime = 0, this.recon = !1, this.notObstr = !1
                 }, this.setClass = function(t, e, n) {
                     n || (t.config && t.config.classes.indexOf(e) < 0 && (e = t.config.classes[0]), t.mode && (t.mode.noWeap && (e = 8), t.mode.teamClass && t.mode.teamClass[this.team] && (e = t.mode.teamClass[this.team]))), void 0 != e && null != e || (e = t.classes.length - 1), this.classIndex = e, this.reloads.length = 0, this.ammos.length = 0, this.loadout = t.classes[e].loadout, this.speed = t.classes[e].speed || 1;
                     for (var i = 0; i < this.loadout.length; ++i) this.reloads.push(0), this.ammos.push(t.weapons[this.loadout[i]].ammo);
@@ -28633,10 +28651,10 @@
                     this.recon = o;
                     var s = Math.min(t[1], i.dltMx) / this.deltaDiv;
                     this.inputSN = t[0];
-                    var c = n.getAngleDist(t[2], this.xDir);
+                    var c = n.getAngleDist(t[2], this.xDire);
                     e.saveSpin(this, c);
                     var l = !o && this.isYou;
-                    if (l && (this.leanAnimX -= c * i.leanSens, this.leanAnimX = n.limit(this.leanAnimX, i.leanMax), this.leanAnimY -= n.getAngleDist(t[3], this.yDir) * i.leanSens, this.leanAnimY = n.limit(this.leanAnimY, i.leanMax), this.leanAnimX && (this.leanAnimX *= Math.pow(i.leanPull, s)), this.leanAnimY && (this.leanAnimY *= Math.pow(i.leanPull, s)), this.leanAnimZ && (this.leanAnimZ *= Math.pow(i.leanPullZ, s)), this.bobAnimZ && (this.bobAnimZ *= Math.pow(i.bobPullZ, s)), this.bobAnimY && (this.bobAnimY *= Math.pow(i.bobPullY, s)), this.landAnim += .08 * this.landVelocity * s, this.landVelocity ? (this.landVelocity *= Math.pow(i.landPullV, s), this.landVelocity = n.cropVal(this.landVelocity, .01)) : this.landAnim && (this.landAnim *= Math.pow(i.landPull, s))), t[10] && e.swapWeapon(this, t[10]), o || (this.recoilForce && (this.recoilAnim += this.recoilForce * s, this.recoilAnimY += this.recoilForce * s, this.recoilForce *= Math.pow(this.weapon.recoverF, s)), this.recoilAnim && (this.recoilAnim *= Math.pow(this.weapon.recover, s)), this.recoilAnimY && (this.recoilAnimY *= Math.pow(this.weapon.recoverY || this.weapon.recover, s))), this.xDir = (t[2] || 0).round(3), this.yDir = (t[3] || 0).round(3), this.oldX = this.x, this.oldY = this.y, this.oldZ = this.z, this.weapon.zoom) {
+                    if (l && (this.leanAnimX -= c * i.leanSens, this.leanAnimX = n.limit(this.leanAnimX, i.leanMax), this.leanAnimY -= n.getAngleDist(t[3], this.yDire) * i.leanSens, this.leanAnimY = n.limit(this.leanAnimY, i.leanMax), this.leanAnimX && (this.leanAnimX *= Math.pow(i.leanPull, s)), this.leanAnimY && (this.leanAnimY *= Math.pow(i.leanPull, s)), this.leanAnimZ && (this.leanAnimZ *= Math.pow(i.leanPullZ, s)), this.bobAnimZ && (this.bobAnimZ *= Math.pow(i.bobPullZ, s)), this.bobAnimY && (this.bobAnimY *= Math.pow(i.bobPullY, s)), this.landAnim += .08 * this.landVelocity * s, this.landVelocity ? (this.landVelocity *= Math.pow(i.landPullV, s), this.landVelocity = n.cropVal(this.landVelocity, .01)) : this.landAnim && (this.landAnim *= Math.pow(i.landPull, s))), t[10] && e.swapWeapon(this, t[10]), o || (this.recoilForce && (this.recoilAnim += this.recoilForce * s, this.recoilAnimY += this.recoilForce * s, this.recoilForce *= Math.pow(this.weapon.recoverF, s)), this.recoilAnim && (this.recoilAnim *= Math.pow(this.weapon.recover, s)), this.recoilAnimY && (this.recoilAnimY *= Math.pow(this.weapon.recoverY || this.weapon.recover, s))), this.xDire = (t[2] || 0).round(3), this.yDire = (t[3] || 0).round(3), this.oldX = this.x, this.oldY = this.y, this.oldZ = this.z, this.weapon.zoom) {
                         var h = this.reloadTimer <= 0 && this.swapTime <= 0;
                         t[6] && this.aimVal > 0 && h ? (this.aimDir = 0, this.aimVal -= 1 / (this.weapon.aimSpeed / s), this.aimVal <= 0 && (this.aimVal = 0, this.isYou && !o && e.toggleAim(this, 1)), !this.isYou || o || this.weapon.scope || e.updateAim(this, 1 - this.aimVal)) : (!h || !t[6] && this.aimVal < 1) && (this.aimDir = 1, this.aimVal || !this.isYou || o || e.toggleAim(this, 0), this.aimVal += 1 / (this.weapon.aimSpeed / s), this.aimVal >= 1 && (this.aimVal = 1), !this.isYou || o || this.weapon.scope || e.updateAim(this, 1 - this.aimVal)), 0 == this.aimVal ? this.aimTime += s : this.aimTime = 0
                     }
@@ -28646,7 +28664,7 @@
                         d = this.onLadder ? i.ladderDecel : this.onGround ? i.groundDecel : i.airDecel;
                     a.lockMove && (p *= 0), this.onGround && e.tryJump(this, t[7]), u || (this.yVel -= s * (i.gravity * (a.config ? a.config.gravMlt : 1)));
                     var f = i.movDirs[t[4]];
-                    f != Math.PI && 0 != f && f != Math.PI / 2 && f != -Math.PI / 2 && (p *= a.config ? a.config.strafeSpd : 1), void 0 !== f && (this.xVel += p * Math.cos(f - this.xDir), this.zVel += p * Math.sin(f - this.xDir)), this.xVel && (this.x += this.xVel * s, this.xVel *= Math.pow(d, s), this.xVel = n.cropVal(this.xVel, i.decelMin)), this.yVel && (this.y += this.yVel * s, this.yVel *= Math.pow(d, s), this.yVel = n.cropVal(this.yVel, i.decelMin)), this.zVel && (this.z += this.zVel * s, this.zVel *= Math.pow(d, s), this.zVel = n.cropVal(this.zVel, i.decelMin));
+                    f != Math.PI && 0 != f && f != Math.PI / 2 && f != -Math.PI / 2 && (p *= a.config ? a.config.strafeSpd : 1), void 0 !== f && (this.xVel += p * Math.cos(f - this.xDire), this.zVel += p * Math.sin(f - this.xDire)), this.xVel && (this.x += this.xVel * s, this.xVel *= Math.pow(d, s), this.xVel = n.cropVal(this.xVel, i.decelMin)), this.yVel && (this.y += this.yVel * s, this.yVel *= Math.pow(d, s), this.yVel = n.cropVal(this.yVel, i.decelMin)), this.zVel && (this.z += this.zVel * s, this.zVel *= Math.pow(d, s), this.zVel = n.cropVal(this.zVel, i.decelMin));
                     var m = this.onGround && !this.didJump,
                         g = !1;
                     this.onGround = !1, this.onLadder = !1;
@@ -28656,7 +28674,7 @@
                             else if (r.kill) e.hasServer && e.kill(this);
                     else if (r.ladder) {
                         if (this.y < r.y + r.height && 0 == this.crouchVal && (this.yVel = 0, this.onLadder = !0, this.stepSrc = null, void 0 !== f)) {
-                            var y = (Math.abs(n.getAngleDist(r.dir, f - this.xDir)) - Math.PI / 2) / (Math.PI / 2);
+                            var y = (Math.abs(n.getAngleDist(r.dir, f - this.xDire)) - Math.PI / 2) / (Math.PI / 2);
                             y > 0 && (this.y += i.ladderSpeed * this.weapon.spdMlt * s * y, this.y <= r.y - r.height ? this.y = r.y - r.height : this.y >= r.y + r.height && (this.y = r.y + r.height))
                         }
                     } else if (r.ramp) {
@@ -28695,7 +28713,7 @@
                         if (this.interpolate) {
                             this.dt += r;
                             var o = Math.min(1.6, this.dt / (i.serverSendRate * i.interpolation));
-                            o /= t.config ? t.config.deltaMlt : 1, this.oldX = this.x, this.oldY = this.y, this.oldZ = this.z, this.x = this.x1 + (this.x2 - this.x1) * o, this.y = this.y1 + (this.y2 - this.y1) * o, this.z = this.z1 + (this.z2 - this.z1) * o, this.onGround && e.playerStep(this, n.getDistance(this.oldX, this.oldZ, this.x, this.z)), this.xDir = Math.lerpAngle(this.xDir2, this.xDir1, Math.min(1, o)), this.yDir = Math.lerpAngle(this.yDir2, this.yDir1, Math.min(1, o))
+                            o /= t.config ? t.config.deltaMlt : 1, this.oldX = this.x, this.oldY = this.y, this.oldZ = this.z, this.x = this.x1 + (this.x2 - this.x1) * o, this.y = this.y1 + (this.y2 - this.y1) * o, this.z = this.z1 + (this.z2 - this.z1) * o, this.onGround && e.playerStep(this, n.getDistance(this.oldX, this.oldZ, this.x, this.z)), this.xDire = Math.lerpAngle(this.xDir2, this.xDir1, Math.min(1, o)), this.yDire = Math.lerpAngle(this.yDir2, this.yDir1, Math.min(1, o))
                         }
                     }
                 }
@@ -28736,7 +28754,7 @@
                 i = s.jumpPush * (t.config ? t.config.jumpMlt : 1);
             e.yVel += (n - n * (s.crouchJump * e.crouchVal)) * e.weapon.spdMlt * (e.aimVal ? 1 : s.aimJumpSlow);
             var a = o.getDistance(0, 0, e.xVel, e.zVel);
-            e.xVel -= i * a * Math.sin(e.xDir), e.zVel -= i * a * Math.cos(e.xDir), r && !e.recon && r.play("jump_" + o.randInt(0, 1), .1, !1, o.randFloat(.9, 1))
+            e.xVel -= i * a * Math.sin(e.xDire), e.zVel -= i * a * Math.cos(e.xDire), r && !e.recon && r.play("jump_" + o.randInt(0, 1), .1, !1, o.randFloat(.9, 1))
         }, this.updateAim = function(t, n) {
             e.zoom(1 + (t.weapon.zoom - 1) * n)
         }, this.toggleAim = function(n, i) {
@@ -28759,19 +28777,19 @@
                     u = 0 == n.aimVal && n.weapon.scope;
                 if (0 != e.useDepthMap && "0" != e.useDepthMap || (l.muzzle.visible = !0, a.setMaterial(l.muzzle, 2, 1, !0), l.muzzle.init(0, n.weapon.muzOffY || 0, -n.weapon.muzOff, 0, 0, 0, 4 * (n.weapon.muzMlt || 1), 1), u || ((p = n.weaponMeshes[n.weaponIndex].muzzle.getWorldPosition().clone()).project(e.camera), p.x = (p.x + 1) / 2, p.y = (p.y + 1) / 2, e.flash(p.x, p.y))), !n.weapon.nCase) {
                     var p = n.weaponMeshes[n.weaponIndex].casing.getWorldPosition();
-                    r && r.play3D("case_" + o.randInt(0, 1), p.x, p.y, p.z, .4, o.randFloat(.8, 1.3)), u || a.physObj(p.x, p.y, p.z, n.xDir - Math.PI / 2, Math.PI / 5 * o.randFloat(.8, 1.2), 25, n.weapon.caseInd || 1, n)
+                    r && r.play3D("case_" + o.randInt(0, 1), p.x, p.y, p.z, .4, o.randFloat(.8, 1.3)), u || a.physObj(p.x, p.y, p.z, n.xDire - Math.PI / 2, Math.PI / 5 * o.randFloat(.8, 1.2), 25, n.weapon.caseInd || 1, n)
                 }
             }
             if (void 0 != n.weapon.projectile) {
                 if (c) {
                     var d = (n.spread + (n.weapon.innac || 0)) * s.spreadAdj,
-                        m = n.xDir + o.randFloat(-d, d),
-                        g = n.yDir + n.recoilAnimY * s.recoilMlt + o.randFloat(-d, d);
+                        m = n.xDire + o.randFloat(-d, d),
+                        g = n.yDire + n.recoilAnimY * s.recoilMlt + o.randFloat(-d, d);
                     t.projectiles.init(n.x, n.y + n.height - s.cameraHeight, n.z, m, g, n.weapon.projectile, n)
                 }
             } else
                 for (var v = 0; v < (n.weapon.shots || 1); ++v) {
-                    d = (n.spread + (n.weapon.innac || 0)) * s.spreadAdj, m = n.xDir + o.randFloat(-d, d), g = n.yDir + n.recoilAnimY * s.recoilMlt + o.randFloat(-d, d), f.length = 0;
+                    d = (n.spread + (n.weapon.innac || 0)) * s.spreadAdj, m = n.xDire + o.randFloat(-d, d), g = n.yDire + n.recoilAnimY * s.recoilMlt + o.randFloat(-d, d), f.length = 0;
                     for (var y = 0, x = 1 / (n.weapon.range * Math.sin(m + Math.PI) * Math.cos(g)), w = 1 / (n.weapon.range * Math.cos(m + Math.PI) * Math.cos(g)), b = 1 / (n.weapon.range * Math.sin(g)), M = 0; M < t.map.manager.objects.length; ++M)(h = t.map.manager.objects[M]).noShoot || (y = o.lineInRect(n.x, n.z, n.y + n.height - s.cameraHeight, x, w, b, h.x - h.width, h.z - h.length, h.y - h.height, h.x + h.width, h.z + h.length, h.y + h.height)) && y <= 1 && f.push({
                         obj: h,
                         dst: y
@@ -28829,15 +28847,15 @@
         }, this.spray = function(e) {
             if (t.now - e.lastSpray >= s.sprayTimer) {
                 f.length = 0;
-                for (var n = 0, i = 1 / (s.sprayRange * Math.sin(e.xDir + Math.PI) * Math.cos(e.yDir)), r = 1 / (s.sprayRange * Math.cos(e.xDir + Math.PI) * Math.cos(e.yDir)), a = 1 / (s.sprayRange * Math.sin(e.yDir)), l = 0; l < t.map.manager.objects.length; ++l)(h = t.map.manager.objects[l]).noShoot || (n = o.lineInRect(e.x, e.z, e.y + e.height - s.cameraHeight, i, r, a, h.x - h.width, h.z - h.length, h.y - h.height, h.x + h.width, h.z + h.length, h.y + h.height)) && n <= 1 && f.push({
+                for (var n = 0, i = 1 / (s.sprayRange * Math.sin(e.xDire + Math.PI) * Math.cos(e.yDire)), r = 1 / (s.sprayRange * Math.cos(e.xDire + Math.PI) * Math.cos(e.yDire)), a = 1 / (s.sprayRange * Math.sin(e.yDire)), l = 0; l < t.map.manager.objects.length; ++l)(h = t.map.manager.objects[l]).noShoot || (n = o.lineInRect(e.x, e.z, e.y + e.height - s.cameraHeight, i, r, a, h.x - h.width, h.z - h.length, h.y - h.height, h.x + h.width, h.z + h.length, h.y + h.height)) && n <= 1 && f.push({
                     obj: h,
                     dst: n
                 });
                 if (f.length && (f.sort(o.orderByDst), h = f[0].obj)) {
                     var u = s.sprayRange * f[0].dst - .1,
-                        p = e.y + e.height - s.cameraHeight + u * Math.sin(e.yDir),
-                        d = e.x + u * Math.sin(e.xDir + Math.PI) * Math.cos(e.yDir),
-                        m = e.z + u * Math.cos(e.xDir + Math.PI) * Math.cos(e.yDir),
+                        p = e.y + e.height - s.cameraHeight + u * Math.sin(e.yDire),
+                        d = e.x + u * Math.sin(e.xDire + Math.PI) * Math.cos(e.yDire),
+                        m = e.z + u * Math.cos(e.xDire + Math.PI) * Math.cos(e.yDire),
                         g = 0,
                         v = 0;
                     p >= h.y + h.height ? v = -90 : p <= h.y - h.height ? v = 90 : d <= h.x - h.width ? g = -90 : d >= h.x + h.width ? g = 90 : m <= h.z - h.length && (g = 180);
@@ -28870,7 +28888,7 @@
         }, this.tickPlayer = function(t, e) {
             t.playTime += e, t.hitTimer > 0 && (t.hitTimer -= e), t.ticker -= e, t.ticker <= 0 && (t.ticker = 500, t.hitTimer <= 0 && this.changeHealth(t, null, -t.maxHealth * s.regenVal))
         }, this.changeHealth = function(e, n, i, r) {
-            if (!t.waitTimers && !(i < 0 && e.health == e.maxHealth || !r && e.team && n && e.team == n.team && i > 0)) {
+            if (!t.waitTimers && !(i < 0 && e.health == e.maxHealth || (n && n.lastHack && t.now - n.lastHack <= 2e3 && (i *= .1), !r && e.team && n && e.team == n.team && i > 0))) {
                 if (n && n != e && c.send(n.id, "4", e.sid, Math.round(i), e.health - i <= 0 ? 1 : 0), e.dummy) return !0;
                 i > 0 && (e.hitTimer = t.mode.regenDelay || s.regenDelay), e.health -= i, e.health = Math.max(Math.min(e.maxHealth, e.health), 0), n ? (c.send(e.id, "h", Math.ceil(e.health), null, Math.round(n.x), Math.round(n.z)), n != e && (e.dmgReceived[n.id] ? (e.dmgReceived[n.id].val += i, e.dmgReceived[n.id].time = t.now) : e.dmgReceived[n.id] = {
                     time: t.now,
@@ -28882,7 +28900,7 @@
         }, this.swapWeapon = function(n, i, r, a) {
             if (!(n.ammos.length <= 1 && i || a > n.ammos.length)) {
                 var o = n.weaponIndex;
-                if (i && (n.reloadTimer = 0, n.weaponIndex += i, n.didShoot = !1, n.weaponIndex < 0 && (n.weaponIndex = n.ammos.length - 1), n.weaponIndex > n.ammos.length - 1 && (n.weaponIndex = 0)), void 0 != a && (n.weaponIndex = a), n.weapon = t.weapons[n.loadout[n.weaponIndex]], n.weapon || (console.log("CRASH CAUSE --------------"), console.log("WEAPON INDEX: " + n.weaponIndex), console.log("PLAYER LOADOUT: " + n.loadout), console.log("PLAYER AMMOS: " + n.ammos), n.weapon = t.weapons[n.loadout[0]], n.weapon && (n.weaponIndex = 0)), e && (o != n.weaponIndex || r)) {
+                if (i && (1 != i && -1 != i && (i = 0), n.reloadTimer = 0, n.weaponIndex += i, n.didShoot = !1, n.weaponIndex < 0 && (n.weaponIndex = n.ammos.length - 1), n.weaponIndex > n.ammos.length - 1 && (n.weaponIndex = 0)), void 0 != a && (n.weaponIndex = a), n.weapon = t.weapons[n.loadout[n.weaponIndex]], n.weapon || (n.weapon = t.weapons[n.loadout[0]], n.weapon && (n.weaponIndex = 0)), e && (o != n.weaponIndex || r)) {
                     for (var s = 0; s < n.weaponMeshes.length; ++s) n.weaponMeshes[s].visible = !1;
                     n.weaponMeshes[n.weaponIndex] && (n.weaponMeshes[n.weaponIndex].visible = !t.hideWeapon || !n.isYou)
                 }
@@ -29258,7 +29276,7 @@
         caseZOff: -.5,
         caseYOff: -.1,
         muzOff: 5.5,
-        muzMlt: 1.5,
+        muzMlt: 1.65,
         rate: 120,
         spread: 300,
         minSpread: 15,
@@ -29346,7 +29364,7 @@
         spread: 120,
         minSpread: 15,
         zoom: 1.5,
-        leanMlt: 1.6,
+        leanMlt: 1.4,
         recoil: .008,
         recoilR: .012,
         recover: .99,
@@ -29958,7 +29976,7 @@
                 var e = this.scale.x / 2;
                 this.position.x - e >= this.area.x + this.area.w ? this.position.x = this.area.x - this.area.w - e : this.position.x + e <= this.area.x - this.area.w && (this.position.x = this.area.x + this.area.w + e), this.position.z - e >= this.area.z + this.area.l ? this.position.z = this.area.z - this.area.l - e : this.position.z + e <= this.area.z - this.area.l && (this.position.z = this.area.z + this.area.l + e), this.position.y - e >= this.area.y + this.area.h ? this.position.y = this.area.y - e : this.position.y + e <= this.area.y && (this.position.y = this.area.y + this.area.h + e)
             }
-            this.life -= t, this.life <= 0 && this.updC && (this.visible = !1), this.updC++
+            this.life > 0 ? (this.life -= t, this.life <= 0 && this.updC && (this.visible = !1), this.updC++) : this.life <= 0 && this.updC && (this.visible = !1)
         }
     };
     var c = [Math.PI / 3, -Math.PI / 3],
@@ -30003,7 +30021,7 @@
                 h: a,
                 l: o
             });
-            for (var l = 0; l < s.count; ++l) this.add(s.src, t + r.randInt(-i, i), e + r.randInt(0, a), n + r.randInt(-o, o), s.spd * Math.sin(s.dir), s.grav ? r.randFloat(s.grav[0], s.grav[1]) : 0, s.spd * Math.cos(s.dir), r.randFloat(s.scl[0], s.scl[1]), 0, s.grav, s.blending, this.areas[this.areas.length - 1])
+            for (var l = 0; l < s.count; ++l) this.add(s.src, t + r.randInt(-i, i), e + r.randInt(0, a), n + r.randInt(-o, o), s.spd * Math.sin(s.dir), s.grav ? r.randFloat(s.grav[0], s.grav[1]) : 0, s.spd * Math.cos(s.dir), r.randFloat(s.scl[0], s.scl[1]), 0, 0, s.blending, this.areas[this.areas.length - 1])
         }, this.effect = function(e, a, o, s, c, h) {
             if (this.active && (0 == t.useDepthMap || "0" == t.useDepthMap)) {
                 n = l[h];
@@ -30235,41 +30253,47 @@
     }
 }, function(t, e) {
     t.exports = [{
-        name: "Dummy",
-        opacity: 1
+        name: "Krunker",
+        opacity: .6
     }, {
         name: "Target",
+        opacity: .6
+    }, {
+        name: "GG",
+        opacity: .6
+    }, {
+        name: "Pumpkin",
+        opacity: .6
+    }, {
+        name: "Spooky",
+        opacity: .6
+    }, {
+        name: "Ded",
+        opacity: .6
+    }, {
+        name: "Sadface",
+        opacity: .6
+    }, {
+        name: "xD",
         opacity: .7
     }, {
-        name: "Vertix",
-        opacity: .7
+        name: "Sid",
+        opacity: .6
     }, {
-        name: "Oil Rig",
-        opacity: .7
+        name: "Vince",
+        opacity: .6
     }, {
-        name: "Krunker Boys",
-        opacity: .7
+        name: "Kiki",
+        opacity: .6
     }, {
         name: "Ladder",
         opacity: 1
     }, {
-        name: "Complaints",
-        opacity: .8
+        name: "Dummy",
+        opacity: 1
     }, {
-        name: "Duck",
-        opacity: .7
-    }, {
-        name: "Sid",
-        opacity: .7
-    }, {
-        name: "Vince",
-        opacity: .7
-    }, {
-        name: "Kiki",
-        opacity: .7
-    }, {
-        name: "Panda Gang",
-        opacity: .7
+        name: "8 Ball",
+        opacity: .6
     }]
 }, function(t, e) {
     t.exports.wheels = [{
@@ -31584,7 +31608,7 @@
         weapon: 9,
         rarity: 0
     }, {
-        name: "Tiger Rockets",
+        name: "Tiger Rocket",
         id: 20,
         weapon: 9,
         rarity: 2
@@ -32550,7 +32574,7 @@
                 _ = String.fromCharCode;
 
             function S(t) {
-                throw RangeError(w[t])
+                throw new RangeError(w[t])
             }
 
             function E(t, e) {
@@ -32618,7 +32642,7 @@
                 return T.join("")
             }
             s = {
-                version: "1.3.2",
+                version: "1.4.1",
                 ucs2: {
                     decode: A,
                     encode: L
@@ -34047,7 +34071,7 @@
 
     function me(t) {
         g.players.hideAll();
-        for (var e = 0; e < t.length;)(x = g.players.findBySid(t[e])) && x != v && (x.objInstances.visible = !x.lodActive, x.latestData = !0, x.forcePos ? (x.x = t[e + 1], x.y = t[e + 2], x.z = t[e + 3], x.xDir = t[e + 4], x.yDir = t[e + 5], x.interpolate = !1, x.forcePos = !1) : (x.dt = 0, x.x1 = x.x, x.x2 = t[e + 1], x.y1 = x.y, x.y2 = t[e + 2], x.z1 = x.z, x.z2 = t[e + 3], x.xDir1 = x.xDir, x.xDir2 = t[e + 4], x.yDir1 = x.yDir, x.yDir2 = t[e + 5], x.interpolate = !0), x.onGround = t[e + 6], x.crouchVal = t[e + 7], g.players.swapWeapon(x, 0, !1, t[e + 8])), e += 9
+        for (var e = 0; e < t.length;)(x = g.players.findBySid(t[e])) && x != v && (x.objInstances.visible = !x.lodActive, x.latestData = !0, x.forcePos ? (x.x = t[e + 1], x.y = t[e + 2], x.z = t[e + 3], x.xDire = t[e + 4], x.yDire = t[e + 5], x.interpolate = !1, x.forcePos = !1) : (x.dt = 0, x.x1 = x.x, x.x2 = t[e + 1], x.y1 = x.y, x.y2 = t[e + 2], x.z1 = x.z, x.z2 = t[e + 3], x.xDir1 = x.xDire, x.xDir2 = t[e + 4], x.yDir1 = x.yDire, x.yDir2 = t[e + 5], x.interpolate = !0), x.onGround = t[e + 6], x.crouchVal = t[e + 7], g.players.swapWeapon(x, 0, !1, t[e + 8])), e += 9
     }
 
     function ge(t) {
@@ -34252,7 +34276,7 @@
                 if (v && v.active)
                     for (var n = 0; n < Ce.length; ++n) Ce[n].life && (Ce[n].life -= t, Ce[n].life <= 0 && (Ce[n].life = 0), e += "<div class='hitInd' style='transform: translate(0, -50%) rotate(" + (_.xDr + h.getDirection(Ce[n].x, Ce[n].z, v.x, v.z)) + "rad);opacity:" + Ce[n].life / i.hitLife + "'></div>");
                 hitHolder.innerHTML = e
-            }(P), f.update(P), "block" == menuHolder.style.display && i.isProd && !A && (window.idleTimer += P, window.idleTimer >= i.kickTimer && ze("Kicked for inactivity")), requestAnimFrame(De)
+            }(P), f.update(P), (window.hacks || window.aimbot || "SLITHERE.COM MOD" == document.title) && m && m.connected && m.send("hk"), "block" == menuHolder.style.display && i.isProd && !A && (window.idleTimer += P, window.idleTimer >= i.kickTimer && ze("Kicked for inactivity")), requestAnimFrame(De)
     }
 
     function Be() {
@@ -34388,4 +34412,4 @@
             }, setInterval(Be, i.clientSendRate), setInterval(ue, i.nameVisRate), C = Date.now(), De()
         }()
     }
-}])
+}]);
